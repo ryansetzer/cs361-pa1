@@ -1,0 +1,10 @@
+--- outputs/C_echo.txt	2022-09-25 14:55:15.186642027 -0400
++++ expected/C_echo.txt	2022-09-11 14:59:21.000000000 -0400
+@@ -0,0 +1,7 @@
++$ echo goodbye
++goodbye
++$ echo hello\nworld
++hello
++world
++$ quit
++

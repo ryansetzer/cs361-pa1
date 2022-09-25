@@ -1,0 +1,11 @@
+--- ../src/builtins.h	2022-09-11 14:59:21.000000000 -0400
++++ ckstyle/builtins.h.gnu	2022-09-25 14:55:21.550706052 -0400
+@@ -4,7 +4,7 @@
+ #include <stdbool.h>
+ 
+ int echo (char *);
+-int export (char *);
++int export(char *);
+ int pwd (void);
+ int unset (char *);
+ int which (char *);
