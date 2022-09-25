@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <string.h>
+
 // Given a message as input, print it to the screen followed by a
 // newline ('\n'). If the message contains the two-byte escape sequence
 // "\\n", print a newline '\n' instead. No other escape sequence is
@@ -10,6 +13,16 @@
 int
 echo (char *message)
 {
+  if (message != NULL)
+    {
+      message[strlen (message) - 1] = '\0';
+    } 
+  char *token = strtok (message, "\\n");
+  do
+    {
+      printf("%s\n", token);
+      token = strtok (NULL, "\\n");
+    } while (token != NULL);
   return 0;
 }
 

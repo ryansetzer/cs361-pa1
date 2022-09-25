@@ -1,14 +1,24 @@
-==59348== Memcheck, a memory error detector
-==59348== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==59348== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==59348== Command: ../dukesh -b scripts/bins.txt
-==59348== 
-==59348== 
-==59348== HEAP SUMMARY:
-==59348==     in use at exit: 0 bytes in 0 blocks
-==59348==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
-==59348== 
-==59348== All heap blocks were freed -- no leaks are possible
-==59348== 
-==59348== For lists of detected and suppressed errors, rerun with: -s
-==59348== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==301333== Memcheck, a memory error detector
+==301333== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==301333== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==301333== Command: ../dukesh -b scripts/bins.txt
+==301333== 
+$ ./bin/ls data
+$ ./bin/head Makefile
+$ quit
+
+==301333== 
+==301333== HEAP SUMMARY:
+==301333==     in use at exit: 472 bytes in 1 blocks
+==301333==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==301333== 
+==301333== LEAK SUMMARY:
+==301333==    definitely lost: 0 bytes in 0 blocks
+==301333==    indirectly lost: 0 bytes in 0 blocks
+==301333==      possibly lost: 0 bytes in 0 blocks
+==301333==    still reachable: 472 bytes in 1 blocks
+==301333==         suppressed: 0 bytes in 0 blocks
+==301333== Rerun with --leak-check=full to see details of leaked memory
+==301333== 
+==301333== For lists of detected and suppressed errors, rerun with: -s
+==301333== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

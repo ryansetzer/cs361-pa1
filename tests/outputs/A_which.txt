@@ -1,0 +1,4 @@
+$ which ./bin/rm
+$ which ./bin/cat
+$ quit
+

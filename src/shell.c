@@ -21,9 +21,13 @@ shell (FILE *input)
       memset (buffer, 0, sizeof (buffer));
       if (fgets (buffer, MAXLENGTH, input) == NULL)
         break;
-
       if (input != stdin)
         printf ("%s", buffer);
+      // COMMANDS
+      if (strncmp (buffer, "echo", 4) == 0)
+        echo (&buffer[5]);
+      if (strncmp (buffer, "quit", 4) == 0)
+        break;
     }
   printf ("\n");
   hash_destroy ();

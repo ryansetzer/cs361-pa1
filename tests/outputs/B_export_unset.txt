@@ -1,0 +1,8 @@
+$ which export
+$ echo N=${NUM}
+N=${NUM}
+$ export NUM=5
+$ echo N=${NUM}
+N=${NUM}
+$ quit
+

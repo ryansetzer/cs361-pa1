@@ -1,17 +1,17 @@
---- outputs/C_which.txt	2022-09-25 14:55:17.266662953 -0400
+--- outputs/C_which.txt	2022-09-25 18:10:55.152355069 -0400
 +++ expected/C_which.txt	2022-09-11 14:59:21.000000000 -0400
-@@ -0,0 +1,14 @@
-+$ which cd
+@@ -1,8 +1,14 @@
+ $ which cd
 +cd: dukesh built-in command
-+$ which echo
+ $ which echo
 +echo: dukesh built-in command
-+$ which pwd
+ $ which pwd
 +pwd: dukesh built-in command
-+$ which which 
+ $ which which 
 +which: dukesh built-in command
-+$ which ./bin/ls
+ $ which ./bin/ls
 +./bin/ls
-+$ which ./bin/head
+ $ which ./bin/head
 +./bin/head
-+$ quit
-+
+ $ quit
+ 

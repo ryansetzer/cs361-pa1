@@ -13,6 +13,19 @@ static void usage (void);
 int
 main (int argc, char *argv[])
 {
+  FILE *script = NULL;
+  if (!get_args (argc, argv, &script)) // Invalid Usage
+    {
+      usage ();
+    }
+  else if (script == NULL) // Uses commands from STDIN
+    {
+      shell (stdin);
+    }
+  else // Uses commands from File given by command line
+    {
+      shell (script);
+    }
   return EXIT_SUCCESS;
 }
 

@@ -1,0 +1,8 @@
+$ which cd
+$ which echo
+$ which pwd
+$ which which 
+$ which ./bin/ls
+$ which ./bin/head
+$ quit
+

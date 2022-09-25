@@ -1,14 +1,25 @@
-==59403== Memcheck, a memory error detector
-==59403== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==59403== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==59403== Command: ../dukesh -b scripts/env.txt
-==59403== 
-==59403== 
-==59403== HEAP SUMMARY:
-==59403==     in use at exit: 0 bytes in 0 blocks
-==59403==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
-==59403== 
-==59403== All heap blocks were freed -- no leaks are possible
-==59403== 
-==59403== For lists of detected and suppressed errors, rerun with: -s
-==59403== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==301402== Memcheck, a memory error detector
+==301402== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==301402== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==301402== Command: ../dukesh -b scripts/env.txt
+==301402== 
+$ ./bin/env A=5 ./bin/env
+$ ./bin/env A=5 B=6 C=7 ./bin/env
+$ ./bin/env A=5 B=6 C=7 ./bin/env | head -n 1
+$ quit
+
+==301402== 
+==301402== HEAP SUMMARY:
+==301402==     in use at exit: 472 bytes in 1 blocks
+==301402==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==301402== 
+==301402== LEAK SUMMARY:
+==301402==    definitely lost: 0 bytes in 0 blocks
+==301402==    indirectly lost: 0 bytes in 0 blocks
+==301402==      possibly lost: 0 bytes in 0 blocks
+==301402==    still reachable: 472 bytes in 1 blocks
+==301402==         suppressed: 0 bytes in 0 blocks
+==301402== Rerun with --leak-check=full to see details of leaked memory
+==301402== 
+==301402== For lists of detected and suppressed errors, rerun with: -s
+==301402== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
