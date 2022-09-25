@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 // Given a message as input, print it to the screen followed by a
@@ -14,9 +15,7 @@ int
 echo (char *message)
 {
   if (message != NULL)
-    {
-      message[strlen (message) - 1] = '\0';
-    } 
+    message[strlen (message) - 1] = '\0'; 
   char *token = strtok (message, "\\n");
   do
     {
@@ -41,6 +40,9 @@ export (char *kvpair)
 int
 pwd (void)
 {
+  char currDirectory[1000];
+  if (getcwd(currDirectory, sizeof(currDirectory)) != NULL)
+    printf ("%s\n", currDirectory);
   return 0;
 }
 

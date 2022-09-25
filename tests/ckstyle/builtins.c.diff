@@ -1,11 +1,11 @@
---- ../src/builtins.c	2022-09-25 18:09:13.063332003 -0400
-+++ ckstyle/builtins.c.gnu	2022-09-25 18:10:59.676400406 -0400
-@@ -16,13 +16,14 @@
+--- ../src/builtins.c	2022-09-25 18:33:56.778201510 -0400
++++ ckstyle/builtins.c.gnu	2022-09-25 18:34:08.334317325 -0400
+@@ -15,13 +15,14 @@
+ echo (char *message)
+ {
    if (message != NULL)
-     {
-       message[strlen (message) - 1] = '\0';
--    } 
-+    }
+-    message[strlen (message) - 1] = '\0'; 
++    message[strlen (message) - 1] = '\0';
    char *token = strtok (message, "\\n");
    do
      {
@@ -18,7 +18,7 @@
    return 0;
  }
  
-@@ -31,11 +32,7 @@
+@@ -30,18 +31,14 @@
  //
  // Returns 0 on success, 1 for an invalid pair string (kvpair is NULL or
  // there is no '=' in the string).
@@ -31,3 +31,11 @@
  
  // Prints the current working directory (see getcwd()). Returns 0.
  int
+ pwd (void)
+ {
+   char currDirectory[1000];
+-  if (getcwd(currDirectory, sizeof(currDirectory)) != NULL)
++  if (getcwd (currDirectory, sizeof (currDirectory)) != NULL)
+     printf ("%s\n", currDirectory);
+   return 0;
+ }

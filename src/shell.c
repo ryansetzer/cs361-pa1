@@ -26,6 +26,8 @@ shell (FILE *input)
       // COMMANDS
       if (strncmp (buffer, "echo", 4) == 0)
         echo (&buffer[5]);
+      if (strncmp (buffer, "pwd", 3) == 0)
+        pwd ();
       if (strncmp (buffer, "quit", 4) == 0)
         break;
     }
