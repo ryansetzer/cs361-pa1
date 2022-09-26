@@ -1,4 +1,4 @@
---- outputs/A_binaries_flags.txt	2022-09-26 15:24:39.357171850 -0400
+--- outputs/A_binaries_flags.txt	2022-09-26 15:33:16.150289822 -0400
 +++ expected/A_binaries_flags-2.txt	2022-09-11 14:59:21.000000000 -0400
 @@ -1,6 +1,19 @@
  $ ./bin/ls -a data

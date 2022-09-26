@@ -68,7 +68,14 @@ which (char *cmdline)
   if (cmdline == NULL)
     return 1;
   else
-    cmdline[strlen (cmdline) - 1] = '\0';
+    for (int i = 0; i < strlen (cmdline); i++)
+      {
+        if (cmdline[i] == ' ' || cmdline[i] == '\n')
+          {
+            cmdline[i] = '\0';
+            break;
+          }
+      }
   if (isBuiltIn (cmdline))
     printf ("%s: dukesh built-in command\n", cmdline);
   else

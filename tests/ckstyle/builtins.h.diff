@@ -1,5 +1,5 @@
 --- ../src/builtins.h	2022-09-26 15:16:26.764296312 -0400
-+++ ckstyle/builtins.h.gnu	2022-09-26 15:24:41.065188762 -0400
++++ ckstyle/builtins.h.gnu	2022-09-26 15:33:17.914307294 -0400
 @@ -4,7 +4,7 @@
  #include <stdbool.h>
  

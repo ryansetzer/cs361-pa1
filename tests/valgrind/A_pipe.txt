@@ -1,24 +1,24 @@
-==562277== Memcheck, a memory error detector
-==562277== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==562277== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==562277== Command: ../dukesh -b scripts/pipe.txt
-==562277== 
+==580840== Memcheck, a memory error detector
+==580840== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==580840== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==580840== Command: ../dukesh -b scripts/pipe.txt
+==580840== 
 $ ./bin/ls -a data | ./bin/head -n 1
 $ ./bin/ls -a data | ./bin/head -n 2000
 $ quit
 
-==562277== 
-==562277== HEAP SUMMARY:
-==562277==     in use at exit: 472 bytes in 1 blocks
-==562277==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
-==562277== 
-==562277== LEAK SUMMARY:
-==562277==    definitely lost: 0 bytes in 0 blocks
-==562277==    indirectly lost: 0 bytes in 0 blocks
-==562277==      possibly lost: 0 bytes in 0 blocks
-==562277==    still reachable: 472 bytes in 1 blocks
-==562277==         suppressed: 0 bytes in 0 blocks
-==562277== Rerun with --leak-check=full to see details of leaked memory
-==562277== 
-==562277== For lists of detected and suppressed errors, rerun with: -s
-==562277== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==580840== 
+==580840== HEAP SUMMARY:
+==580840==     in use at exit: 472 bytes in 1 blocks
+==580840==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==580840== 
+==580840== LEAK SUMMARY:
+==580840==    definitely lost: 0 bytes in 0 blocks
+==580840==    indirectly lost: 0 bytes in 0 blocks
+==580840==      possibly lost: 0 bytes in 0 blocks
+==580840==    still reachable: 472 bytes in 1 blocks
+==580840==         suppressed: 0 bytes in 0 blocks
+==580840== Rerun with --leak-check=full to see details of leaked memory
+==580840== 
+==580840== For lists of detected and suppressed errors, rerun with: -s
+==580840== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

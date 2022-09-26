@@ -1,25 +1,25 @@
-==562212== Memcheck, a memory error detector
-==562212== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==562212== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==562212== Command: ../dukesh -b scripts/env.txt
-==562212== 
+==580816== Memcheck, a memory error detector
+==580816== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==580816== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==580816== Command: ../dukesh -b scripts/env.txt
+==580816== 
 $ ./bin/env A=5 ./bin/env
 $ ./bin/env A=5 B=6 C=7 ./bin/env
 $ ./bin/env A=5 B=6 C=7 ./bin/env | head -n 1
 $ quit
 
-==562212== 
-==562212== HEAP SUMMARY:
-==562212==     in use at exit: 472 bytes in 1 blocks
-==562212==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
-==562212== 
-==562212== LEAK SUMMARY:
-==562212==    definitely lost: 0 bytes in 0 blocks
-==562212==    indirectly lost: 0 bytes in 0 blocks
-==562212==      possibly lost: 0 bytes in 0 blocks
-==562212==    still reachable: 472 bytes in 1 blocks
-==562212==         suppressed: 0 bytes in 0 blocks
-==562212== Rerun with --leak-check=full to see details of leaked memory
-==562212== 
-==562212== For lists of detected and suppressed errors, rerun with: -s
-==562212== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==580816== 
+==580816== HEAP SUMMARY:
+==580816==     in use at exit: 472 bytes in 1 blocks
+==580816==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==580816== 
+==580816== LEAK SUMMARY:
+==580816==    definitely lost: 0 bytes in 0 blocks
+==580816==    indirectly lost: 0 bytes in 0 blocks
+==580816==      possibly lost: 0 bytes in 0 blocks
+==580816==    still reachable: 472 bytes in 1 blocks
+==580816==         suppressed: 0 bytes in 0 blocks
+==580816== Rerun with --leak-check=full to see details of leaked memory
+==580816== 
+==580816== For lists of detected and suppressed errors, rerun with: -s
+==580816== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

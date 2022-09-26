@@ -5,7 +5,7 @@ echo: dukesh built-in command
 $ which pwd
 pwd: dukesh built-in command
 $ which which 
-which : dukesh built-in command
+which: dukesh built-in command
 $ which ./bin/ls
 ./bin/ls
 $ which ./bin/head
