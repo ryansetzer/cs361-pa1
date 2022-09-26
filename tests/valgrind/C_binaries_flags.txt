@@ -1,26 +1,26 @@
-==339836== Memcheck, a memory error detector
-==339836== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==339836== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==339836== Command: ../dukesh -b scripts/bins_flags.txt
-==339836== 
+==327673== Memcheck, a memory error detector
+==327673== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==327673== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==327673== Command: ../dukesh -b scripts/bins_flags.txt
+==327673== 
 $ ./bin/ls -a data
 $ ./bin/ls -s data
 $ ./bin/ls -sa data
 $ ./bin/head -n 1 Makefile
 $ quit
 
-==339836== 
-==339836== HEAP SUMMARY:
-==339836==     in use at exit: 472 bytes in 1 blocks
-==339836==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
-==339836== 
-==339836== LEAK SUMMARY:
-==339836==    definitely lost: 0 bytes in 0 blocks
-==339836==    indirectly lost: 0 bytes in 0 blocks
-==339836==      possibly lost: 0 bytes in 0 blocks
-==339836==    still reachable: 472 bytes in 1 blocks
-==339836==         suppressed: 0 bytes in 0 blocks
-==339836== Rerun with --leak-check=full to see details of leaked memory
-==339836== 
-==339836== For lists of detected and suppressed errors, rerun with: -s
-==339836== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==327673== 
+==327673== HEAP SUMMARY:
+==327673==     in use at exit: 472 bytes in 1 blocks
+==327673==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==327673== 
+==327673== LEAK SUMMARY:
+==327673==    definitely lost: 0 bytes in 0 blocks
+==327673==    indirectly lost: 0 bytes in 0 blocks
+==327673==      possibly lost: 0 bytes in 0 blocks
+==327673==    still reachable: 472 bytes in 1 blocks
+==327673==         suppressed: 0 bytes in 0 blocks
+==327673== Rerun with --leak-check=full to see details of leaked memory
+==327673== 
+==327673== For lists of detected and suppressed errors, rerun with: -s
+==327673== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

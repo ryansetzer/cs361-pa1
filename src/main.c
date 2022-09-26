@@ -15,17 +15,11 @@ main (int argc, char *argv[])
 {
   FILE *script = NULL;
   if (!get_args (argc, argv, &script)) // Invalid Usage
-    {
-      usage ();
-    }
+    usage ();
   else if (script == NULL) // Uses commands from STDIN
-    {
-      shell (stdin);
-    }
+    shell (stdin);
   else // Uses commands from File given by command line
-    {
-      shell (script);
-    }
+    shell (script);
   return EXIT_SUCCESS;
 }
 
