@@ -1,7 +1,8 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-
+#include <stdlib.h>
+#include <unistd.h>
+#include "shell.h"
 #include "process.h"
 
 // Given a message as input, print it to the screen followed by a
@@ -17,13 +18,13 @@ int
 echo (char *message)
 {
   if (message != NULL)
-    message[strlen (message) - 1] = '\0'; 
+    message[strlen (message) - 1] = '\0';
   char *token = strtok (message, "\\n");
   do
-    {
-      printf("%s\n", token);
-      token = strtok (NULL, "\\n");
-    } while (token != NULL);
+  {
+    printf ("%s\n", token);
+    token = strtok (NULL, "\\n");
+  } while (token != NULL);
   return 0;
 }
 
@@ -42,9 +43,9 @@ export (char *kvpair)
 int
 pwd (void)
 {
-  char currDirectory[1000];
-  if (getcwd(currDirectory, sizeof(currDirectory)) != NULL)
-    printf ("%s\n", currDirectory);
+  char dir[1000];
+  if (getcwd(dir, sizeof(dir)) != NULL)
+    printf ("%s\n", dir);
   return 0;
 }
 
@@ -77,8 +78,29 @@ which (char *cmdline)
           }
       }
   if (isBuiltIn (cmdline))
-    printf ("%s: dukesh built-in command\n", cmdline);
-  else
-    printf ("%s\n", cmdline); 
+  {
+    printf ("%s: dukesh built-in command\n", cmdline); 
+    return 0;  
+  }
+  else if (strncmp (cmdline, "./", 2) == 0)
+  {
+    printf ("%s\n", cmdline);
+    return 0;
+  }
+  getcwd (PATH, sizeof (PATH));
+  printf("%s/%s\n", PATH, cmdline);
+  return 0;
+}
+// Changes the current working directory.
+// Returns 0 for success, 1 for errors.
+int
+cd (char *newDir)
+{
+  if (newDir == NULL)
+    return 1;
+  newDir [strlen (newDir) - 1] = '\0';
+  if (chdir (newDir) != 0)
+    perror ("cd failed");
+  strcpy (PATH, newDir);
   return 0;
 }

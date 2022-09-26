@@ -9,4 +9,6 @@ int pwd (void);
 int unset (char *);
 int which (char *);
 
+int cd (char *);
+
 #endif

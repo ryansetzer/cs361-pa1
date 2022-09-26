@@ -3,4 +3,6 @@
 
 void shell (FILE *);
 
+extern char *PATH;
+
 #endif
