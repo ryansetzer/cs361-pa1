@@ -1,6 +1,6 @@
---- ../src/builtins.c	2022-09-25 18:33:56.778201510 -0400
-+++ ckstyle/builtins.c.gnu	2022-09-26 13:09:27.612718671 -0400
-@@ -15,13 +15,14 @@
+--- ../src/builtins.c	2022-09-26 15:24:31.421093273 -0400
++++ ckstyle/builtins.c.gnu	2022-09-26 15:24:41.037188484 -0400
+@@ -17,13 +17,14 @@
  echo (char *message)
  {
    if (message != NULL)
@@ -18,7 +18,7 @@
    return 0;
  }
  
-@@ -30,18 +31,14 @@
+@@ -32,18 +33,14 @@
  //
  // Returns 0 on success, 1 for an invalid pair string (kvpair is NULL or
  // there is no '=' in the string).
@@ -37,5 +37,13 @@
 -  if (getcwd(currDirectory, sizeof(currDirectory)) != NULL)
 +  if (getcwd (currDirectory, sizeof (currDirectory)) != NULL)
      printf ("%s\n", currDirectory);
+   return 0;
+ }
+@@ -72,6 +69,6 @@
+   if (isBuiltIn (cmdline))
+     printf ("%s: dukesh built-in command\n", cmdline);
+   else
+-    printf ("%s\n", cmdline); 
++    printf ("%s\n", cmdline);
    return 0;
  }

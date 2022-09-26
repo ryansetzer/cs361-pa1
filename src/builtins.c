@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "process.h"
+
 // Given a message as input, print it to the screen followed by a
 // newline ('\n'). If the message contains the two-byte escape sequence
 // "\\n", print a newline '\n' instead. No other escape sequence is
@@ -63,5 +65,13 @@ unset (char *key)
 int
 which (char *cmdline)
 {
+  if (cmdline == NULL)
+    return 1;
+  else
+    cmdline[strlen (cmdline) - 1] = '\0';
+  if (isBuiltIn (cmdline))
+    printf ("%s: dukesh built-in command\n", cmdline);
+  else
+    printf ("%s\n", cmdline); 
   return 0;
 }

@@ -10,5 +10,5 @@ B_env                          FAIL (see outputs/B_env.diff for details)
 A_binaries                     FAIL (see outputs/A_binaries.diff for details)
 A_binaries_flags               FAIL (see outputs/A_binaries_flags.diff for details)
 A_pipe                         FAIL (see outputs/A_pipe.diff for details)
-A_which                        FAIL (see outputs/A_which.diff for details)
+A_which                        pass
 No memory leak found.

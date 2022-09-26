@@ -1,26 +1,27 @@
-==327638== Memcheck, a memory error detector
-==327638== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==327638== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==327638== Command: ../dukesh -b scripts/dirs.txt
-==327638== 
+==562090== Memcheck, a memory error detector
+==562090== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==562090== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==562090== Command: ../dukesh -b scripts/dirs.txt
+==562090== 
 $ cd /usr/bin
 $ pwd
 /cs/home/stu/setzerrj/cs361/cs361-pa1/tests
 $ which ls
+ls
 $ quit
 
-==327638== 
-==327638== HEAP SUMMARY:
-==327638==     in use at exit: 472 bytes in 1 blocks
-==327638==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
-==327638== 
-==327638== LEAK SUMMARY:
-==327638==    definitely lost: 0 bytes in 0 blocks
-==327638==    indirectly lost: 0 bytes in 0 blocks
-==327638==      possibly lost: 0 bytes in 0 blocks
-==327638==    still reachable: 472 bytes in 1 blocks
-==327638==         suppressed: 0 bytes in 0 blocks
-==327638== Rerun with --leak-check=full to see details of leaked memory
-==327638== 
-==327638== For lists of detected and suppressed errors, rerun with: -s
-==327638== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==562090== 
+==562090== HEAP SUMMARY:
+==562090==     in use at exit: 472 bytes in 1 blocks
+==562090==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==562090== 
+==562090== LEAK SUMMARY:
+==562090==    definitely lost: 0 bytes in 0 blocks
+==562090==    indirectly lost: 0 bytes in 0 blocks
+==562090==      possibly lost: 0 bytes in 0 blocks
+==562090==    still reachable: 472 bytes in 1 blocks
+==562090==         suppressed: 0 bytes in 0 blocks
+==562090== Rerun with --leak-check=full to see details of leaked memory
+==562090== 
+==562090== For lists of detected and suppressed errors, rerun with: -s
+==562090== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

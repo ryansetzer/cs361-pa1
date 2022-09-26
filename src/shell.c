@@ -28,6 +28,8 @@ shell (FILE *input)
         echo (&buffer[5]);
       if (strncmp (buffer, "pwd", 3) == 0)
         pwd ();
+      if (strncmp (buffer, "which", 5) == 0)
+        which (&buffer[6]);
       if (strncmp (buffer, "quit", 4) == 0)
         break;
     }

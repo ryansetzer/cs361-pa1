@@ -16,7 +16,7 @@ isBuiltIn (char *command)
        i++)
     {
       if (strncmp (command, builtInCommands[i],
-                   sizeof (builtInCommands[i]) == 0))
+                   strlen (builtInCommands[i])) == 0)
         return 1;
     }
   return 0;

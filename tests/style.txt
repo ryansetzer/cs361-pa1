@@ -2,7 +2,7 @@ builtins.c                     FAIL (see ckstyle/builtins.c.diff for details)
 builtins.h                     FAIL (see ckstyle/builtins.h.diff for details)
 hash.h                         pass
 main.c                         pass
-process.c                      pass
+process.c                      FAIL (see ckstyle/process.c.diff for details)
 process.h                      pass
 shell.c                        pass
 shell.h                        pass

@@ -1,4 +1,5 @@
 $ which export
+export
 $ echo N=${NUM}
 N=${NUM}
 $ export NUM=5
