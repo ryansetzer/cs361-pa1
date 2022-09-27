@@ -1,12 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-<<<<<<< HEAD
 #include <stdbool.h>
 #include <getopt.h>
-=======
-#include <sys/wait.h>
-#include <unistd.h>
->>>>>>> 0a6c1ebe34e2d7850a999d11c60a70f818ce5df1
 
 static void usage (void);
 static bool get_args (int, char **, bool, bool);
@@ -14,31 +9,12 @@ static bool get_args (int, char **, bool, bool);
 int
 main (int argc, char *argv[])
 {
-<<<<<<< HEAD
   bool allFiles = false;
   bool listSizes = false;
   if (!get_args (argc, argv, allFiles, listSizes))
     usage ();
 
   printf ("success\n");
-=======
-
-  int fd[2];
-  pipe (fd);
-  pid_t child_pid = fork();
-  if (child_pid < 0)
-    return EXIT_FAILURE;
-  if (child_pid == 0)
-    {
-      close (fd[0]);
-      dup2 (fd[1], STDOUT_FILENO);
-      execlp ("ls", "ls");
-    }
-  close (fd[1]);
-  char *buffer[1000];
-  read (fd[0], buffer, sizeof (buffer));
-  printf ("%s", buffer);
->>>>>>> 0a6c1ebe34e2d7850a999d11c60a70f818ce5df1
   return EXIT_SUCCESS;
 }
 
