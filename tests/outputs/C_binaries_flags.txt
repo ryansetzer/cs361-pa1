@@ -1,6 +1,0 @@
-$ ./bin/ls -a data
-$ ./bin/ls -s data
-$ ./bin/ls -sa data
-$ ./bin/head -n 1 Makefile
-$ quit
-
