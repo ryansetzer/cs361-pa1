@@ -84,6 +84,8 @@ which (char *cmdline)
   }
   else if (strncmp (cmdline, "./", 2) == 0)
   {
+    if (isExecutable (&cmdline[3]))
+      printf ("%s: is executable\n", cmdline);
     printf ("%s\n", cmdline);
     return 0;
   }
