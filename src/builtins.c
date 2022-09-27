@@ -19,12 +19,13 @@ echo (char *message)
 {
   if (message != NULL)
     message[strlen (message) - 1] = '\0';
-  char *token = strtok (message, "\\n");
+  char *token = strtok (message, " ");
   do
   {
-    printf ("%s\n", token);
-    token = strtok (NULL, "\\n");
+    printf ("%s ", token);
+    token = strtok (NULL, " ");
   } while (token != NULL);
+  printf ("\n");
   return 0;
 }
 
