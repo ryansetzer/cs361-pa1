@@ -1,7 +1,0 @@
-$ cd /usr/bin
-$ pwd
-/cs/home/stu/setzerrj/cs361/cs361-pa1/tests
-$ which ls
-ls
-$ quit
-

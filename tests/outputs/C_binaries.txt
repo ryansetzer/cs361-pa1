@@ -1,4 +1,0 @@
-$ ./bin/ls data
-$ ./bin/head Makefile
-$ quit
-
