@@ -1,0 +1,6 @@
+$ echo goodbye
+goodbye 
+$ echo hello\nworld
+hello\nworld 
+$ quit
+

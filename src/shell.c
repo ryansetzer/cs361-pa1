@@ -21,7 +21,7 @@ shell (FILE *input)
   PATH = calloc (1000, sizeof (PATH));
   char test[1000];
   getcwd (test, sizeof (test));
-  strcpy(PATH, test);
+  strcpy (PATH, test);
   hash_init (100);
   hash_insert ("?", "0");
   char buffer[MAXLENGTH];
@@ -45,12 +45,6 @@ shell (FILE *input)
         pwd ();
       if (strncmp (buffer, "which", 5) == 0)
         which (&buffer[6]);
-//      if (strncmp (buffer, "./bin/", 6) == 0)
-//      {
-//        runCmd (fd, &buffer[6]);
-//        read (fd[0], temp, MAXLENGTH);
-//        //printf ("%s\n", temp);
-//      }
       if (strncmp (buffer, "ls", 2) == 0)
         {
           printf ("Using this ls\n");
