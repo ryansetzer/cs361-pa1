@@ -16,14 +16,36 @@ main (int argc, char *argv[])
   bool listSizes = false;
   char *dir;
   DIR *d;
+  struct dirent *entry;
   if (!get_args (argc, argv, &allFiles, &listSizes, &dir))
     usage ();
 
-  printf("dir=%s\n", dir);
   if (dir == NULL)
-    d=opendir(".");
+    d = opendir ("."); // uses current directory
   else
-    d=opendir(dir);
+    d = opendir (dir); // uses given directory
+  if (d == NULL)
+    return EXIT_FAILURE;
+  while (entry = readdir (d))
+    {
+      if (allFiles && listSizes)
+        printf ("%d %s   ", entry -> d_reclen, entry -> d_name);
+      else if (allFiles && !listSizes)
+        printf ("%s  ", entry -> d_name);
+      else if (!allFiles && listSizes)
+        {
+          if ((entry -> d_name)[0] != '.')
+            printf ("%d %s   ", entry -> d_reclen, entry -> d_name);
+        }
+      else if (!allFiles && !listSizes)
+        {
+          if ((entry -> d_name)[0] != '.')
+            printf ("%s  ", entry -> d_name);
+        }
+      else
+        printf ("Some'than ain't rite\n");
+    }
+  printf ("\n");
   return EXIT_SUCCESS;
 }
 
