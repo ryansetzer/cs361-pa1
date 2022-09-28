@@ -14,7 +14,30 @@ main (int argc, char *argv[])
   if (!get_args (argc, argv, allFiles, listSizes))
     usage ();
 
-  printf ("success\n");
+  int fd[2];
+//  pipe (fd);
+
+
+//  pid_t child = fork();
+//  if (child < 0)
+//    return 1;
+//  if (child == 0)
+//    {
+//      close (fd[0]); // close read end of pipe
+//      dup2 (STDOUT_FILENO, fd[1]);
+//      if (allFiles && listSizes)
+//        execlp ("ls", "ls", "a", "s");
+//      else if (allFiles && !listSizes)
+//        execlp ("ls", "ls", "a");
+//      else if (!allFiles && listSizes)
+//        execlp ("ls", "ls", "s");
+//      else
+//        execlp ("ls", "ls");      
+//  char buffer[1000];
+//  close (fd[1]); // close write end of pipe
+// read (fd[0], buffer, sizeof(buffer));
+//  printf ("%s\n", buffer); 
+//  printf ("success\n");
   return EXIT_SUCCESS;
 }
 

@@ -45,13 +45,20 @@ shell (FILE *input)
         pwd ();
       if (strncmp (buffer, "which", 5) == 0)
         which (&buffer[6]);
-      if (strncmp (buffer, "./bin/", 6) == 0)
-      {
-        runCmd (fd, &buffer[6]);
-        read (fd[0], temp, MAXLENGTH);
-        //printf ("%s\n", temp);
-      }
-
+//      if (strncmp (buffer, "./bin/", 6) == 0)
+//      {
+//        runCmd (fd, &buffer[6]);
+//        read (fd[0], temp, MAXLENGTH);
+//        //printf ("%s\n", temp);
+//      }
+      if (strncmp (buffer, "ls", 2) == 0)
+        {
+          printf ("Using this ls\n");
+          char *arguments = &buffer[2];
+          runCmd (fd, "ls", arguments);
+          read (fd[0], temp, MAXLENGTH);
+          printf ("%s\n", temp);
+        }
       if (strncmp (buffer, "quit", 4) == 0)
         break;
     }
