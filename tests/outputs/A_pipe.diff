@@ -1,0 +1,13 @@
+--- outputs/A_pipe.txt	2022-09-28 16:08:44.023625459 -0400
++++ expected/A_pipe-2.txt	2022-09-11 14:59:21.000000000 -0400
+@@ -1,4 +1,10 @@
+ $ ./bin/ls -a data | ./bin/head -n 1
++.
+ $ ./bin/ls -a data | ./bin/head -n 2000
++.
++..
++pwd.txt
++.hidden.txt
++empty.txt
+ $ quit
+ 

@@ -18,17 +18,17 @@ int
 echo (char *message)
 {
   if (message != NULL)
-    message[strlen (message) - 1] = '\0';
-  char *token = strtok (message, " ");
+    {
+      message[strlen (message) - 1] = '\0';
+    } 
+  char *token = strtok (message, "\\n");
   do
-  {
-    printf ("%s ", token);
-    token = strtok (NULL, " ");
-  } while (token != NULL);
-  printf ("\n");
+    {
+      printf("%s\n", token);
+      token = strtok (NULL, "\\n");
+    } while (token != NULL);
   return 0;
 }
-
 // Given a key-value pair string (e.g., "alpha=beta"), insert the mapping
 // into the global hash table (hash_insert ("alpha", "beta")).
 //
