@@ -18,7 +18,15 @@ main (int argc, char *argv[])
   size_t lineSize = LINELEN;
   char *buffer;
   if (!(get_args (argc, argv, &script, &numLines)))
+  {
     usage ();
+    return EXIT_FAILURE;
+  }
+  if (script == NULL)
+  {
+    printf ("Try using a real file.\n");
+    return EXIT_FAILURE;
+  } 
   int i = numLines;
   while (i > 0)
   {
@@ -46,8 +54,11 @@ get_args (int argc, char **argv, FILE **script, int *num)
         default:
           return false;
         }
-    }
+    }   
+    if (argc < 2)
+      return false;
     *script = fopen (argv[argc - 1], "r");
+
   return true;
 }
 
