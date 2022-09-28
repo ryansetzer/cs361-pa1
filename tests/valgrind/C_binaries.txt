@@ -1,24 +1,31 @@
-==3801612== Memcheck, a memory error detector
-==3801612== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==3801612== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==3801612== Command: ../dukesh -b scripts/bins.txt
-==3801612== 
+==3869834== Memcheck, a memory error detector
+==3869834== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3869834== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==3869834== Command: ../dukesh -b scripts/bins.txt
+==3869834== 
+==3869834== Conditional jump or move depends on uninitialised value(s)
+==3869834==    at 0x483EF58: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3869834==    by 0x48E8433: puts (ioputs.c:35)
+==3869834==    by 0x1098D5: runCmd (process.c:66)
+==3869834==    by 0x109AE5: shell (shell.c:47)
+==3869834==    by 0x10951B: main (main.c:22)
+==3869834== 
 $ ./bin/ls data
-$ ./bin/head Makefile
-$ quit
+pwd.txt  empty.txt  
 
-==3801612== 
-==3801612== HEAP SUMMARY:
-==3801612==     in use at exit: 8,472 bytes in 2 blocks
-==3801612==   total heap usage: 7 allocs, 5 frees, 27,260 bytes allocated
-==3801612== 
-==3801612== LEAK SUMMARY:
-==3801612==    definitely lost: 0 bytes in 0 blocks
-==3801612==    indirectly lost: 0 bytes in 0 blocks
-==3801612==      possibly lost: 0 bytes in 0 blocks
-==3801612==    still reachable: 8,472 bytes in 2 blocks
-==3801612==         suppressed: 0 bytes in 0 blocks
-==3801612== Rerun with --leak-check=full to see details of leaked memory
-==3801612== 
-==3801612== For lists of detected and suppressed errors, rerun with: -s
-==3801612== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==3869834== 
+==3869834== HEAP SUMMARY:
+==3869834==     in use at exit: 10,876 bytes in 5 blocks
+==3869834==   total heap usage: 7 allocs, 2 frees, 27,260 bytes allocated
+==3869834== 
+==3869834== LEAK SUMMARY:
+==3869834==    definitely lost: 0 bytes in 0 blocks
+==3869834==    indirectly lost: 0 bytes in 0 blocks
+==3869834==      possibly lost: 0 bytes in 0 blocks
+==3869834==    still reachable: 10,876 bytes in 5 blocks
+==3869834==         suppressed: 0 bytes in 0 blocks
+==3869834== Rerun with --leak-check=full to see details of leaked memory
+==3869834== 
+==3869834== Use --track-origins=yes to see where uninitialised values come from
+==3869834== For lists of detected and suppressed errors, rerun with: -s
+==3869834== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

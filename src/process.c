@@ -38,31 +38,32 @@ isExecutable (char *command)
 }
 
 int
-runCmd (int *pipe, char *command, char *arguments)
+runCmd (char *command, char *arguments)
 {
-  printf ("Working here\n");
+  int fd[2];
+  pipe (fd);
   int pid = fork ();
   if (pid == -1)
     {
-      printf ("Inproper child fork\n");
-      close (pipe[0]);
-      close (pipe[1]);
+      close (fd[0]);
+      close (fd[1]);
       return -1;
     }
   if (pid == 0)
     {
-      printf ("Proper child fork\n");
       char *writeableArgument = strdup (&arguments[1]);
       writeableArgument[strlen (writeableArgument) - 1] = '\0';
-      printf ("command: %s, arguments: %s\n", command, writeableArgument);
-      close (pipe[0]); // close read end of pipe
-      printf ("Here\n");
-      dup2 (pipe[1], STDOUT_FILENO);
-      if (strncmp ("", writeableArgument, strlen (writeableArgument)) == 0)
+
+      close (fd[0]); // close read end of pipe
+      dup2 (fd[1], STDOUT_FILENO);
+      if (strlen (writeableArgument) == 0)
         execlp (command, command, NULL);
       else
-        execlp ("./bin/ls", "./bin/ls", writeableArgument, NULL);
+        execlp (command, command, writeableArgument, NULL);
     }
+  char buffer[1000];
+  read (fd[0], buffer, sizeof (buffer));
+  printf ("%s\n", buffer);
   exit (0);
   return 0;
 }

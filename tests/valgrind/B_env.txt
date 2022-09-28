@@ -1,25 +1,25 @@
-==3801713== Memcheck, a memory error detector
-==3801713== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==3801713== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==3801713== Command: ../dukesh -b scripts/env.txt
-==3801713== 
+==3869958== Memcheck, a memory error detector
+==3869958== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3869958== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==3869958== Command: ../dukesh -b scripts/env.txt
+==3869958== 
 $ ./bin/env A=5 ./bin/env
 $ ./bin/env A=5 B=6 C=7 ./bin/env
 $ ./bin/env A=5 B=6 C=7 ./bin/env | head -n 1
 $ quit
 
-==3801713== 
-==3801713== HEAP SUMMARY:
-==3801713==     in use at exit: 8,472 bytes in 2 blocks
-==3801713==   total heap usage: 7 allocs, 5 frees, 27,260 bytes allocated
-==3801713== 
-==3801713== LEAK SUMMARY:
-==3801713==    definitely lost: 0 bytes in 0 blocks
-==3801713==    indirectly lost: 0 bytes in 0 blocks
-==3801713==      possibly lost: 0 bytes in 0 blocks
-==3801713==    still reachable: 8,472 bytes in 2 blocks
-==3801713==         suppressed: 0 bytes in 0 blocks
-==3801713== Rerun with --leak-check=full to see details of leaked memory
-==3801713== 
-==3801713== For lists of detected and suppressed errors, rerun with: -s
-==3801713== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==3869958== 
+==3869958== HEAP SUMMARY:
+==3869958==     in use at exit: 8,472 bytes in 2 blocks
+==3869958==   total heap usage: 7 allocs, 5 frees, 27,260 bytes allocated
+==3869958== 
+==3869958== LEAK SUMMARY:
+==3869958==    definitely lost: 0 bytes in 0 blocks
+==3869958==    indirectly lost: 0 bytes in 0 blocks
+==3869958==      possibly lost: 0 bytes in 0 blocks
+==3869958==    still reachable: 8,472 bytes in 2 blocks
+==3869958==         suppressed: 0 bytes in 0 blocks
+==3869958== Rerun with --leak-check=full to see details of leaked memory
+==3869958== 
+==3869958== For lists of detected and suppressed errors, rerun with: -s
+==3869958== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

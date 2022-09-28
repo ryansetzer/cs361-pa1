@@ -10,6 +10,6 @@
 //   - running a pair of commands that are connected with a pipe
 int isBuiltIn (char *);
 int isExecutable (char *);
-int runCmd (int *, char *, char *);
+int runCmd (char *, char *);
 
 #endif

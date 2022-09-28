@@ -1,8 +1,3 @@
 $ ./bin/ls data
-$ echo $?
-$?
-$ ./bin/ls asldfkjasldfkj
-$ echo $?
-$?
-$ quit
-
+pwd.txt  empty.txt  
+

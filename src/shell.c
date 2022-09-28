@@ -15,8 +15,6 @@ char *PATH;
 void
 shell (FILE *input)
 {
-  int fd[2];
-  pipe (fd);
 
   PATH = calloc (1000, sizeof (PATH));
   char test[1000];
@@ -25,8 +23,6 @@ shell (FILE *input)
   hash_init (100);
   hash_insert ("?", "0");
   char buffer[MAXLENGTH];
-
-  char temp[MAXLENGTH];
   while (1)
     {
       // Print the cursor and get the next command entered
@@ -45,13 +41,10 @@ shell (FILE *input)
         pwd ();
       if (strncmp (buffer, "which", 5) == 0)
         which (&buffer[6]);
-      if (strncmp (buffer, "ls", 2) == 0)
+      if (strncmp (buffer, "./bin/ls", 8) == 0)
         {
-          printf ("Using this ls\n");
-          char *arguments = &buffer[2];
-          runCmd (fd, "ls", arguments);
-          read (fd[0], temp, MAXLENGTH);
-          printf ("%s\n", temp);
+          char *arguments = &buffer[8];
+          runCmd ("./bin/ls", arguments);
         }
       if (strncmp (buffer, "quit", 4) == 0)
         break;
