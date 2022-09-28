@@ -62,8 +62,10 @@ runCmd (char *command, char *arguments)
         execlp (command, command, writeableArgument, NULL);
     }
   char buffer[1000];
+  for (int i = 0; i < sizeof (buffer); i++)
+    buffer[i] = 0;
   read (fd[0], buffer, sizeof (buffer));
-  printf ("%s\n", buffer);
-  exit (0);
+  if (strncmp (" ", buffer, sizeof (buffer)) != 0)
+    printf ("%s\n", buffer);
   return 0;
 }

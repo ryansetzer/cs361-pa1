@@ -1,8 +1,8 @@
-==3869919== Memcheck, a memory error detector
-==3869919== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==3869919== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==3869919== Command: ../dukesh -b scripts/which.txt
-==3869919== 
+==4000210== Memcheck, a memory error detector
+==4000210== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4000210== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==4000210== Command: ../dukesh -b scripts/which.txt
+==4000210== 
 $ which cd
 cd: dukesh built-in command
 $ which echo
@@ -17,18 +17,18 @@ $ which ./bin/head
 ./bin/head
 $ quit
 
-==3869919== 
-==3869919== HEAP SUMMARY:
-==3869919==     in use at exit: 8,472 bytes in 2 blocks
-==3869919==   total heap usage: 7 allocs, 5 frees, 27,260 bytes allocated
-==3869919== 
-==3869919== LEAK SUMMARY:
-==3869919==    definitely lost: 0 bytes in 0 blocks
-==3869919==    indirectly lost: 0 bytes in 0 blocks
-==3869919==      possibly lost: 0 bytes in 0 blocks
-==3869919==    still reachable: 8,472 bytes in 2 blocks
-==3869919==         suppressed: 0 bytes in 0 blocks
-==3869919== Rerun with --leak-check=full to see details of leaked memory
-==3869919== 
-==3869919== For lists of detected and suppressed errors, rerun with: -s
-==3869919== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==4000210== 
+==4000210== HEAP SUMMARY:
+==4000210==     in use at exit: 8,472 bytes in 2 blocks
+==4000210==   total heap usage: 7 allocs, 5 frees, 27,260 bytes allocated
+==4000210== 
+==4000210== LEAK SUMMARY:
+==4000210==    definitely lost: 0 bytes in 0 blocks
+==4000210==    indirectly lost: 0 bytes in 0 blocks
+==4000210==      possibly lost: 0 bytes in 0 blocks
+==4000210==    still reachable: 8,472 bytes in 2 blocks
+==4000210==         suppressed: 0 bytes in 0 blocks
+==4000210== Rerun with --leak-check=full to see details of leaked memory
+==4000210== 
+==4000210== For lists of detected and suppressed errors, rerun with: -s
+==4000210== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

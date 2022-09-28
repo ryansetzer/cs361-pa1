@@ -19,14 +19,17 @@ main (int argc, char *argv[])
   struct dirent *entry;
   if (!get_args (argc, argv, &allFiles, &listSizes, &dir))
     usage ();
-
   if (dir == NULL)
     d = opendir ("."); // uses current directory
   else
     d = opendir (dir); // uses given directory
   if (d == NULL)
-    return EXIT_FAILURE;
-  while (entry = readdir (d))
+    {
+      printf (" ");
+      return EXIT_FAILURE;
+    }
+  entry = readdir (d);
+  while (entry != NULL)
     {
       if (allFiles && listSizes)
         printf ("%d %s   ", entry -> d_reclen, entry -> d_name);
@@ -44,8 +47,8 @@ main (int argc, char *argv[])
         }
       else
         printf ("Some'than ain't rite\n");
+      entry = readdir (d);
     }
-  printf ("\n");
   return EXIT_SUCCESS;
 }
 
