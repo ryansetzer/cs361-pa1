@@ -1,8 +1,8 @@
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
 #include "shell.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 // The contents of this file are up to you, but they should be related to
 // running separate processes. It is recommended that you have functions
 // for:
@@ -18,15 +18,15 @@ isBuiltIn (char *command)
   for (int i = 0; i < sizeof (builtInCommands) / sizeof (builtInCommands[0]);
        i++)
     {
-      if (strncmp (command, builtInCommands[i],
-                   strlen (builtInCommands[i])) == 0)
+      if (strncmp (command, builtInCommands[i], strlen (builtInCommands[i]))
+          == 0)
         return 1;
     }
   return 0;
 }
 
 int
-isExecutable (char * command)
+isExecutable (char *command)
 {
   char *executables[] = { "ls", "cat", "env", "head", "rm" };
   for (int i = 0; i < sizeof (executables) / sizeof (executables[0]); i++)
@@ -37,9 +37,8 @@ isExecutable (char * command)
   return 0;
 }
 
-
 int
-runCmd (int *pipe, char *command, char* arguments)
+runCmd (int *pipe, char *command, char *arguments)
 {
   printf ("Working here\n");
   int pid = fork ();
@@ -54,7 +53,7 @@ runCmd (int *pipe, char *command, char* arguments)
     {
       printf ("Proper child fork\n");
       char *writeableArgument = strdup (&arguments[1]);
-      writeableArgument [strlen (writeableArgument) - 1] = '\0';
+      writeableArgument[strlen (writeableArgument) - 1] = '\0';
       printf ("command: %s, arguments: %s\n", command, writeableArgument);
       close (pipe[0]); // close read end of pipe
       printf ("Here\n");
