@@ -61,7 +61,7 @@ runCmd (int *pipe, char *command, char *arguments)
       if (strncmp ("", writeableArgument, strlen (writeableArgument)) == 0)
         execlp (command, command, NULL);
       else
-        execlp (command, command, writeableArgument, NULL);
+        execlp ("./bin/ls", "./bin/ls", writeableArgument, NULL);
     }
   exit (0);
   return 0;

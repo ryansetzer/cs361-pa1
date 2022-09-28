@@ -2,65 +2,55 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <getopt.h>
+#include <unistd.h>
+#include <sys/types.h>                                                                                                                                                                                                 
+#include <dirent.h>    
 
 static void usage (void);
-static bool get_args (int, char **, bool, bool);
+static bool get_args (int, char **, bool *, bool *, char **);
 
 int
 main (int argc, char *argv[])
 {
   bool allFiles = false;
   bool listSizes = false;
-  if (!get_args (argc, argv, allFiles, listSizes))
+  char *dir;
+  DIR *d;
+  if (!get_args (argc, argv, &allFiles, &listSizes, &dir))
     usage ();
 
-  int fd[2];
-//  pipe (fd);
-
-
-//  pid_t child = fork();
-//  if (child < 0)
-//    return 1;
-//  if (child == 0)
-//    {
-//      close (fd[0]); // close read end of pipe
-//      dup2 (STDOUT_FILENO, fd[1]);
-//      if (allFiles && listSizes)
-//        execlp ("ls", "ls", "a", "s");
-//      else if (allFiles && !listSizes)
-//        execlp ("ls", "ls", "a");
-//      else if (!allFiles && listSizes)
-//        execlp ("ls", "ls", "s");
-//      else
-//        execlp ("ls", "ls");      
-//  char buffer[1000];
-//  close (fd[1]); // close write end of pipe
-// read (fd[0], buffer, sizeof(buffer));
-//  printf ("%s\n", buffer); 
-//  printf ("success\n");
+  printf("dir=%s\n", dir);
+  if (dir == NULL)
+    d=opendir(".");
+  else
+    d=opendir(dir);
   return EXIT_SUCCESS;
 }
 
 bool
-get_args (int argc, char **argv, bool allFiles, bool listSizes)
+get_args (int argc, char **argv, bool *allFiles, bool *listSizes, char **dir)
 {
   int i = 0;
-  while ((i = getopt (argc, argv, ":a:s")) != -1)
+  while ((i = getopt (argc, argv, "as")) != -1)
     {
       switch (i)
         {
           case 'a':
-            allFiles = true;
+            *allFiles = true;
+	    break;
           case 's':
-            listSizes = true;
+            *listSizes = true;
+	    break;
           default:
             return false;
         }
     }
-  if (optind != argc - 1)
+  if (optind > argc)
     {
       return false;
     }
+
+  *dir = argv[optind];
   return true;
 }
 
