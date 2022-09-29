@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include "shell.h"
 #include "process.h"
+#include "hash.h"
 
 // Given a message as input, print it to the screen followed by a
 // newline ('\n'). If the message contains the two-byte escape sequence
@@ -21,11 +22,22 @@ echo (char *message)
     {
       message[strlen (message) - 1] = '\0';
     } 
-  char *token = strtok (message, "\\n");
+  char *token = strtok_r (message, "\\n", &message);
+  char *token2;
   do
     {
-      printf("%s\n", token);
-      token = strtok (NULL, "\\n");
+      token2 = strtok_r (token, "${", &token);
+      printf ("%s", token2);
+      token2 = strtok_r (token, "${", &token);
+      if (token2 != NULL)
+        {
+          token2[strlen (token2) - 1] = '\0';
+          char* value = hash_find (token2);
+          if (value != NULL)
+          	printf ("%s", value);
+        }
+      printf ("\n");
+      token = strtok_r (message, "\\n", &message);
     } while (token != NULL);
   return 0;
 }
@@ -37,6 +49,13 @@ echo (char *message)
 int
 export (char *kvpair)
 {
+  char *token = strtok (kvpair, "=");
+  char *key = token;
+  token = strtok (NULL, "=");
+  char *value = token;
+  value [strlen (value) - 1] = '\0';
+  // printf ("key: [%s] value: [%s]\n", key, value);
+  hash_insert (key, value);
   return 0;
 }
 
@@ -55,6 +74,7 @@ pwd (void)
 int
 unset (char *key)
 {
+  hash_remove (key);
   return 0;
 }
 

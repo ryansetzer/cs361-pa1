@@ -1,29 +1,29 @@
-==111958== Memcheck, a memory error detector
-==111958== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==111958== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==111958== Command: ../dukesh -b scripts/export.txt
-==111958== 
-==111958== 
-==111958== Process terminating with default action of signal 2 (SIGINT)
-==111958==    at 0x4971D39: open (open64.c:48)
-==111958==    by 0x48F4015: _IO_file_open (fileops.c:189)
-==111958==    by 0x48F42D9: _IO_file_fopen@@GLIBC_2.2.5 (fileops.c:281)
-==111958==    by 0x48E698D: __fopen_internal (iofopen.c:75)
-==111958==    by 0x48E698D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
-==111958==    by 0x109552: get_args (main.c:40)
-==111958==    by 0x1094C7: main (main.c:17)
-==111958== 
-==111958== HEAP SUMMARY:
-==111958==     in use at exit: 472 bytes in 1 blocks
-==111958==   total heap usage: 1 allocs, 0 frees, 472 bytes allocated
-==111958== 
-==111958== LEAK SUMMARY:
-==111958==    definitely lost: 0 bytes in 0 blocks
-==111958==    indirectly lost: 0 bytes in 0 blocks
-==111958==      possibly lost: 0 bytes in 0 blocks
-==111958==    still reachable: 472 bytes in 1 blocks
-==111958==         suppressed: 0 bytes in 0 blocks
-==111958== Rerun with --leak-check=full to see details of leaked memory
-==111958== 
-==111958== For lists of detected and suppressed errors, rerun with: -s
-==111958== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==727392== Memcheck, a memory error detector
+==727392== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==727392== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==727392== Command: ../dukesh -b scripts/export.txt
+==727392== 
+$ which export
+export: dukesh built-in command
+$ echo N=${NUM}
+N=
+$ export NUM=5
+$ echo N=${NUM}
+N=5
+$ quit
+
+==727392== 
+==727392== HEAP SUMMARY:
+==727392==     in use at exit: 8,472 bytes in 2 blocks
+==727392==   total heap usage: 9 allocs, 7 frees, 27,266 bytes allocated
+==727392== 
+==727392== LEAK SUMMARY:
+==727392==    definitely lost: 0 bytes in 0 blocks
+==727392==    indirectly lost: 0 bytes in 0 blocks
+==727392==      possibly lost: 0 bytes in 0 blocks
+==727392==    still reachable: 8,472 bytes in 2 blocks
+==727392==         suppressed: 0 bytes in 0 blocks
+==727392== Rerun with --leak-check=full to see details of leaked memory
+==727392== 
+==727392== For lists of detected and suppressed errors, rerun with: -s
+==727392== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

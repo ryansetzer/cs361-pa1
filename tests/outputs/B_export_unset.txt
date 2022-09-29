@@ -1,9 +1,9 @@
 $ which export
-/cs/home/stu/cox3mt/cs361/cs361-pa1/tests/export
+export: dukesh built-in command
 $ echo N=${NUM}
-N=${NUM}
+N=
 $ export NUM=5
 $ echo N=${NUM}
-N=${NUM}
+N=5
 $ quit
 

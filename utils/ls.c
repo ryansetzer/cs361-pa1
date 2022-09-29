@@ -4,8 +4,10 @@
 #include <stdbool.h>
 #include <getopt.h>
 #include <unistd.h>
-#include <sys/types.h>                                                                                                                                                                                                 
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <dirent.h>    
+#include <fcntl.h>
 
 static void usage (void);
 static bool get_args (int, char **, bool *, bool *, bool *, char **);
@@ -19,7 +21,6 @@ main (int argc, char *argv[])
   char *dir;
   DIR *d;
   struct dirent *entry;
-
   if (!get_args (argc, argv, &allFiles, &listSizes, &badFlag, &dir))
   {
     if (!badFlag)
@@ -40,17 +41,20 @@ main (int argc, char *argv[])
       printf (" ");
       return EXIT_FAILURE;
     }
+
   entry = readdir (d);
+  struct stat st;
   while (entry != NULL)
     {
+      stat (entry -> d_name, &st);
       if (allFiles && listSizes)
-        printf ("%d %s\n", entry -> d_reclen, entry -> d_name);
+        printf ("%ld %s\n", st.st_size, entry -> d_name);
       else if (allFiles && !listSizes)
         printf ("%s\n", entry -> d_name);
       else if (!allFiles && listSizes)
         {
           if ((entry -> d_name)[0] != '.')
-            printf ("%d %s\n", entry -> d_reclen, entry -> d_name);
+            printf ("%ld %s\n", st.st_size, entry -> d_name);
         }
       else if (!allFiles && !listSizes)
         {
@@ -59,6 +63,7 @@ main (int argc, char *argv[])
         }
       else
         printf ("Some'than ain't rite\n");
+      entry = NULL;
       entry = readdir (d);
     }
   return EXIT_SUCCESS;

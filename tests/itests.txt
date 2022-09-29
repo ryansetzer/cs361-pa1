@@ -5,4 +5,10 @@ C_binaries_flags               FAIL (see outputs/C_binaries_flags.diff for detai
 C_binaries_bad                 pass
 C_which                        pass
 B_return_code                  FAIL (see outputs/B_return_code.diff for details)
-B_export_unset                 FAIL (see outputs/B_export_unset.diff for details)
+B_export_unset                 pass
+B_env                          FAIL (see outputs/B_env.diff for details)
+A_binaries                     pass
+A_binaries_flags               FAIL (see outputs/A_binaries_flags.diff for details)
+A_pipe                         FAIL (see outputs/A_pipe.diff for details)
+A_which                        pass
+No memory leak found.

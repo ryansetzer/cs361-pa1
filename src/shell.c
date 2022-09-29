@@ -52,6 +52,11 @@ shell (FILE *input)
           char *arguments = &buffer[10];
           runCmd ("./bin/head", arguments);
         }
+      if (strncmp (buffer, "export", 6) == 0)
+        {
+          char *arguments = &buffer[7];
+          export (arguments); 
+        }
       if (strncmp (buffer, "quit", 4) == 0)
         break; 
     }

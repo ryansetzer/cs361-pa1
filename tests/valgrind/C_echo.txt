@@ -1,8 +1,8 @@
-==111839== Memcheck, a memory error detector
-==111839== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==111839== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==111839== Command: ../dukesh -b scripts/echo.txt
-==111839== 
+==727301== Memcheck, a memory error detector
+==727301== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==727301== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==727301== Command: ../dukesh -b scripts/echo.txt
+==727301== 
 $ echo goodbye
 goodbye
 $ echo hello\nworld
@@ -10,18 +10,18 @@ hello
 world
 $ quit
 
-==111839== 
-==111839== HEAP SUMMARY:
-==111839==     in use at exit: 8,472 bytes in 2 blocks
-==111839==   total heap usage: 7 allocs, 5 frees, 27,260 bytes allocated
-==111839== 
-==111839== LEAK SUMMARY:
-==111839==    definitely lost: 0 bytes in 0 blocks
-==111839==    indirectly lost: 0 bytes in 0 blocks
-==111839==      possibly lost: 0 bytes in 0 blocks
-==111839==    still reachable: 8,472 bytes in 2 blocks
-==111839==         suppressed: 0 bytes in 0 blocks
-==111839== Rerun with --leak-check=full to see details of leaked memory
-==111839== 
-==111839== For lists of detected and suppressed errors, rerun with: -s
-==111839== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==727301== 
+==727301== HEAP SUMMARY:
+==727301==     in use at exit: 8,472 bytes in 2 blocks
+==727301==   total heap usage: 7 allocs, 5 frees, 27,260 bytes allocated
+==727301== 
+==727301== LEAK SUMMARY:
+==727301==    definitely lost: 0 bytes in 0 blocks
+==727301==    indirectly lost: 0 bytes in 0 blocks
+==727301==      possibly lost: 0 bytes in 0 blocks
+==727301==    still reachable: 8,472 bytes in 2 blocks
+==727301==         suppressed: 0 bytes in 0 blocks
+==727301== Rerun with --leak-check=full to see details of leaked memory
+==727301== 
+==727301== For lists of detected and suppressed errors, rerun with: -s
+==727301== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

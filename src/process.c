@@ -14,7 +14,7 @@
 int
 isBuiltIn (char *command)
 {
-  char *builtInCommands[] = { "cd", "echo", "pwd", "which" };
+  char *builtInCommands[] = { "cd", "echo", "pwd", "which", "export" };
   for (int i = 0; i < sizeof (builtInCommands) / sizeof (builtInCommands[0]);
        i++)
     {
