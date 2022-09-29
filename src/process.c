@@ -60,11 +60,10 @@ runCmd (char *command, char *arguments)
       dup2 (fd[1], STDOUT_FILENO);
       if (strlen (writeableArgument) == 0)
         execlp (command, command, NULL);
+      else if (token2 == NULL || token1 == NULL)
+        execlp (command, command, writeableArgument, NULL);
       else
-        if (token2 == NULL || token1 == NULL)
-          execlp (command, command, writeableArgument, NULL);
-        else
-          execlp (command, command, token1, token2, NULL);
+        execlp (command, command, token1, token2, NULL);
     }
   char buffer[1000];
   for (int i = 0; i < sizeof (buffer); i++)

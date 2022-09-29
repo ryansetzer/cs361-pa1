@@ -1,5 +1,5 @@
 --- ../src/builtins.c	2022-09-29 10:40:24.139940470 -0400
-+++ ckstyle/builtins.c.gnu	2022-09-29 10:40:35.124042072 -0400
++++ ckstyle/builtins.c.gnu	2022-09-29 10:50:14.409501396 -0400
 @@ -1,10 +1,10 @@
 +#include "hash.h"
 +#include "process.h"

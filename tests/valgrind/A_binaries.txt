@@ -1,8 +1,8 @@
-==727411== Memcheck, a memory error detector
-==727411== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==727411== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==727411== Command: ../dukesh -b scripts/bins.txt
-==727411== 
+==739383== Memcheck, a memory error detector
+==739383== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==739383== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==739383== Command: ../dukesh -b scripts/bins.txt
+==739383== 
 $ ./bin/ls data
 pwd.txt
 empty.txt
@@ -14,18 +14,18 @@ $ ./bin/head Makefile
 # This version of the Makefile includes support for building a test suite. The
 $ quit
 
-==727411== 
-==727411== HEAP SUMMARY:
-==727411==     in use at exit: 8,472 bytes in 2 blocks
-==727411==   total heap usage: 7 allocs, 5 frees, 27,260 bytes allocated
-==727411== 
-==727411== LEAK SUMMARY:
-==727411==    definitely lost: 0 bytes in 0 blocks
-==727411==    indirectly lost: 0 bytes in 0 blocks
-==727411==      possibly lost: 0 bytes in 0 blocks
-==727411==    still reachable: 8,472 bytes in 2 blocks
-==727411==         suppressed: 0 bytes in 0 blocks
-==727411== Rerun with --leak-check=full to see details of leaked memory
-==727411== 
-==727411== For lists of detected and suppressed errors, rerun with: -s
-==727411== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==739383== 
+==739383== HEAP SUMMARY:
+==739383==     in use at exit: 8,472 bytes in 2 blocks
+==739383==   total heap usage: 7 allocs, 5 frees, 27,260 bytes allocated
+==739383== 
+==739383== LEAK SUMMARY:
+==739383==    definitely lost: 0 bytes in 0 blocks
+==739383==    indirectly lost: 0 bytes in 0 blocks
+==739383==      possibly lost: 0 bytes in 0 blocks
+==739383==    still reachable: 8,472 bytes in 2 blocks
+==739383==         suppressed: 0 bytes in 0 blocks
+==739383== Rerun with --leak-check=full to see details of leaked memory
+==739383== 
+==739383== For lists of detected and suppressed errors, rerun with: -s
+==739383== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

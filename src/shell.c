@@ -31,7 +31,7 @@ shell (FILE *input)
       if (fgets (buffer, MAXLENGTH, input) == NULL)
         {
           break;
-        } 
+        }
       if (input != stdin)
         printf ("%s", buffer);
       if (strncmp (buffer, "echo", 4) == 0)
@@ -55,10 +55,10 @@ shell (FILE *input)
       if (strncmp (buffer, "export", 6) == 0)
         {
           char *arguments = &buffer[7];
-          export (arguments); 
+          export(arguments);
         }
       if (strncmp (buffer, "quit", 4) == 0)
-        break; 
+        break;
     }
   printf ("\n");
   hash_destroy ();
