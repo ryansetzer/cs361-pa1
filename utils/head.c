@@ -24,7 +24,7 @@ main (int argc, char *argv[])
   }
   if (script == NULL)
   {
-    printf ("Try using a real file.\n");
+    printf (" ");
     return EXIT_FAILURE;
   } 
   int i = numLines;
@@ -36,7 +36,6 @@ main (int argc, char *argv[])
     printf ("%s", buffer);
     i--;
   }
-  printf("\n");
   return EXIT_SUCCESS;
 }
 
@@ -51,8 +50,6 @@ get_args (int argc, char **argv, FILE **script, int *num)
         case 'n':
           *num = atoi(argv[argc - 2]);
           break;
-        default:
-          return false;
         }
     }   
     if (argc < 2)

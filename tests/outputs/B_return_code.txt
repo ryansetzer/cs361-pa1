@@ -1,5 +1,6 @@
 $ ./bin/ls data
-pwd.txt  empty.txt  
+pwd.txt
+empty.txt
 $ echo $?
 $?
 $ ./bin/ls asldfkjasldfkj

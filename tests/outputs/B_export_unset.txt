@@ -1,5 +1,5 @@
 $ which export
-/cs/home/stu/setzerrj/cs361/cs361-pa1/tests/export
+/cs/home/stu/cox3mt/cs361/cs361-pa1/tests/export
 $ echo N=${NUM}
 N=${NUM}
 $ export NUM=5

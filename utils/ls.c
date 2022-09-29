@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <getopt.h>
@@ -7,18 +8,29 @@
 #include <dirent.h>    
 
 static void usage (void);
-static bool get_args (int, char **, bool *, bool *, char **);
+static bool get_args (int, char **, bool *, bool *, bool *, char **);
 
 int
 main (int argc, char *argv[])
 {
   bool allFiles = false;
   bool listSizes = false;
+  bool badFlag = false;
   char *dir;
   DIR *d;
   struct dirent *entry;
-  if (!get_args (argc, argv, &allFiles, &listSizes, &dir))
-    usage ();
+
+  if (!get_args (argc, argv, &allFiles, &listSizes, &badFlag, &dir))
+  {
+    if (!badFlag)
+    {
+      usage ();
+    }
+    else
+      printf (" ");
+    return EXIT_FAILURE;
+  }
+
   if (dir == NULL)
     d = opendir ("."); // uses current directory
   else
@@ -32,18 +44,18 @@ main (int argc, char *argv[])
   while (entry != NULL)
     {
       if (allFiles && listSizes)
-        printf ("%d %s   ", entry -> d_reclen, entry -> d_name);
+        printf ("%d %s\n", entry -> d_reclen, entry -> d_name);
       else if (allFiles && !listSizes)
-        printf ("%s  ", entry -> d_name);
+        printf ("%s\n", entry -> d_name);
       else if (!allFiles && listSizes)
         {
           if ((entry -> d_name)[0] != '.')
-            printf ("%d %s   ", entry -> d_reclen, entry -> d_name);
+            printf ("%d %s\n", entry -> d_reclen, entry -> d_name);
         }
       else if (!allFiles && !listSizes)
         {
           if ((entry -> d_name)[0] != '.')
-            printf ("%s  ", entry -> d_name);
+            printf ("%s\n", entry -> d_name);
         }
       else
         printf ("Some'than ain't rite\n");
@@ -53,7 +65,7 @@ main (int argc, char *argv[])
 }
 
 bool
-get_args (int argc, char **argv, bool *allFiles, bool *listSizes, char **dir)
+get_args (int argc, char **argv, bool *allFiles, bool *listSizes, bool *badFlag, char **dir)
 {
   int i = 0;
   while ((i = getopt (argc, argv, "as")) != -1)
@@ -62,11 +74,12 @@ get_args (int argc, char **argv, bool *allFiles, bool *listSizes, char **dir)
         {
           case 'a':
             *allFiles = true;
-	    break;
+	          break;
           case 's':
             *listSizes = true;
-	    break;
+	          break;
           default:
+            *badFlag = true;
             return false;
         }
     }

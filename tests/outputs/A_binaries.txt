@@ -1,5 +1,0 @@
-$ ./bin/ls data
-pwd.txt  empty.txt  
-$ ./bin/head Makefile
-$ quit
-

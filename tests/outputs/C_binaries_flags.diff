@@ -1,37 +1,19 @@
---- outputs/C_binaries_flags.txt	2022-09-28 17:43:29.124975976 -0400
-+++ expected/C_binaries_flags-4.txt	2022-09-11 14:59:21.000000000 -0400
-@@ -1,27 +1,19 @@
- $ ./bin/ls -a data
--ls, list directory contents
--usage: ls [FLAG ...] [DIR]
--FLAG is one or more of:
--  -a       list all files (even hidden ones)
--  -s       list file sizes
--If no DIR specified, list current directory contents
--.  ..  integration.sh  bin  utests.txt  testsuite.c  expected  itests.include  itests.txt  valgrind  testsuite  testsuite.o  public.o  outputs  style.sh  data  scripts  Makefile  public.c  
-+.
-+..
-+pwd.txt
-+.hidden.txt
-+empty.txt
+--- outputs/C_binaries_flags.txt	2022-09-28 20:07:32.458378281 -0400
++++ expected/C_binaries_flags-4.txt	2022-09-28 17:44:42.825659551 -0400
+@@ -5,14 +5,15 @@
+ .hidden.txt
+ empty.txt
  $ ./bin/ls -s data
--ls, list directory contents
--usage: ls [FLAG ...] [DIR]
--FLAG is one or more of:
--  -a       list all files (even hidden ones)
--  -s       list file sizes
--If no DIR specified, list current directory contents
--40 integration.sh   24 bin   32 utests.txt   32 testsuite.c   32 expected   40 itests.include   32 itests.txt   32 valgrind   32 testsuite   32 testsuite.o   32 public.o   32 outputs   32 style.sh   24 data   32 scripts   32 Makefile   32 public.c   
+-32 pwd.txt
+-32 empty.txt
 +9 pwd.txt
 +0 empty.txt
  $ ./bin/ls -sa data
--ls, list directory contents
--usage: ls [FLAG ...] [DIR]
--FLAG is one or more of:
--  -a       list all files (even hidden ones)
--  -s       list file sizes
--If no DIR specified, list current directory contents
--24 .   24 ..   40 integration.sh   24 bin   32 utests.txt   32 testsuite.c   32 expected   40 itests.include   32 itests.txt   32 valgrind   32 testsuite   32 testsuite.o   32 public.o   32 outputs   32 style.sh   24 data   32 scripts   32 Makefile   32 public.c   
+-24 .
+-24 ..
+-32 pwd.txt
+-32 .hidden.txt
+-32 empty.txt
 +4096 .
 +4096 ..
 +9 pwd.txt

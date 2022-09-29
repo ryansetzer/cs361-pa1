@@ -53,19 +53,24 @@ runCmd (char *command, char *arguments)
     {
       char *writeableArgument = strdup (&arguments[1]);
       writeableArgument[strlen (writeableArgument) - 1] = '\0';
-
+      char *token1 = strtok (writeableArgument, " ");
+      char *token2 = strtok (NULL, "\0");
+      printf ("%s\n", writeableArgument);
       close (fd[0]); // close read end of pipe
       dup2 (fd[1], STDOUT_FILENO);
       if (strlen (writeableArgument) == 0)
         execlp (command, command, NULL);
       else
-        execlp (command, command, writeableArgument, NULL);
+        if (token2 == NULL || token1 == NULL)
+          execlp (command, command, writeableArgument, NULL);
+        else
+          execlp (command, command, token1, token2, NULL);
     }
   char buffer[1000];
   for (int i = 0; i < sizeof (buffer); i++)
     buffer[i] = 0;
   read (fd[0], buffer, sizeof (buffer));
   if (strncmp (" ", buffer, sizeof (buffer)) != 0)
-    printf ("%s\n", buffer);
+    printf ("%s", buffer);
   return 0;
 }

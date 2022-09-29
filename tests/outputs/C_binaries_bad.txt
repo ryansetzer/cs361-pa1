@@ -1,11 +1,4 @@
 $ ./bin/ls -l
-ls, list directory contents
-usage: ls [FLAG ...] [DIR]
-FLAG is one or more of:
-  -a       list all files (even hidden ones)
-  -s       list file sizes
-If no DIR specified, list current directory contents
-integration.sh  bin  utests.txt  testsuite.c  expected  itests.include  itests.txt  valgrind  testsuite  testsuite.o  public.o  outputs  style.sh  data  scripts  Makefile  public.c  
 $ ./bin/head -c 5 Makefile
 $ quit
 

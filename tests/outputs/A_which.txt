@@ -1,6 +1,0 @@
-$ which ./bin/rm
-./bin/rm
-$ which ./bin/cat
-./bin/cat
-$ quit
-
