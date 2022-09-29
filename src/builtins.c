@@ -27,6 +27,15 @@ echo (char *message)
   do
     {
       token2 = strtok_r (token, "$", &token);
+      if (strncmp (token2, "?", 1) == 0) // for ? usecase
+        {
+          int value = atoi (hash_find ("?"));
+          printf ("%d\n", value);
+          char buffer[1000];
+	  snprintf(buffer, sizeof(buffer), "%d", value + 1);
+          hash_insert ("?", buffer);
+          return 0;
+        }
       printf ("%s", token2);
       token2 = strtok_r (token, "$", &token);
       if (token2 != NULL)

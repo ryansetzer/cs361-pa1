@@ -4,7 +4,7 @@ C_binaries                     pass
 C_binaries_flags               pass
 C_binaries_bad                 pass
 C_which                        pass
-B_return_code                  FAIL (see outputs/B_return_code.diff for details)
+B_return_code                  pass
 B_export_unset                 pass
 B_env                          FAIL (see outputs/B_env.diff for details)
 A_binaries                     pass
