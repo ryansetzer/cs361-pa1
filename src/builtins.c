@@ -26,13 +26,14 @@ echo (char *message)
   char *token2;
   do
     {
-      token2 = strtok_r (token, "${", &token);
+      token2 = strtok_r (token, "$", &token);
       printf ("%s", token2);
-      token2 = strtok_r (token, "${", &token);
+      token2 = strtok_r (token, "$", &token);
       if (token2 != NULL)
         {
           token2[strlen (token2) - 1] = '\0';
-          char* value = hash_find (token2);
+          char* value = hash_find (&token2[1]);
+          // printf ("key: [%s] value: [%s]\n", &token2[1], value);
           if (value != NULL)
           	printf ("%s", value);
         }

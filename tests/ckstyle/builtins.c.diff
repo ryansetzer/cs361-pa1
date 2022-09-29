@@ -1,5 +1,5 @@
---- ../src/builtins.c	2022-09-29 10:40:24.139940470 -0400
-+++ ckstyle/builtins.c.gnu	2022-09-29 10:50:14.409501396 -0400
+--- ../src/builtins.c	2022-09-29 15:38:08.662597439 -0400
++++ ckstyle/builtins.c.gnu	2022-09-29 15:38:21.542717742 -0400
 @@ -1,10 +1,10 @@
 +#include "hash.h"
 +#include "process.h"
@@ -24,12 +24,13 @@
    char *token = strtok_r (message, "\\n", &message);
    char *token2;
    do
-@@ -32,13 +32,14 @@
+@@ -32,14 +32,15 @@
        if (token2 != NULL)
          {
            token2[strlen (token2) - 1] = '\0';
--          char* value = hash_find (token2);
-+          char *value = hash_find (token2);
+-          char* value = hash_find (&token2[1]);
++          char *value = hash_find (&token2[1]);
+           // printf ("key: [%s] value: [%s]\n", &token2[1], value);
            if (value != NULL)
 -          	printf ("%s", value);
 +            printf ("%s", value);
@@ -42,7 +43,7 @@
    return 0;
  }
  // Given a key-value pair string (e.g., "alpha=beta"), insert the mapping
-@@ -46,14 +47,13 @@
+@@ -47,14 +48,13 @@
  //
  // Returns 0 on success, 1 for an invalid pair string (kvpair is NULL or
  // there is no '=' in the string).
@@ -59,7 +60,7 @@
    // printf ("key: [%s] value: [%s]\n", key, value);
    hash_insert (key, value);
    return 0;
-@@ -64,7 +64,7 @@
+@@ -65,7 +65,7 @@
  pwd (void)
  {
    char dir[1000];
@@ -68,7 +69,7 @@
      printf ("%s\n", dir);
    return 0;
  }
-@@ -99,19 +99,19 @@
+@@ -100,19 +100,19 @@
            }
        }
    if (isBuiltIn (cmdline))
@@ -99,7 +100,7 @@
    return 0;
  }
  // Changes the current working directory.
-@@ -121,7 +121,7 @@
+@@ -122,7 +122,7 @@
  {
    if (newDir == NULL)
      return 1;

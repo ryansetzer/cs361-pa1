@@ -5,14 +5,14 @@ pwd.txt
 .hidden.txt
 empty.txt
 $ ./bin/ls -s data
-4096 pwd.txt
-4096 empty.txt
+9 pwd.txt
+0 empty.txt
 $ ./bin/ls -sa data
 4096 .
 4096 ..
-4096 pwd.txt
-4096 .hidden.txt
-4096 empty.txt
+9 pwd.txt
+5 .hidden.txt
+0 empty.txt
 $ ./bin/head -n 1 Makefile
 $ quit
 

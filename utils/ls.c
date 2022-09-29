@@ -8,6 +8,7 @@
 #include <sys/stat.h>
 #include <dirent.h>    
 #include <fcntl.h>
+#include "../src/shell.h"
 
 static void usage (void);
 static bool get_args (int, char **, bool *, bool *, bool *, char **);
@@ -46,7 +47,15 @@ main (int argc, char *argv[])
   struct stat st;
   while (entry != NULL)
     {
-      stat (entry -> d_name, &st);
+      char buffer[1000];
+      for (int i = 0; i < sizeof (buffer); i++)
+        buffer [i] = ' ';
+      getcwd (buffer, sizeof (buffer));
+      char *fullDir = strcat (buffer, "/");
+      fullDir = strcat (fullDir, dir);
+      fullDir = strcat (fullDir, "/");
+      fullDir = strcat (fullDir, entry -> d_name);
+      lstat (fullDir, &st);
       if (allFiles && listSizes)
         printf ("%ld %s\n", st.st_size, entry -> d_name);
       else if (allFiles && !listSizes)

@@ -1,8 +1,8 @@
-==739383== Memcheck, a memory error detector
-==739383== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==739383== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==739383== Command: ../dukesh -b scripts/bins.txt
-==739383== 
+==1053157== Memcheck, a memory error detector
+==1053157== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1053157== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1053157== Command: ../dukesh -b scripts/bins.txt
+==1053157== 
 $ ./bin/ls data
 pwd.txt
 empty.txt
@@ -14,18 +14,18 @@ $ ./bin/head Makefile
 # This version of the Makefile includes support for building a test suite. The
 $ quit
 
-==739383== 
-==739383== HEAP SUMMARY:
-==739383==     in use at exit: 8,472 bytes in 2 blocks
-==739383==   total heap usage: 7 allocs, 5 frees, 27,260 bytes allocated
-==739383== 
-==739383== LEAK SUMMARY:
-==739383==    definitely lost: 0 bytes in 0 blocks
-==739383==    indirectly lost: 0 bytes in 0 blocks
-==739383==      possibly lost: 0 bytes in 0 blocks
-==739383==    still reachable: 8,472 bytes in 2 blocks
-==739383==         suppressed: 0 bytes in 0 blocks
-==739383== Rerun with --leak-check=full to see details of leaked memory
-==739383== 
-==739383== For lists of detected and suppressed errors, rerun with: -s
-==739383== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==1053157== 
+==1053157== HEAP SUMMARY:
+==1053157==     in use at exit: 8,472 bytes in 2 blocks
+==1053157==   total heap usage: 7 allocs, 5 frees, 27,260 bytes allocated
+==1053157== 
+==1053157== LEAK SUMMARY:
+==1053157==    definitely lost: 0 bytes in 0 blocks
+==1053157==    indirectly lost: 0 bytes in 0 blocks
+==1053157==      possibly lost: 0 bytes in 0 blocks
+==1053157==    still reachable: 8,472 bytes in 2 blocks
+==1053157==         suppressed: 0 bytes in 0 blocks
+==1053157== Rerun with --leak-check=full to see details of leaked memory
+==1053157== 
+==1053157== For lists of detected and suppressed errors, rerun with: -s
+==1053157== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
