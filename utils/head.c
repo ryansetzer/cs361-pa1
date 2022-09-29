@@ -8,18 +8,25 @@
 #define LINELEN 1024
 
 static void usage (void);
-static bool get_args (int argc, char **argv, FILE **script, int *num);
+static bool get_args (int argc, char **argv, FILE **script, int *num, bool *badFlag);
 
 int
 main (int argc, char *argv[])
 {
+  bool badFlag = false;
+
   FILE *script = NULL;
   int numLines = 5;
   size_t lineSize = LINELEN;
   char *buffer;
-  if (!(get_args (argc, argv, &script, &numLines)))
+  if (!(get_args (argc, argv, &script, &numLines, &badFlag)))
   {
-    usage ();
+    if (!badFlag)
+    {
+      usage ();
+    }
+    else
+      printf (" ");
     return EXIT_FAILURE;
   }
   if (script == NULL)
@@ -40,7 +47,7 @@ main (int argc, char *argv[])
 }
 
 static bool
-get_args (int argc, char **argv, FILE **script, int *num)
+get_args (int argc, char **argv, FILE **script, int *num, bool *badFlag)
 {
   int ch = 0;
   while ((ch = getopt (argc, argv, "n:h")) != -1)
@@ -50,6 +57,9 @@ get_args (int argc, char **argv, FILE **script, int *num)
         case 'n':
           *num = atoi(argv[argc - 2]);
           break;
+        default:
+          *badFlag = true;
+          return false;
         }
     }   
     if (argc < 2)

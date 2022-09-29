@@ -54,7 +54,9 @@ runCmd (char *command, char *arguments)
       char *writeableArgument = strdup (&arguments[1]);
       writeableArgument[strlen (writeableArgument) - 1] = '\0';
       char *token1 = strtok (writeableArgument, " ");
-      char *token2 = strtok (NULL, "\0");
+      char *token2 = strtok (NULL, " ");
+      char *token3 = strtok (NULL, "\\n");
+      printf ("token1=%s   token2=%s   token3=%s\n", token1, token2, token3);
       printf ("%s\n", writeableArgument);
       close (fd[0]); // close read end of pipe
       dup2 (fd[1], STDOUT_FILENO);
@@ -62,6 +64,8 @@ runCmd (char *command, char *arguments)
         execlp (command, command, NULL);
       else if (token2 == NULL || token1 == NULL)
         execlp (command, command, writeableArgument, NULL);
+      else if (token1 != NULL && token2 != NULL && token3 != NULL)
+        execlp (command, command, token1, token2, token3, NULL);
       else
         execlp (command, command, token1, token2, NULL);
     }
