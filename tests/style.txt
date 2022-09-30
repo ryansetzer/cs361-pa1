@@ -1,10 +1,9 @@
-builtins.c                     FAIL (see ckstyle/builtins.c.diff for details)
-builtins.h                     FAIL (see ckstyle/builtins.h.diff for details)
+builtins.c                     pass
+builtins.h                     pass
 hash.h                         pass
 main.c                         pass
 process.c                      pass
 process.h                      pass
 shell.c                        pass
 shell.h                        pass
-Code that does not adhere to GNU standards will not be accepted.
-You must fix these files before submission.
+Code correctly adheres to required style.

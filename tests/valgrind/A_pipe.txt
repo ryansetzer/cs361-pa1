@@ -1,8 +1,8 @@
-==1150927== Memcheck, a memory error detector
-==1150927== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1150927== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==1150927== Command: ../dukesh -b scripts/pipe.txt
-==1150927== 
+==2132674== Memcheck, a memory error detector
+==2132674== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2132674== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==2132674== Command: ../dukesh -b scripts/pipe.txt
+==2132674== 
 $ ./bin/ls -a data | ./bin/head -n 1
 .
 ..
@@ -17,18 +17,18 @@ pwd.txt
 empty.txt
 $ quit
 
-==1150927== 
-==1150927== HEAP SUMMARY:
-==1150927==     in use at exit: 8,472 bytes in 2 blocks
-==1150927==   total heap usage: 7 allocs, 5 frees, 27,260 bytes allocated
-==1150927== 
-==1150927== LEAK SUMMARY:
-==1150927==    definitely lost: 0 bytes in 0 blocks
-==1150927==    indirectly lost: 0 bytes in 0 blocks
-==1150927==      possibly lost: 0 bytes in 0 blocks
-==1150927==    still reachable: 8,472 bytes in 2 blocks
-==1150927==         suppressed: 0 bytes in 0 blocks
-==1150927== Rerun with --leak-check=full to see details of leaked memory
-==1150927== 
-==1150927== For lists of detected and suppressed errors, rerun with: -s
-==1150927== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==2132674== 
+==2132674== HEAP SUMMARY:
+==2132674==     in use at exit: 8,472 bytes in 2 blocks
+==2132674==   total heap usage: 7 allocs, 5 frees, 27,260 bytes allocated
+==2132674== 
+==2132674== LEAK SUMMARY:
+==2132674==    definitely lost: 0 bytes in 0 blocks
+==2132674==    indirectly lost: 0 bytes in 0 blocks
+==2132674==      possibly lost: 0 bytes in 0 blocks
+==2132674==    still reachable: 8,472 bytes in 2 blocks
+==2132674==         suppressed: 0 bytes in 0 blocks
+==2132674== Rerun with --leak-check=full to see details of leaked memory
+==2132674== 
+==2132674== For lists of detected and suppressed errors, rerun with: -s
+==2132674== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
