@@ -1,8 +1,8 @@
-==2132595== Memcheck, a memory error detector
-==2132595== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2132595== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==2132595== Command: ../dukesh -b scripts/bins.txt
-==2132595== 
+==2452656== Memcheck, a memory error detector
+==2452656== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2452656== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==2452656== Command: ../dukesh -b scripts/bins.txt
+==2452656== 
 $ ./bin/ls data
 pwd.txt
 empty.txt
@@ -14,18 +14,18 @@ $ ./bin/head Makefile
 # This version of the Makefile includes support for building a test suite. The
 $ quit
 
-==2132595== 
-==2132595== HEAP SUMMARY:
-==2132595==     in use at exit: 8,472 bytes in 2 blocks
-==2132595==   total heap usage: 7 allocs, 5 frees, 27,260 bytes allocated
-==2132595== 
-==2132595== LEAK SUMMARY:
-==2132595==    definitely lost: 0 bytes in 0 blocks
-==2132595==    indirectly lost: 0 bytes in 0 blocks
-==2132595==      possibly lost: 0 bytes in 0 blocks
-==2132595==    still reachable: 8,472 bytes in 2 blocks
-==2132595==         suppressed: 0 bytes in 0 blocks
-==2132595== Rerun with --leak-check=full to see details of leaked memory
-==2132595== 
-==2132595== For lists of detected and suppressed errors, rerun with: -s
-==2132595== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==2452656== 
+==2452656== HEAP SUMMARY:
+==2452656==     in use at exit: 472 bytes in 1 blocks
+==2452656==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==2452656== 
+==2452656== LEAK SUMMARY:
+==2452656==    definitely lost: 0 bytes in 0 blocks
+==2452656==    indirectly lost: 0 bytes in 0 blocks
+==2452656==      possibly lost: 0 bytes in 0 blocks
+==2452656==    still reachable: 472 bytes in 1 blocks
+==2452656==         suppressed: 0 bytes in 0 blocks
+==2452656== Rerun with --leak-check=full to see details of leaked memory
+==2452656== 
+==2452656== For lists of detected and suppressed errors, rerun with: -s
+==2452656== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

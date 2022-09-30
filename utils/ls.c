@@ -8,7 +8,6 @@
 #include <sys/stat.h>
 #include <dirent.h>    
 #include <fcntl.h>
-#include "../src/shell.h"
 
 static void usage (void);
 static bool get_args (int, char **, bool *, bool *, bool *, char **);
