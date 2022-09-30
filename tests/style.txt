@@ -1,9 +1,0 @@
-builtins.c                     pass
-builtins.h                     pass
-hash.h                         pass
-main.c                         pass
-process.c                      pass
-process.h                      pass
-shell.c                        pass
-shell.h                        pass
-Code correctly adheres to required style.
