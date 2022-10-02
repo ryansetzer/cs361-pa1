@@ -1,5 +1,5 @@
 #include "hash.h"
-#include "shell.h"
+#include "process.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -117,8 +117,9 @@ which (char *cmdline)
       printf ("%s\n", cmdline);
       return 0;
     }
-  getcwd (PATH, sizeof (PATH));
-  printf ("%s/%s\n", PATH, cmdline);
+  char path[100];
+  getcwd (path, sizeof (path));
+  printf ("%s/%s\n", path, cmdline);
   return 0;
 }
 // Changes the current working directory.
@@ -131,6 +132,5 @@ cd (char *newDir)
   newDir[strlen (newDir) - 1] = '\0';
   if (chdir (newDir) != 0)
     perror ("cd failed");
-  strcpy (PATH, newDir);
   return 0;
 }

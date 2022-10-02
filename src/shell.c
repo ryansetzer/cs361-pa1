@@ -10,16 +10,9 @@
 // No command line can be more than 100 characters
 #define MAXLENGTH 100
 
-char *PATH;
-
 void
 shell (FILE *input)
 {
-
-  PATH = calloc (1000, sizeof (PATH));
-  char test[1000];
-  getcwd (test, sizeof (test));
-  strcpy (PATH, test);
   hash_init (100);
   hash_insert ("?", "0");
   char buffer[MAXLENGTH];
