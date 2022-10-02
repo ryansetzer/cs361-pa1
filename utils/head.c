@@ -31,8 +31,15 @@ main (int argc, char *argv[])
   }
   if (script == NULL)
   {
-    printf (" ");
-    return EXIT_FAILURE;
+    int i = 0;
+    char buf[100];
+    while (i < numLines)
+    {
+      fscanf (stdin, "%s", buf);
+      printf ("%s\n", buf);
+      i++;
+    }
+    return EXIT_SUCCESS;
   } 
   int i = numLines;
   while (i > 0)
@@ -55,7 +62,7 @@ get_args (int argc, char **argv, FILE **script, int *num, bool *badFlag)
       switch (ch)
         {
         case 'n':
-          *num = atoi(argv[argc - 2]);
+          *num = atoi(argv[optind - 1]);
           break;
         default:
           *badFlag = true;
