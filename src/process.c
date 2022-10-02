@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include "builtins.h"
+
 // The contents of this file are up to you, but they should be related to
 // running separate processes. It is recommended that you have functions
 // for:
@@ -40,6 +42,7 @@ isExecutable (char *command)
 int
 runCmd (char *command, char *arguments)
 {
+  printf ("Command: [%s], Arguments: [%s]\n", command, arguments);
   int fd[2];
   pipe (fd);
   int pid = fork ();
@@ -56,8 +59,8 @@ runCmd (char *command, char *arguments)
       char *token1 = strtok (writeableArgument, " ");
       char *token2 = strtok (NULL, " ");
       char *token3 = strtok (NULL, "\\n");
-      printf ("token1=%s   token2=%s   token3=%s\n", token1, token2, token3);
-      printf ("%s\n", writeableArgument);
+      // printf ("token1=%s   token2=%s   token3=%s\n", token1, token2, token3);
+      // printf ("%s\n", writeableArgument);
       close (fd[0]); // close read end of pipe
       dup2 (fd[1], STDOUT_FILENO);
       if (strlen (writeableArgument) == 0)
@@ -75,5 +78,78 @@ runCmd (char *command, char *arguments)
   read (fd[0], buffer, sizeof (buffer));
   if (strncmp (" ", buffer, sizeof (buffer)) != 0)
     printf ("%s", buffer);
+  else
+    printf ("-99-\n");
   return 0;
 }
+
+void
+runExec (char *commandOne, char *commandTwo)
+{
+  int fd[2];
+  pipe (fd);
+
+  pid_t child = fork ();
+
+  if (child == 0)
+    {
+      close (fd[0]); // close read end of pipe
+      dup2 (fd[1], STDOUT_FILENO);
+      if (strncmp (commandOne, "cd", 2) == 0)
+        cd (&commandOne[3]);
+      if (strncmp (commandOne, "pwd", 3) == 0)
+        pwd ();
+      if (strncmp (commandOne, "which", 5) == 0)
+        which (&commandOne[6]);
+      if (strncmp (commandOne, "./bin/ls", 8) == 0)
+        {
+          char *arguments = &commandOne[8];
+          runCmd ("./bin/ls", arguments);
+        }
+      if (strncmp (commandOne, "./bin/head", 10) == 0)
+        {
+          char *arguments = &commandOne[10];
+          runCmd ("./bin/head", arguments);
+        }
+      if (strncmp (commandOne, "export", 6) == 0)
+        {
+          char *arguments = &commandOne[7];
+          export(arguments);
+        }
+    }
+  else
+    {
+      close (fd[1]); // close write end of pipe
+      if (strncmp (commandTwo, "./bin/head", 10) == 0)
+        {
+          // char *arguments = &commandTwo[10];
+          // char *writable = strdup (arguments);
+          // char *fullArgs = strcat (writable, " ../store.txt");
+          // printf ("full arguments: %s\n", fullArgs);
+          // printf ("In: runCmd\n");
+          // runCmd ("./bin/head", &fullArgs[1]);
+          // printf ("Out: runCmd\n");
+          pid_t child = fork();
+          int fdd[2];
+          pipe (fdd);
+          if (child == 0)
+            {
+              dup2 (fdd[1], fd[0]);
+              execlp ("./bin/head", "./bin/head", fd[0], NULL);
+            }
+          else 
+            {
+              char buf[1000];
+              read (fdd[0], buf, sizeof (buf));
+              printf ("%s\n", buf);
+            }
+        }
+    }   
+}
+
+
+
+
+
+
+

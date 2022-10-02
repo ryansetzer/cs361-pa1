@@ -11,5 +11,6 @@
 int isBuiltIn (char *);
 int isExecutable (char *);
 int runCmd (char *, char *);
+void runExec (char *, char *);
 
 #endif

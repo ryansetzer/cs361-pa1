@@ -19,6 +19,7 @@ main (int argc, char *argv[])
   bool allFiles = false;
   bool listSizes = false;
   bool badFlag = false;
+  bool usingHome = false;
   char *dir;
   DIR *d;
   struct dirent *entry;
@@ -32,9 +33,11 @@ main (int argc, char *argv[])
       printf (" ");
     return EXIT_FAILURE;
   }
-
   if (dir == NULL)
-    d = opendir ("."); // uses current directory
+    {
+      d = opendir ("."); // uses current directory
+      usingHome = true;
+    }
   else
     d = opendir (dir); // uses given directory
   if (d == NULL)
@@ -42,7 +45,6 @@ main (int argc, char *argv[])
       printf (" ");
       return EXIT_FAILURE;
     }
-
   entry = readdir (d);
   struct stat st;
   while (entry != NULL)
@@ -50,11 +52,15 @@ main (int argc, char *argv[])
       char buffer[1000];
       for (int i = 0; i < sizeof (buffer); i++)
         buffer [i] = ' ';
+      char *filename = entry -> d_name;
       getcwd (buffer, sizeof (buffer));
       char *fullDir = strcat (buffer, "/");
-      fullDir = strcat (fullDir, dir);
-      fullDir = strcat (fullDir, "/");
-      fullDir = strcat (fullDir, entry -> d_name);
+      if (!usingHome)
+        {
+          fullDir = strcat (fullDir, dir);
+          fullDir = strcat (fullDir, "/");
+        }
+      fullDir = strcat (fullDir, filename);
       lstat (fullDir, &st);
       if (allFiles && listSizes)
         printf ("%ld %s\n", st.st_size, entry -> d_name);

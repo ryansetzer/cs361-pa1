@@ -34,31 +34,43 @@ shell (FILE *input)
         }
       if (input != stdin)
         printf ("%s", buffer);
-      if (strncmp (buffer, "echo", 4) == 0)
-        echo (&buffer[5]);
-      if (strncmp (buffer, "cd", 2) == 0)
-        cd (&buffer[3]);
-      if (strncmp (buffer, "pwd", 3) == 0)
-        pwd ();
-      if (strncmp (buffer, "which", 5) == 0)
-        which (&buffer[6]);
-      if (strncmp (buffer, "./bin/ls", 8) == 0)
+      char *argumentOne = strtok (buffer, "|");
+      char *argumentTwo = strtok (NULL, "|");
+      if (argumentTwo != NULL)
         {
-          char *arguments = &buffer[8];
-          runCmd ("./bin/ls", arguments);
+          argumentOne [strlen (argumentOne) - 1] = '\0';
+          argumentTwo [strlen (argumentTwo) - 1] = '\0';
+          runExec (argumentOne, &argumentTwo[1]);
         }
-      if (strncmp (buffer, "./bin/head", 10) == 0)
+      else
         {
-          char *arguments = &buffer[10];
-          runCmd ("./bin/head", arguments);
+          if (strncmp (buffer, "echo", 4) == 0)
+            echo (&buffer[5]);
+          if (strncmp (buffer, "cd", 2) == 0)
+            cd (&buffer[3]);
+          if (strncmp (buffer, "pwd", 3) == 0)
+            pwd ();
+          if (strncmp (buffer, "which", 5) == 0)
+            which (&buffer[6]);
+          if (strncmp (buffer, "./bin/ls", 8) == 0)
+            {
+              char *arguments = &buffer[8];
+              runCmd ("./bin/ls", arguments);
+            }
+          if (strncmp (buffer, "./bin/head", 10) == 0)
+            {
+              char *arguments = &buffer[10];
+              runCmd ("./bin/head", arguments);
+            }
+          if (strncmp (buffer, "export", 6) == 0)
+            {
+              char *arguments = &buffer[7];
+              export(arguments);
+            }
         }
-      if (strncmp (buffer, "export", 6) == 0)
-        {
-          char *arguments = &buffer[7];
-          export(arguments);
-        }
-      if (strncmp (buffer, "quit", 4) == 0)
-        break;
+        if (strncmp (buffer, "quit", 4) == 0)
+          break;
+        
     }
   printf ("\n");
   hash_destroy ();
