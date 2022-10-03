@@ -41,7 +41,6 @@ isExecutable (char *command)
 int
 runCmd (char *command, char *arguments)
 {
-  printf ("Command: [%s], Arguments: [%s]\n", command, arguments);
   int fd[2];
   pipe (fd);
   int pid = fork ();
@@ -71,14 +70,10 @@ runCmd (char *command, char *arguments)
       else
         execlp (command, command, token1, token2, NULL);
     }
-  char buffer[1000];
-  for (int i = 0; i < sizeof (buffer); i++)
-    buffer[i] = 0;
-  read (fd[0], buffer, sizeof (buffer));
-  if (strncmp (" ", buffer, sizeof (buffer)) != 0)
-    printf ("%s", buffer);
-  else
-    printf ("-99-\n");
+  char buffer1[1000];
+  read (fd[0], buffer1, sizeof (buffer1));
+  if (strncmp (" ", buffer1, sizeof (buffer1)) != 0)
+    printf ("%s", buffer1);
   return 0;
 }
 
@@ -119,30 +114,14 @@ runExec (char *commandOne, char *commandTwo)
   else
     {
       close (fd[1]); // close write end of pipe
-      if (strncmp (commandTwo, "./bin/head", 10) == 0)
-        {
-          // char *arguments = &commandTwo[10];
-          // char *writable = strdup (arguments);
-          // char *fullArgs = strcat (writable, " ../store.txt");
-          // printf ("full arguments: %s\n", fullArgs);
-          // printf ("In: runCmd\n");
-          // runCmd ("./bin/head", &fullArgs[1]);
-          // printf ("Out: runCmd\n");
-          pid_t child = fork();
-          int fdd[2];
-          pipe (fdd);
-          if (child == 0)
-            {
-              dup2 (fdd[1], fd[0]);
-              execlp ("./bin/head", "./bin/head", fd[0], NULL);
-            }
-          else 
-            {
-              char buf[1000];
-              read (fdd[0], buf, sizeof (buf));
-              printf ("%s\n", buf);
-            }
-        }
+//      if (strncmp (commandTwo, "./bin/head", 10) == 0)
+//        {
+//          dup2 (fd[0], STDOUT_FILENO);
+//          execlp ("./bin/head", "./bin/head", fd[0], NULL);
+//        }
+      char buffy[1000];
+      read (fd[0], buffy, sizeof (buffy));
+      printf ("[%s]\n", buffy);
     }   
 }
 
