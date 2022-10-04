@@ -1,16 +1,18 @@
---- ../src/process.c	2022-10-03 23:51:38.927002190 -0400
-+++ ckstyle/process.c.gnu	2022-10-03 23:51:49.683107145 -0400
-@@ -1,8 +1,8 @@
+--- ../src/process.c	2022-10-04 16:12:55.949288740 -0400
++++ ckstyle/process.c.gnu	2022-10-04 16:13:41.985720482 -0400
+@@ -1,9 +1,9 @@
 +#include "builtins.h"
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
- #include <unistd.h>
+-#include <unistd.h>
+ #include <sys/wait.h>
 -#include "builtins.h"
++#include <unistd.h>
  
  // The contents of this file are up to you, but they should be related to
  // running separate processes. It is recommended that you have functions
-@@ -41,7 +41,7 @@
+@@ -42,7 +42,7 @@
  void
  runCmd (char *command, char *arguments, int fd[2])
  {
@@ -29,37 +31,20 @@
        close (fd[0]); // close read end of pipe
        dup2 (fd[1], STDOUT_FILENO);
        if (strlen (writeableArgument) == 0)
-@@ -80,7 +81,7 @@
- 
-   if (child == 0)
+@@ -82,13 +83,13 @@
      {
--      char *arguments = strdup (commandOne); 
-+      char *arguments = strdup (commandOne);
-       char *token = strtok (commandOne, " ");
+       // SECOND COMMAND
+       dup2 (fd[0], STDIN_FILENO);
+-      char *arguments = strdup (commandTwo); 
++      char *arguments = strdup (commandTwo);
+       char *token = strtok (commandTwo, " ");
        arguments = &arguments[strlen (token) + 1];
-       runCmd (token, arguments, fd);
-@@ -92,18 +93,10 @@
-     {
-       // dup2 (fd[0], STDIN_FILENO);
-       // dup2 (fd[1], STDOUT_FILENO);
--      //char buffybuf[1000];
--      //read (fd[0], buffybuf, sizeof (buffybuf));
--      //printf ("runCmd pipe: [%s]\n", buffybuf);
--      //char *arguments = strdup (commandTwo); 
--      //char *token = strtok (commandTwo, " ");
--      
--    }   
-+      // char buffybuf[1000];
-+      // read (fd[0], buffybuf, sizeof (buffybuf));
-+      // printf ("runCmd pipe: [%s]\n", buffybuf);
-+      // char *arguments = strdup (commandTwo);
-+      // char *token = strtok (commandTwo, " ");
-+    }
- }
--
--
--
--
--
--
--
+       printf ("command2: [%s], arguments: [%s]\n", token, arguments);
+-      runCmd(token, arguments, fd);
++      runCmd (token, arguments, fd);
+       // FIRST COMMAND
+-      arguments = strdup (commandOne); 
++      arguments = strdup (commandOne);
+       token = strtok (commandOne, " ");
+       arguments = &arguments[strlen (token)];
+       printf ("command: [%s], arguments: [%s]\n", token, arguments);

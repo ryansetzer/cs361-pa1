@@ -1,8 +1,8 @@
-==296062== Memcheck, a memory error detector
-==296062== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==296062== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==296062== Command: ../dukesh -b scripts/dirs.txt
-==296062== 
+==1043056== Memcheck, a memory error detector
+==1043056== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1043056== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1043056== Command: ../dukesh -b scripts/dirs.txt
+==1043056== 
 $ cd /usr/bin
 $ pwd
 /usr/bin
@@ -10,18 +10,18 @@ $ which ls
 /usr/bin/ls
 $ quit
 
-==296062== 
-==296062== HEAP SUMMARY:
-==296062==     in use at exit: 472 bytes in 1 blocks
-==296062==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
-==296062== 
-==296062== LEAK SUMMARY:
-==296062==    definitely lost: 0 bytes in 0 blocks
-==296062==    indirectly lost: 0 bytes in 0 blocks
-==296062==      possibly lost: 0 bytes in 0 blocks
-==296062==    still reachable: 472 bytes in 1 blocks
-==296062==         suppressed: 0 bytes in 0 blocks
-==296062== Rerun with --leak-check=full to see details of leaked memory
-==296062== 
-==296062== For lists of detected and suppressed errors, rerun with: -s
-==296062== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==1043056== 
+==1043056== HEAP SUMMARY:
+==1043056==     in use at exit: 472 bytes in 1 blocks
+==1043056==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1043056== 
+==1043056== LEAK SUMMARY:
+==1043056==    definitely lost: 0 bytes in 0 blocks
+==1043056==    indirectly lost: 0 bytes in 0 blocks
+==1043056==      possibly lost: 0 bytes in 0 blocks
+==1043056==    still reachable: 472 bytes in 1 blocks
+==1043056==         suppressed: 0 bytes in 0 blocks
+==1043056== Rerun with --leak-check=full to see details of leaked memory
+==1043056== 
+==1043056== For lists of detected and suppressed errors, rerun with: -s
+==1043056== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

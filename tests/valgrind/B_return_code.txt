@@ -1,8 +1,8 @@
-==296185== Memcheck, a memory error detector
-==296185== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==296185== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==296185== Command: ../dukesh -b scripts/rc.txt
-==296185== 
+==1043137== Memcheck, a memory error detector
+==1043137== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1043137== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1043137== Command: ../dukesh -b scripts/rc.txt
+==1043137== 
 $ ./bin/ls data
 pwd.txt
 empty.txt
@@ -13,18 +13,18 @@ $ echo $?
 1
 $ quit
 
-==296185== 
-==296185== HEAP SUMMARY:
-==296185==     in use at exit: 472 bytes in 1 blocks
-==296185==   total heap usage: 8 allocs, 7 frees, 19,264 bytes allocated
-==296185== 
-==296185== LEAK SUMMARY:
-==296185==    definitely lost: 0 bytes in 0 blocks
-==296185==    indirectly lost: 0 bytes in 0 blocks
-==296185==      possibly lost: 0 bytes in 0 blocks
-==296185==    still reachable: 472 bytes in 1 blocks
-==296185==         suppressed: 0 bytes in 0 blocks
-==296185== Rerun with --leak-check=full to see details of leaked memory
-==296185== 
-==296185== For lists of detected and suppressed errors, rerun with: -s
-==296185== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==1043137== 
+==1043137== HEAP SUMMARY:
+==1043137==     in use at exit: 472 bytes in 1 blocks
+==1043137==   total heap usage: 8 allocs, 7 frees, 19,264 bytes allocated
+==1043137== 
+==1043137== LEAK SUMMARY:
+==1043137==    definitely lost: 0 bytes in 0 blocks
+==1043137==    indirectly lost: 0 bytes in 0 blocks
+==1043137==      possibly lost: 0 bytes in 0 blocks
+==1043137==    still reachable: 472 bytes in 1 blocks
+==1043137==         suppressed: 0 bytes in 0 blocks
+==1043137== Rerun with --leak-check=full to see details of leaked memory
+==1043137== 
+==1043137== For lists of detected and suppressed errors, rerun with: -s
+==1043137== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

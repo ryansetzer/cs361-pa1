@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/wait.h>
 #include "builtins.h"
 
 // The contents of this file are up to you, but they should be related to
@@ -48,7 +49,6 @@ runCmd (char *command, char *arguments, int fd[2])
 
   if (child_pid == 0)
     {
-      printf ("Child forked\n");
       char *writeableArgument = strdup (&arguments[1]);
       writeableArgument[strlen (writeableArgument) - 1] = '\0';
       char *token1 = strtok (writeableArgument, " ");
@@ -80,30 +80,30 @@ runExec (char *commandOne, char *commandTwo)
 
   if (child == 0)
     {
-      char *arguments = strdup (commandOne); 
-      char *token = strtok (commandOne, " ");
+      // SECOND COMMAND
+      dup2 (fd[0], STDIN_FILENO);
+      char *arguments = strdup (commandTwo); 
+      char *token = strtok (commandTwo, " ");
       arguments = &arguments[strlen (token) + 1];
+      printf ("command2: [%s], arguments: [%s]\n", token, arguments);
+      runCmd(token, arguments, fd);
+      // FIRST COMMAND
+      arguments = strdup (commandOne); 
+      token = strtok (commandOne, " ");
+      arguments = &arguments[strlen (token)];
+      printf ("command: [%s], arguments: [%s]\n", token, arguments);
       runCmd (token, arguments, fd);
-      char bufbuf[1000];
-      read (fd[0], bufbuf, sizeof (bufbuf));
-      printf ("%s\n", bufbuf);
+      char buffyTheVampSlayer[1000];
+      for (int i = 0; i < sizeof (buffyTheVampSlayer); i++)
+        buffyTheVampSlayer[i] = '\0';
+      printf ("waiting to read\n");
+      read (fd[0], buffyTheVampSlayer, sizeof (buffyTheVampSlayer));
+      printf ("read\n");
+      printf ("%s", buffyTheVampSlayer);
     }
   else
     {
-      // dup2 (fd[0], STDIN_FILENO);
-      // dup2 (fd[1], STDOUT_FILENO);
-      //char buffybuf[1000];
-      //read (fd[0], buffybuf, sizeof (buffybuf));
-      //printf ("runCmd pipe: [%s]\n", buffybuf);
-      //char *arguments = strdup (commandTwo); 
-      //char *token = strtok (commandTwo, " ");
-      
-    }   
+      close (fd[0]);
+      close (fd[1]);
+    }
 }
-
-
-
-
-
-
-

@@ -27,7 +27,9 @@ shell (FILE *input)
         }
       if (input != stdin)
         printf ("%s", buffer);
-      char *argumentOne = strtok (buffer, "|");
+      char bufferTwin[MAXLENGTH];
+      memcpy (bufferTwin, buffer, MAXLENGTH);
+      char *argumentOne = strtok (bufferTwin, "|");
       char *argumentTwo = strtok (NULL, "|");
       if (argumentTwo != NULL)
         {
@@ -73,10 +75,9 @@ shell (FILE *input)
             }
           if (strncmp (buffer, "export", 6) == 0)
             export(&buffer[7]);
+          if (strncmp (buffer, "quit", 4) == 0)
+            break;
         }
-        if (strncmp (buffer, "quit", 4) == 0)
-          break;
-        
     }
   printf ("\n");
   hash_destroy ();

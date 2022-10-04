@@ -1,8 +1,8 @@
-==296217== Memcheck, a memory error detector
-==296217== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==296217== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==296217== Command: ../dukesh -b scripts/bins.txt
-==296217== 
+==1043191== Memcheck, a memory error detector
+==1043191== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1043191== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1043191== Command: ../dukesh -b scripts/bins.txt
+==1043191== 
 $ ./bin/ls data
 pwd.txt
 empty.txt
@@ -14,18 +14,18 @@ $ ./bin/head Makefile
 # This version of the Makefile includes support for building a test suite. The
 $ quit
 
-==296217== 
-==296217== HEAP SUMMARY:
-==296217==     in use at exit: 472 bytes in 1 blocks
-==296217==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
-==296217== 
-==296217== LEAK SUMMARY:
-==296217==    definitely lost: 0 bytes in 0 blocks
-==296217==    indirectly lost: 0 bytes in 0 blocks
-==296217==      possibly lost: 0 bytes in 0 blocks
-==296217==    still reachable: 472 bytes in 1 blocks
-==296217==         suppressed: 0 bytes in 0 blocks
-==296217== Rerun with --leak-check=full to see details of leaked memory
-==296217== 
-==296217== For lists of detected and suppressed errors, rerun with: -s
-==296217== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==1043191== 
+==1043191== HEAP SUMMARY:
+==1043191==     in use at exit: 472 bytes in 1 blocks
+==1043191==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1043191== 
+==1043191== LEAK SUMMARY:
+==1043191==    definitely lost: 0 bytes in 0 blocks
+==1043191==    indirectly lost: 0 bytes in 0 blocks
+==1043191==      possibly lost: 0 bytes in 0 blocks
+==1043191==    still reachable: 472 bytes in 1 blocks
+==1043191==         suppressed: 0 bytes in 0 blocks
+==1043191== Rerun with --leak-check=full to see details of leaked memory
+==1043191== 
+==1043191== For lists of detected and suppressed errors, rerun with: -s
+==1043191== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

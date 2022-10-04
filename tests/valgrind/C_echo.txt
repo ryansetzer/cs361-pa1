@@ -1,8 +1,8 @@
-==296066== Memcheck, a memory error detector
-==296066== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==296066== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==296066== Command: ../dukesh -b scripts/echo.txt
-==296066== 
+==1043063== Memcheck, a memory error detector
+==1043063== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1043063== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1043063== Command: ../dukesh -b scripts/echo.txt
+==1043063== 
 $ echo goodbye
 goodbye
 $ echo hello\nworld
@@ -10,18 +10,18 @@ hello
 world
 $ quit
 
-==296066== 
-==296066== HEAP SUMMARY:
-==296066==     in use at exit: 472 bytes in 1 blocks
-==296066==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
-==296066== 
-==296066== LEAK SUMMARY:
-==296066==    definitely lost: 0 bytes in 0 blocks
-==296066==    indirectly lost: 0 bytes in 0 blocks
-==296066==      possibly lost: 0 bytes in 0 blocks
-==296066==    still reachable: 472 bytes in 1 blocks
-==296066==         suppressed: 0 bytes in 0 blocks
-==296066== Rerun with --leak-check=full to see details of leaked memory
-==296066== 
-==296066== For lists of detected and suppressed errors, rerun with: -s
-==296066== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==1043063== 
+==1043063== HEAP SUMMARY:
+==1043063==     in use at exit: 472 bytes in 1 blocks
+==1043063==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1043063== 
+==1043063== LEAK SUMMARY:
+==1043063==    definitely lost: 0 bytes in 0 blocks
+==1043063==    indirectly lost: 0 bytes in 0 blocks
+==1043063==      possibly lost: 0 bytes in 0 blocks
+==1043063==    still reachable: 472 bytes in 1 blocks
+==1043063==         suppressed: 0 bytes in 0 blocks
+==1043063== Rerun with --leak-check=full to see details of leaked memory
+==1043063== 
+==1043063== For lists of detected and suppressed errors, rerun with: -s
+==1043063== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
