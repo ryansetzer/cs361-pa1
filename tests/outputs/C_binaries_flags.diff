@@ -1,0 +1,22 @@
+--- outputs/C_binaries_flags.txt	2022-10-03 21:22:25.450473953 -0400
++++ expected/C_binaries_flags-4.txt	2022-10-03 17:17:58.513303729 -0400
+@@ -1,5 +1,19 @@
++$ ./bin/ls -a data
+ .
+ ..
+ pwd.txt
+ .hidden.txt
+ empty.txt
++$ ./bin/ls -s data
++9 pwd.txt
++0 empty.txt
++$ ./bin/ls -sa data
++4096 .
++4096 ..
++9 pwd.txt
++5 .hidden.txt
++0 empty.txt
++$ ./bin/head -n 1 Makefile
++#
++$ quit
++

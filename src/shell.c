@@ -31,8 +31,8 @@ shell (FILE *input)
       char *argumentTwo = strtok (NULL, "|");
       if (argumentTwo != NULL)
         {
-          argumentOne [strlen (argumentOne) - 1] = '\0';
           argumentTwo [strlen (argumentTwo) - 1] = '\0';
+          //printf ("FROM SHELL : command one: [%s], command two: [%s]\n", argumentOne, argumentTwo);
           runExec (argumentOne, &argumentTwo[1]);
         }
       else
@@ -47,19 +47,26 @@ shell (FILE *input)
             which (&buffer[6]);
           if (strncmp (buffer, "./bin/ls", 8) == 0)
             {
+              int fd[2];
+              pipe (fd);
               char *arguments = &buffer[8];
-              runCmd ("./bin/ls", arguments);
+              runCmd ("./bin/ls", arguments, fd);
+              char tempBuf[1000];
+              read (fd[0], tempBuf, sizeof (tempBuf));
+              printf ("hhh%s", tempBuf);
             }
           if (strncmp (buffer, "./bin/head", 10) == 0)
             {
+              int fd[2];
+              pipe (fd);
               char *arguments = &buffer[10];
-              runCmd ("./bin/head", arguments);
+              runCmd ("./bin/head", arguments, fd);
+              char tempBuf[1000];
+              read (fd[0], tempBuf, sizeof (tempBuf));
+              printf ("%s\n", tempBuf);
             }
           if (strncmp (buffer, "export", 6) == 0)
-            {
-              char *arguments = &buffer[7];
-              export(arguments);
-            }
+            export(&buffer[7]);
         }
         if (strncmp (buffer, "quit", 4) == 0)
           break;

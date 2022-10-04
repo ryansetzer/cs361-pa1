@@ -1,0 +1,34 @@
+==113150== Memcheck, a memory error detector
+==113150== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==113150== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==113150== Command: ../dukesh -b scripts/which.txt
+==113150== 
+$ which cd
+cd: dukesh built-in command
+$ which echo
+echo: dukesh built-in command
+$ which pwd
+pwd: dukesh built-in command
+$ which which 
+which: dukesh built-in command
+$ which ./bin/ls
+./bin/ls
+$ which ./bin/head
+./bin/head
+$ quit
+
+==113150== 
+==113150== HEAP SUMMARY:
+==113150==     in use at exit: 472 bytes in 1 blocks
+==113150==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==113150== 
+==113150== LEAK SUMMARY:
+==113150==    definitely lost: 0 bytes in 0 blocks
+==113150==    indirectly lost: 0 bytes in 0 blocks
+==113150==      possibly lost: 0 bytes in 0 blocks
+==113150==    still reachable: 472 bytes in 1 blocks
+==113150==         suppressed: 0 bytes in 0 blocks
+==113150== Rerun with --leak-check=full to see details of leaked memory
+==113150== 
+==113150== For lists of detected and suppressed errors, rerun with: -s
+==113150== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

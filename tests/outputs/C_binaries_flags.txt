@@ -1,0 +1,5 @@
+.
+..
+pwd.txt
+.hidden.txt
+empty.txt

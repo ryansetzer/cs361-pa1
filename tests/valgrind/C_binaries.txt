@@ -1,0 +1,7 @@
+==113046== Memcheck, a memory error detector
+==113046== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==113046== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==113046== Command: ../dukesh -b scripts/bins.txt
+==113046== 
+pwd.txt
+empty.txt

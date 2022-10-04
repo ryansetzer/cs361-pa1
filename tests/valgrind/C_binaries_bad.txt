@@ -1,0 +1,7 @@
+==113129== Memcheck, a memory error detector
+==113129== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==113129== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==113129== Command: ../dukesh -b scripts/bins_bad.txt
+==113129== 
+./bin/ls: invalid option -- 'l'
+ 

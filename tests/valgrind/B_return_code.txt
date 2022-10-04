@@ -1,0 +1,7 @@
+==113198== Memcheck, a memory error detector
+==113198== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==113198== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==113198== Command: ../dukesh -b scripts/rc.txt
+==113198== 
+pwd.txt
+empty.txt
