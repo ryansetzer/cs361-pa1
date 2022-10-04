@@ -1,0 +1,26 @@
+--- ../src/shell.c	2022-10-03 23:49:07.101515339 -0400
++++ ckstyle/shell.c.gnu	2022-10-03 23:51:49.751107809 -0400
+@@ -31,8 +31,9 @@
+       char *argumentTwo = strtok (NULL, "|");
+       if (argumentTwo != NULL)
+         {
+-          argumentTwo [strlen (argumentTwo) - 1] = '\0';
+-          //printf ("FROM SHELL : command one: [%s], command two: [%s]\n", argumentOne, argumentTwo);
++          argumentTwo[strlen (argumentTwo) - 1] = '\0';
++          // printf ("FROM SHELL : command one: [%s], command two: [%s]\n",
++          // argumentOne, argumentTwo);
+           runExec (argumentOne, &argumentTwo[1]);
+         }
+       else
+@@ -74,9 +75,8 @@
+           if (strncmp (buffer, "export", 6) == 0)
+             export(&buffer[7]);
+         }
+-        if (strncmp (buffer, "quit", 4) == 0)
+-          break;
+-        
++      if (strncmp (buffer, "quit", 4) == 0)
++        break;
+     }
+   printf ("\n");
+   hash_destroy ();

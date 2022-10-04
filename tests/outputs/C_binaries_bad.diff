@@ -1,9 +1,0 @@
---- outputs/C_binaries_bad.txt	2022-10-03 21:22:26.074479934 -0400
-+++ expected/C_binaries_bad-2.txt	2022-10-03 17:17:58.513303729 -0400
-@@ -1 +1,4 @@
-- 
-\ No newline at end of file
-+$ ./bin/ls -l
-+$ ./bin/head -c 5 Makefile
-+$ quit
-+

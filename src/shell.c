@@ -52,8 +52,11 @@ shell (FILE *input)
               char *arguments = &buffer[8];
               runCmd ("./bin/ls", arguments, fd);
               char tempBuf[1000];
+              for (int i = 0; i < sizeof (tempBuf); i++)
+                tempBuf[i] = '\0';
               read (fd[0], tempBuf, sizeof (tempBuf));
-              printf ("hhh%s", tempBuf);
+              if (tempBuf[0] != ' ')
+                printf ("%s", tempBuf);
             }
           if (strncmp (buffer, "./bin/head", 10) == 0)
             {
@@ -62,8 +65,11 @@ shell (FILE *input)
               char *arguments = &buffer[10];
               runCmd ("./bin/head", arguments, fd);
               char tempBuf[1000];
+              for (int i = 0; i < sizeof (tempBuf); i++)
+                tempBuf[i] = '\0';
               read (fd[0], tempBuf, sizeof (tempBuf));
-              printf ("%s\n", tempBuf);
+              if (tempBuf[0] != ' ')
+                printf ("%s", tempBuf);
             }
           if (strncmp (buffer, "export", 6) == 0)
             export(&buffer[7]);

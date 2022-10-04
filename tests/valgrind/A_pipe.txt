@@ -1,0 +1,102 @@
+==296311== Memcheck, a memory error detector
+==296311== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==296311== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==296311== Command: ../dukesh -b scripts/pipe.txt
+==296311== 
+$ ./bin/ls -a data | ./bin/head -n 1
+$ ./bin/ls -a data | ./bin/head -n 2000
+$ quit
+
+==296364== Conditional jump or move depends on uninitialised value(s)
+==296364==    at 0x483EF58: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==296364==    by 0x48E9433: puts (ioputs.c:35)
+==296364==    by 0x109A1D: runExec (process.c:89)
+==296364==    by 0x109B6D: shell (shell.c:36)
+==296364==    by 0x10953B: main (main.c:22)
+==296364== 
+==296363== Conditional jump or move depends on uninitialised value(s)
+==296363==    at 0x483EF58: strlen (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==296363==    by 0x48E9433: puts (ioputs.c:35)
+==296363==    by 0x109A1D: runExec (process.c:89)
+==296363==    by 0x109B6D: shell (shell.c:36)
+==296363==    by 0x10953B: main (main.c:22)
+==296363== 
+==296311== 
+==296311== HEAP SUMMARY:
+==296311==     in use at exit: 472 bytes in 1 blocks
+==296311==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==296311== 
+==296311== LEAK SUMMARY:
+==296311==    definitely lost: 0 bytes in 0 blocks
+==296311==    indirectly lost: 0 bytes in 0 blocks
+==296311==      possibly lost: 0 bytes in 0 blocks
+==296311==    still reachable: 472 bytes in 1 blocks
+==296311==         suppressed: 0 bytes in 0 blocks
+==296311== Rerun with --leak-check=full to see details of leaked memory
+==296311== 
+==296311== For lists of detected and suppressed errors, rerun with: -s
+==296311== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data | ./bin/head -n 1
+$ ./bin/ls -a data | ./bin/head -n 2000
+ 
+$ quit
+
+$ ./bin/ls -a data | ./bin/head -n 1
+ 
+$ ./bin/ls -a data | ./bin/head -n 2000
+$ quit
+
+==296364== 
+==296364== HEAP SUMMARY:
+==296364==     in use at exit: 490 bytes in 2 blocks
+==296364==   total heap usage: 7 allocs, 5 frees, 19,278 bytes allocated
+==296364== 
+==296364== LEAK SUMMARY:
+==296364==    definitely lost: 18 bytes in 1 blocks
+==296364==    indirectly lost: 0 bytes in 0 blocks
+==296364==      possibly lost: 0 bytes in 0 blocks
+==296364==    still reachable: 472 bytes in 1 blocks
+==296364==         suppressed: 0 bytes in 0 blocks
+==296364== Rerun with --leak-check=full to see details of leaked memory
+==296364== 
+==296364== Use --track-origins=yes to see where uninitialised values come from
+==296364== For lists of detected and suppressed errors, rerun with: -s
+==296364== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==296363== 
+==296363== HEAP SUMMARY:
+==296363==     in use at exit: 490 bytes in 2 blocks
+==296363==   total heap usage: 7 allocs, 5 frees, 19,278 bytes allocated
+==296363== 
+==296363== LEAK SUMMARY:
+==296363==    definitely lost: 18 bytes in 1 blocks
+==296363==    indirectly lost: 0 bytes in 0 blocks
+==296363==      possibly lost: 0 bytes in 0 blocks
+==296363==    still reachable: 472 bytes in 1 blocks
+==296363==         suppressed: 0 bytes in 0 blocks
+==296363== Rerun with --leak-check=full to see details of leaked memory
+==296363== 
+==296363== Use --track-origins=yes to see where uninitialised values come from
+==296363== For lists of detected and suppressed errors, rerun with: -s
+==296363== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data | ./bin/head -n 1
+ 
+$ ./bin/ls -a data | ./bin/head -n 2000
+ 
+$ quit
+
+==296367== 
+==296367== HEAP SUMMARY:
+==296367==     in use at exit: 508 bytes in 3 blocks
+==296367==   total heap usage: 8 allocs, 5 frees, 19,296 bytes allocated
+==296367== 
+==296367== LEAK SUMMARY:
+==296367==    definitely lost: 36 bytes in 2 blocks
+==296367==    indirectly lost: 0 bytes in 0 blocks
+==296367==      possibly lost: 0 bytes in 0 blocks
+==296367==    still reachable: 472 bytes in 1 blocks
+==296367==         suppressed: 0 bytes in 0 blocks
+==296367== Rerun with --leak-check=full to see details of leaked memory
+==296367== 
+==296367== Use --track-origins=yes to see where uninitialised values come from
+==296367== For lists of detected and suppressed errors, rerun with: -s
+==296367== ERROR SUMMARY: 2 errors from 1 contexts (suppressed: 0 from 0)

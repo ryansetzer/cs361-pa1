@@ -1,0 +1,65 @@
+--- ../src/process.c	2022-10-03 23:51:38.927002190 -0400
++++ ckstyle/process.c.gnu	2022-10-03 23:51:49.683107145 -0400
+@@ -1,8 +1,8 @@
++#include "builtins.h"
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <unistd.h>
+-#include "builtins.h"
+ 
+ // The contents of this file are up to you, but they should be related to
+ // running separate processes. It is recommended that you have functions
+@@ -41,7 +41,7 @@
+ void
+ runCmd (char *command, char *arguments, int fd[2])
+ {
+-  pid_t child_pid = fork();
++  pid_t child_pid = fork ();
+ 
+   if (child_pid < 0)
+     return;
+@@ -54,7 +54,8 @@
+       char *token1 = strtok (writeableArgument, " ");
+       char *token2 = strtok (NULL, " ");
+       char *token3 = strtok (NULL, "\\n");
+-      //printf ("token1=[%s] token2=[%s] token3=[%s] command: [%s]\n", token1, token2, token3, command);
++      // printf ("token1=[%s] token2=[%s] token3=[%s] command: [%s]\n", token1,
++      // token2, token3, command);
+       close (fd[0]); // close read end of pipe
+       dup2 (fd[1], STDOUT_FILENO);
+       if (strlen (writeableArgument) == 0)
+@@ -80,7 +81,7 @@
+ 
+   if (child == 0)
+     {
+-      char *arguments = strdup (commandOne); 
++      char *arguments = strdup (commandOne);
+       char *token = strtok (commandOne, " ");
+       arguments = &arguments[strlen (token) + 1];
+       runCmd (token, arguments, fd);
+@@ -92,18 +93,10 @@
+     {
+       // dup2 (fd[0], STDIN_FILENO);
+       // dup2 (fd[1], STDOUT_FILENO);
+-      //char buffybuf[1000];
+-      //read (fd[0], buffybuf, sizeof (buffybuf));
+-      //printf ("runCmd pipe: [%s]\n", buffybuf);
+-      //char *arguments = strdup (commandTwo); 
+-      //char *token = strtok (commandTwo, " ");
+-      
+-    }   
++      // char buffybuf[1000];
++      // read (fd[0], buffybuf, sizeof (buffybuf));
++      // printf ("runCmd pipe: [%s]\n", buffybuf);
++      // char *arguments = strdup (commandTwo);
++      // char *token = strtok (commandTwo, " ");
++    }
+ }
+-
+-
+-
+-
+-
+-
+-
