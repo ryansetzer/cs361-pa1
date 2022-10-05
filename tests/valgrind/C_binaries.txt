@@ -1,8 +1,8 @@
-==2217331== Memcheck, a memory error detector
-==2217331== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2217331== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==2217331== Command: ../dukesh -b scripts/bins.txt
-==2217331== 
+==4060787== Memcheck, a memory error detector
+==4060787== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4060787== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==4060787== Command: ../dukesh -b scripts/bins.txt
+==4060787== 
 $ ./bin/ls data
 pwd.txt
 empty.txt
@@ -14,18 +14,18 @@ $ ./bin/head Makefile
 # This version of the Makefile includes support for building a test suite. The
 $ quit
 
-==2217331== 
-==2217331== HEAP SUMMARY:
-==2217331==     in use at exit: 472 bytes in 1 blocks
-==2217331==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
-==2217331== 
-==2217331== LEAK SUMMARY:
-==2217331==    definitely lost: 0 bytes in 0 blocks
-==2217331==    indirectly lost: 0 bytes in 0 blocks
-==2217331==      possibly lost: 0 bytes in 0 blocks
-==2217331==    still reachable: 472 bytes in 1 blocks
-==2217331==         suppressed: 0 bytes in 0 blocks
-==2217331== Rerun with --leak-check=full to see details of leaked memory
-==2217331== 
-==2217331== For lists of detected and suppressed errors, rerun with: -s
-==2217331== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==4060787== 
+==4060787== HEAP SUMMARY:
+==4060787==     in use at exit: 472 bytes in 1 blocks
+==4060787==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==4060787== 
+==4060787== LEAK SUMMARY:
+==4060787==    definitely lost: 0 bytes in 0 blocks
+==4060787==    indirectly lost: 0 bytes in 0 blocks
+==4060787==      possibly lost: 0 bytes in 0 blocks
+==4060787==    still reachable: 472 bytes in 1 blocks
+==4060787==         suppressed: 0 bytes in 0 blocks
+==4060787== Rerun with --leak-check=full to see details of leaked memory
+==4060787== 
+==4060787== For lists of detected and suppressed errors, rerun with: -s
+==4060787== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

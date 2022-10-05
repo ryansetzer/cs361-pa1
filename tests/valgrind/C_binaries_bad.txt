@@ -1,26 +1,26 @@
-==2217378== Memcheck, a memory error detector
-==2217378== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2217378== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==2217378== Command: ../dukesh -b scripts/bins_bad.txt
-==2217378== 
+==4063988== Memcheck, a memory error detector
+==4063988== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4063988== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==4063988== Command: ../dukesh -b scripts/bins_bad.txt
+==4063988== 
 ./bin/ls: invalid option -- 'l'
 ./bin/head: invalid option -- 'c'
 $ ./bin/ls -l
 $ ./bin/head -c 5 Makefile
 $ quit
 
-==2217378== 
-==2217378== HEAP SUMMARY:
-==2217378==     in use at exit: 472 bytes in 1 blocks
-==2217378==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
-==2217378== 
-==2217378== LEAK SUMMARY:
-==2217378==    definitely lost: 0 bytes in 0 blocks
-==2217378==    indirectly lost: 0 bytes in 0 blocks
-==2217378==      possibly lost: 0 bytes in 0 blocks
-==2217378==    still reachable: 472 bytes in 1 blocks
-==2217378==         suppressed: 0 bytes in 0 blocks
-==2217378== Rerun with --leak-check=full to see details of leaked memory
-==2217378== 
-==2217378== For lists of detected and suppressed errors, rerun with: -s
-==2217378== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==4063988== 
+==4063988== HEAP SUMMARY:
+==4063988==     in use at exit: 472 bytes in 1 blocks
+==4063988==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==4063988== 
+==4063988== LEAK SUMMARY:
+==4063988==    definitely lost: 0 bytes in 0 blocks
+==4063988==    indirectly lost: 0 bytes in 0 blocks
+==4063988==      possibly lost: 0 bytes in 0 blocks
+==4063988==    still reachable: 472 bytes in 1 blocks
+==4063988==         suppressed: 0 bytes in 0 blocks
+==4063988== Rerun with --leak-check=full to see details of leaked memory
+==4063988== 
+==4063988== For lists of detected and suppressed errors, rerun with: -s
+==4063988== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

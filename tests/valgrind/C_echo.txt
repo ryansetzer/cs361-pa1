@@ -1,8 +1,8 @@
-==2217319== Memcheck, a memory error detector
-==2217319== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2217319== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==2217319== Command: ../dukesh -b scripts/echo.txt
-==2217319== 
+==4060204== Memcheck, a memory error detector
+==4060204== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4060204== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==4060204== Command: ../dukesh -b scripts/echo.txt
+==4060204== 
 $ echo goodbye
 goodbye
 $ echo hello\nworld
@@ -10,18 +10,18 @@ hello
 world
 $ quit
 
-==2217319== 
-==2217319== HEAP SUMMARY:
-==2217319==     in use at exit: 472 bytes in 1 blocks
-==2217319==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
-==2217319== 
-==2217319== LEAK SUMMARY:
-==2217319==    definitely lost: 0 bytes in 0 blocks
-==2217319==    indirectly lost: 0 bytes in 0 blocks
-==2217319==      possibly lost: 0 bytes in 0 blocks
-==2217319==    still reachable: 472 bytes in 1 blocks
-==2217319==         suppressed: 0 bytes in 0 blocks
-==2217319== Rerun with --leak-check=full to see details of leaked memory
-==2217319== 
-==2217319== For lists of detected and suppressed errors, rerun with: -s
-==2217319== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==4060204== 
+==4060204== HEAP SUMMARY:
+==4060204==     in use at exit: 472 bytes in 1 blocks
+==4060204==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==4060204== 
+==4060204== LEAK SUMMARY:
+==4060204==    definitely lost: 0 bytes in 0 blocks
+==4060204==    indirectly lost: 0 bytes in 0 blocks
+==4060204==      possibly lost: 0 bytes in 0 blocks
+==4060204==    still reachable: 472 bytes in 1 blocks
+==4060204==         suppressed: 0 bytes in 0 blocks
+==4060204== Rerun with --leak-check=full to see details of leaked memory
+==4060204== 
+==4060204== For lists of detected and suppressed errors, rerun with: -s
+==4060204== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

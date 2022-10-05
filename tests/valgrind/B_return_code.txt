@@ -1,8 +1,8 @@
-==2217395== Memcheck, a memory error detector
-==2217395== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==2217395== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==2217395== Command: ../dukesh -b scripts/rc.txt
-==2217395== 
+==4065035== Memcheck, a memory error detector
+==4065035== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4065035== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==4065035== Command: ../dukesh -b scripts/rc.txt
+==4065035== 
 $ ./bin/ls data
 pwd.txt
 empty.txt
@@ -13,18 +13,18 @@ $ echo $?
 1
 $ quit
 
-==2217395== 
-==2217395== HEAP SUMMARY:
-==2217395==     in use at exit: 472 bytes in 1 blocks
-==2217395==   total heap usage: 8 allocs, 7 frees, 19,264 bytes allocated
-==2217395== 
-==2217395== LEAK SUMMARY:
-==2217395==    definitely lost: 0 bytes in 0 blocks
-==2217395==    indirectly lost: 0 bytes in 0 blocks
-==2217395==      possibly lost: 0 bytes in 0 blocks
-==2217395==    still reachable: 472 bytes in 1 blocks
-==2217395==         suppressed: 0 bytes in 0 blocks
-==2217395== Rerun with --leak-check=full to see details of leaked memory
-==2217395== 
-==2217395== For lists of detected and suppressed errors, rerun with: -s
-==2217395== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==4065035== 
+==4065035== HEAP SUMMARY:
+==4065035==     in use at exit: 472 bytes in 1 blocks
+==4065035==   total heap usage: 8 allocs, 7 frees, 19,264 bytes allocated
+==4065035== 
+==4065035== LEAK SUMMARY:
+==4065035==    definitely lost: 0 bytes in 0 blocks
+==4065035==    indirectly lost: 0 bytes in 0 blocks
+==4065035==      possibly lost: 0 bytes in 0 blocks
+==4065035==    still reachable: 472 bytes in 1 blocks
+==4065035==         suppressed: 0 bytes in 0 blocks
+==4065035== Rerun with --leak-check=full to see details of leaked memory
+==4065035== 
+==4065035== For lists of detected and suppressed errors, rerun with: -s
+==4065035== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
