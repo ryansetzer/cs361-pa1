@@ -1,39 +1,341 @@
-==1820939== Memcheck, a memory error detector
-==1820939== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1820939== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==1820939== Command: ../dukesh -b scripts/bins_flags.txt
-==1820939== 
-.
-..
-pwd.txt
-.hidden.txt
-empty.txt
-9 pwd.txt
-0 empty.txt
-4096 .
-4096 ..
-9 pwd.txt
-5 .hidden.txt
-0 empty.txt
-#
+==1934833== Memcheck, a memory error detector
+==1934833== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1934833== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1934833== Command: ../dukesh -b scripts/bins_flags.txt
+==1934833== 
 $ ./bin/ls -a data
 $ ./bin/ls -s data
 $ ./bin/ls -sa data
 $ ./bin/head -n 1 Makefile
 $ quit
 
-==1820939== 
-==1820939== HEAP SUMMARY:
-==1820939==     in use at exit: 472 bytes in 1 blocks
-==1820939==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
-==1820939== 
-==1820939== LEAK SUMMARY:
-==1820939==    definitely lost: 0 bytes in 0 blocks
-==1820939==    indirectly lost: 0 bytes in 0 blocks
-==1820939==      possibly lost: 0 bytes in 0 blocks
-==1820939==    still reachable: 472 bytes in 1 blocks
-==1820939==         suppressed: 0 bytes in 0 blocks
-==1820939== Rerun with --leak-check=full to see details of leaked memory
-==1820939== 
-==1820939== For lists of detected and suppressed errors, rerun with: -s
-==1820939== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==1934906== 
+==1934906== HEAP SUMMARY:
+==1934906==     in use at exit: 472 bytes in 1 blocks
+==1934906==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934906== 
+==1934906== LEAK SUMMARY:
+==1934906==    definitely lost: 0 bytes in 0 blocks
+==1934906==    indirectly lost: 0 bytes in 0 blocks
+==1934906==      possibly lost: 0 bytes in 0 blocks
+==1934906==    still reachable: 472 bytes in 1 blocks
+==1934906==         suppressed: 0 bytes in 0 blocks
+==1934906== Rerun with --leak-check=full to see details of leaked memory
+==1934906== 
+==1934906== For lists of detected and suppressed errors, rerun with: -s
+==1934906== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data
+$ ./bin/ls -s data
+$ ./bin/ls -sa data
+$ ./bin/head -n 1 Makefile
+$ quit
+
+==1934904== 
+==1934904== HEAP SUMMARY:
+==1934904==     in use at exit: 472 bytes in 1 blocks
+==1934904==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934904== 
+==1934904== LEAK SUMMARY:
+==1934904==    definitely lost: 0 bytes in 0 blocks
+==1934904==    indirectly lost: 0 bytes in 0 blocks
+==1934904==      possibly lost: 0 bytes in 0 blocks
+==1934904==    still reachable: 472 bytes in 1 blocks
+==1934904==         suppressed: 0 bytes in 0 blocks
+==1934904== Rerun with --leak-check=full to see details of leaked memory
+==1934904== 
+==1934904== For lists of detected and suppressed errors, rerun with: -s
+==1934904== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data
+$ ./bin/ls -s data
+$ ./bin/ls -sa data
+$ ./bin/head -n 1 Makefile
+$ quit
+
+==1934912== 
+==1934912== HEAP SUMMARY:
+==1934912==     in use at exit: 472 bytes in 1 blocks
+==1934912==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934912== 
+==1934912== LEAK SUMMARY:
+==1934912==    definitely lost: 0 bytes in 0 blocks
+==1934912==    indirectly lost: 0 bytes in 0 blocks
+==1934912==      possibly lost: 0 bytes in 0 blocks
+==1934912==    still reachable: 472 bytes in 1 blocks
+==1934912==         suppressed: 0 bytes in 0 blocks
+==1934912== Rerun with --leak-check=full to see details of leaked memory
+==1934912== 
+==1934912== For lists of detected and suppressed errors, rerun with: -s
+==1934912== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data
+$ ./bin/ls -s data
+$ ./bin/ls -sa data
+$ ./bin/head -n 1 Makefile
+$ quit
+
+==1934902== 
+==1934902== HEAP SUMMARY:
+==1934902==     in use at exit: 472 bytes in 1 blocks
+==1934902==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934902== 
+==1934902== LEAK SUMMARY:
+==1934902==    definitely lost: 0 bytes in 0 blocks
+==1934902==    indirectly lost: 0 bytes in 0 blocks
+==1934902==      possibly lost: 0 bytes in 0 blocks
+==1934902==    still reachable: 472 bytes in 1 blocks
+==1934902==         suppressed: 0 bytes in 0 blocks
+==1934902== Rerun with --leak-check=full to see details of leaked memory
+==1934902== 
+==1934902== For lists of detected and suppressed errors, rerun with: -s
+==1934902== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data
+$ ./bin/ls -s data
+$ ./bin/ls -sa data
+$ ./bin/head -n 1 Makefile
+$ quit
+
+==1934922== 
+==1934922== HEAP SUMMARY:
+==1934922==     in use at exit: 472 bytes in 1 blocks
+==1934922==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934922== 
+==1934922== LEAK SUMMARY:
+==1934922==    definitely lost: 0 bytes in 0 blocks
+==1934922==    indirectly lost: 0 bytes in 0 blocks
+==1934922==      possibly lost: 0 bytes in 0 blocks
+==1934922==    still reachable: 472 bytes in 1 blocks
+==1934922==         suppressed: 0 bytes in 0 blocks
+==1934922== Rerun with --leak-check=full to see details of leaked memory
+==1934922== 
+==1934922== For lists of detected and suppressed errors, rerun with: -s
+==1934922== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data
+$ ./bin/ls -s data
+$ ./bin/ls -sa data
+$ ./bin/head -n 1 Makefile
+$ quit
+
+==1934921== 
+==1934921== HEAP SUMMARY:
+==1934921==     in use at exit: 472 bytes in 1 blocks
+==1934921==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934921== 
+==1934921== LEAK SUMMARY:
+==1934921==    definitely lost: 0 bytes in 0 blocks
+==1934921==    indirectly lost: 0 bytes in 0 blocks
+==1934921==      possibly lost: 0 bytes in 0 blocks
+==1934921==    still reachable: 472 bytes in 1 blocks
+==1934921==         suppressed: 0 bytes in 0 blocks
+==1934921== Rerun with --leak-check=full to see details of leaked memory
+==1934921== 
+==1934921== For lists of detected and suppressed errors, rerun with: -s
+==1934921== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data
+$ ./bin/ls -s data
+$ ./bin/ls -sa data
+$ ./bin/head -n 1 Makefile
+$ quit
+
+==1934932== 
+==1934932== HEAP SUMMARY:
+==1934932==     in use at exit: 472 bytes in 1 blocks
+==1934932==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934932== 
+==1934932== LEAK SUMMARY:
+==1934932==    definitely lost: 0 bytes in 0 blocks
+==1934932==    indirectly lost: 0 bytes in 0 blocks
+==1934932==      possibly lost: 0 bytes in 0 blocks
+==1934932==    still reachable: 472 bytes in 1 blocks
+==1934932==         suppressed: 0 bytes in 0 blocks
+==1934932== Rerun with --leak-check=full to see details of leaked memory
+==1934932== 
+==1934932== For lists of detected and suppressed errors, rerun with: -s
+==1934932== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data
+$ ./bin/ls -s data
+$ ./bin/ls -sa data
+$ ./bin/head -n 1 Makefile
+$ quit
+
+==1934901== 
+==1934901== HEAP SUMMARY:
+==1934901==     in use at exit: 472 bytes in 1 blocks
+==1934901==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934901== 
+==1934901== LEAK SUMMARY:
+==1934901==    definitely lost: 0 bytes in 0 blocks
+==1934901==    indirectly lost: 0 bytes in 0 blocks
+==1934901==      possibly lost: 0 bytes in 0 blocks
+==1934901==    still reachable: 472 bytes in 1 blocks
+==1934901==         suppressed: 0 bytes in 0 blocks
+==1934901== Rerun with --leak-check=full to see details of leaked memory
+==1934901== 
+==1934901== For lists of detected and suppressed errors, rerun with: -s
+==1934901== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data
+$ ./bin/ls -s data
+$ ./bin/ls -sa data
+$ ./bin/head -n 1 Makefile
+$ quit
+
+==1934937== 
+==1934937== HEAP SUMMARY:
+==1934937==     in use at exit: 472 bytes in 1 blocks
+==1934937==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934937== 
+==1934937== LEAK SUMMARY:
+==1934937==    definitely lost: 0 bytes in 0 blocks
+==1934937==    indirectly lost: 0 bytes in 0 blocks
+==1934937==      possibly lost: 0 bytes in 0 blocks
+==1934937==    still reachable: 472 bytes in 1 blocks
+==1934937==         suppressed: 0 bytes in 0 blocks
+==1934937== Rerun with --leak-check=full to see details of leaked memory
+==1934937== 
+==1934937== For lists of detected and suppressed errors, rerun with: -s
+==1934937== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data
+$ ./bin/ls -s data
+$ ./bin/ls -sa data
+$ ./bin/head -n 1 Makefile
+$ quit
+
+==1934936== 
+==1934936== HEAP SUMMARY:
+==1934936==     in use at exit: 472 bytes in 1 blocks
+==1934936==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934936== 
+==1934936== LEAK SUMMARY:
+==1934936==    definitely lost: 0 bytes in 0 blocks
+==1934936==    indirectly lost: 0 bytes in 0 blocks
+==1934936==      possibly lost: 0 bytes in 0 blocks
+==1934936==    still reachable: 472 bytes in 1 blocks
+==1934936==         suppressed: 0 bytes in 0 blocks
+==1934936== Rerun with --leak-check=full to see details of leaked memory
+==1934936== 
+==1934936== For lists of detected and suppressed errors, rerun with: -s
+==1934936== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data
+$ ./bin/ls -s data
+$ ./bin/ls -sa data
+$ ./bin/head -n 1 Makefile
+$ quit
+
+==1934940== 
+==1934940== HEAP SUMMARY:
+==1934940==     in use at exit: 472 bytes in 1 blocks
+==1934940==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934940== 
+==1934940== LEAK SUMMARY:
+==1934940==    definitely lost: 0 bytes in 0 blocks
+==1934940==    indirectly lost: 0 bytes in 0 blocks
+==1934940==      possibly lost: 0 bytes in 0 blocks
+==1934940==    still reachable: 472 bytes in 1 blocks
+==1934940==         suppressed: 0 bytes in 0 blocks
+==1934940== Rerun with --leak-check=full to see details of leaked memory
+==1934940== 
+==1934940== For lists of detected and suppressed errors, rerun with: -s
+==1934940== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data
+$ ./bin/ls -s data
+$ ./bin/ls -sa data
+$ ./bin/head -n 1 Makefile
+$ quit
+
+==1934935== 
+==1934935== HEAP SUMMARY:
+==1934935==     in use at exit: 472 bytes in 1 blocks
+==1934935==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934935== 
+==1934935== LEAK SUMMARY:
+==1934935==    definitely lost: 0 bytes in 0 blocks
+==1934935==    indirectly lost: 0 bytes in 0 blocks
+==1934935==      possibly lost: 0 bytes in 0 blocks
+==1934935==    still reachable: 472 bytes in 1 blocks
+==1934935==         suppressed: 0 bytes in 0 blocks
+==1934935== Rerun with --leak-check=full to see details of leaked memory
+==1934935== 
+==1934935== For lists of detected and suppressed errors, rerun with: -s
+==1934935== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data
+$ ./bin/ls -s data
+$ ./bin/ls -sa data
+$ ./bin/head -n 1 Makefile
+$ quit
+
+==1934954== 
+==1934954== HEAP SUMMARY:
+==1934954==     in use at exit: 472 bytes in 1 blocks
+==1934954==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934954== 
+==1934954== LEAK SUMMARY:
+==1934954==    definitely lost: 0 bytes in 0 blocks
+==1934954==    indirectly lost: 0 bytes in 0 blocks
+==1934954==      possibly lost: 0 bytes in 0 blocks
+==1934954==    still reachable: 472 bytes in 1 blocks
+==1934954==         suppressed: 0 bytes in 0 blocks
+==1934954== Rerun with --leak-check=full to see details of leaked memory
+==1934954== 
+==1934954== For lists of detected and suppressed errors, rerun with: -s
+==1934954== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data
+$ ./bin/ls -s data
+$ ./bin/ls -sa data
+$ ./bin/head -n 1 Makefile
+$ quit
+
+==1934953== 
+==1934953== HEAP SUMMARY:
+==1934953==     in use at exit: 472 bytes in 1 blocks
+==1934953==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934953== 
+==1934953== LEAK SUMMARY:
+==1934953==    definitely lost: 0 bytes in 0 blocks
+==1934953==    indirectly lost: 0 bytes in 0 blocks
+==1934953==      possibly lost: 0 bytes in 0 blocks
+==1934953==    still reachable: 472 bytes in 1 blocks
+==1934953==         suppressed: 0 bytes in 0 blocks
+==1934953== Rerun with --leak-check=full to see details of leaked memory
+==1934953== 
+==1934953== For lists of detected and suppressed errors, rerun with: -s
+==1934953== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data
+$ ./bin/ls -s data
+$ ./bin/ls -sa data
+$ ./bin/head -n 1 Makefile
+$ quit
+
+==1934955== 
+==1934955== HEAP SUMMARY:
+==1934955==     in use at exit: 472 bytes in 1 blocks
+==1934955==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934955== 
+==1934955== LEAK SUMMARY:
+==1934955==    definitely lost: 0 bytes in 0 blocks
+==1934955==    indirectly lost: 0 bytes in 0 blocks
+==1934955==      possibly lost: 0 bytes in 0 blocks
+==1934955==    still reachable: 472 bytes in 1 blocks
+==1934955==         suppressed: 0 bytes in 0 blocks
+==1934955== Rerun with --leak-check=full to see details of leaked memory
+==1934955== 
+==1934955== For lists of detected and suppressed errors, rerun with: -s
+==1934955== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls -a data
+$ ./bin/ls -s data
+$ ./bin/ls -sa data
+$ ./bin/head -n 1 Makefile
+$ quit
+
+==1934833== 
+==1934833== HEAP SUMMARY:
+==1934833==     in use at exit: 472 bytes in 1 blocks
+==1934833==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934833== 
+==1934833== LEAK SUMMARY:
+==1934833==    definitely lost: 0 bytes in 0 blocks
+==1934833==    indirectly lost: 0 bytes in 0 blocks
+==1934833==      possibly lost: 0 bytes in 0 blocks
+==1934833==    still reachable: 472 bytes in 1 blocks
+==1934833==         suppressed: 0 bytes in 0 blocks
+==1934833== Rerun with --leak-check=full to see details of leaked memory
+==1934833== 
+==1934833== For lists of detected and suppressed errors, rerun with: -s
+==1934833== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

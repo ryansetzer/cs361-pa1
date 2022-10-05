@@ -1,0 +1,26 @@
+--- outputs/C_binaries.txt	2022-10-05 17:52:04.814162685 -0400
++++ expected/C_binaries-4.txt	2022-10-05 17:39:25.675166436 -0400
+@@ -1,16 +1,11 @@
+ $ ./bin/ls data
++pwd.txt
++empty.txt
+ $ ./bin/head Makefile
+-$ quit
+-
+-$ ./bin/ls data
+-$ ./bin/head Makefile
+-$ quit
+-
+-$ ./bin/ls data
+-$ ./bin/head Makefile
+-$ quit
+-
+-$ ./bin/ls data
+-$ ./bin/head Makefile
++#
++# Simple Test Makefile
++# Mike Lam, James Madison University, August 2016
++#
++# This version of the Makefile includes support for building a test suite. The
+ $ quit
+ 

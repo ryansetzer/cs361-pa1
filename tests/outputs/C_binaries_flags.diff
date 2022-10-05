@@ -1,0 +1,114 @@
+--- outputs/C_binaries_flags.txt	2022-10-05 17:52:05.530169285 -0400
++++ expected/C_binaries_flags-4.txt	2022-10-05 17:39:25.803167617 -0400
+@@ -1,96 +1,19 @@
+ $ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
+-$ ./bin/head -n 1 Makefile
+-$ quit
+-
+-$ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
+-$ ./bin/head -n 1 Makefile
+-$ quit
+-
+-$ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
+-$ ./bin/head -n 1 Makefile
+-$ quit
+-
+-$ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
+-$ ./bin/head -n 1 Makefile
+-$ quit
+-
+-$ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
+-$ ./bin/head -n 1 Makefile
+-$ quit
+-
+-$ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
+-$ ./bin/head -n 1 Makefile
+-$ quit
+-
+-$ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
+-$ ./bin/head -n 1 Makefile
+-$ quit
+-
+-$ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
+-$ ./bin/head -n 1 Makefile
+-$ quit
+-
+-$ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
+-$ ./bin/head -n 1 Makefile
+-$ quit
+-
+-$ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
+-$ ./bin/head -n 1 Makefile
+-$ quit
+-
+-$ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
+-$ ./bin/head -n 1 Makefile
+-$ quit
+-
+-$ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
+-$ ./bin/head -n 1 Makefile
+-$ quit
+-
+-$ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
+-$ ./bin/head -n 1 Makefile
+-$ quit
+-
+-$ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
+-$ ./bin/head -n 1 Makefile
+-$ quit
+-
+-$ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
+-$ ./bin/head -n 1 Makefile
+-$ quit
+-
+-$ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
++.
++..
++pwd.txt
++.hidden.txt
++empty.txt
++$ ./bin/ls -s data
++9 pwd.txt
++0 empty.txt
++$ ./bin/ls -sa data
++4096 .
++4096 ..
++9 pwd.txt
++5 .hidden.txt
++0 empty.txt
+ $ ./bin/head -n 1 Makefile
++#
+ $ quit
+ 

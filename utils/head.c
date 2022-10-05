@@ -28,14 +28,12 @@ main (int argc, char *argv[])
       usage ();
     }
     else
-      printf ('\0');
+      printf (' ');
     return EXIT_FAILURE;
   }
   if (script == NULL)
   {
     char buf[100];
-    int i = numLines;
-    char c;
     int counter = 0;
     while (fgets (buf, lineSize, stdin) != NULL)
     {
@@ -46,14 +44,13 @@ main (int argc, char *argv[])
     }
     return EXIT_SUCCESS;
   }
-    char c; 
+    char buf[100];
     int counter = 0;
-    while ((c = getc (script)) != -1)
+    while (fgets (buf, lineSize, stdin) != NULL)
     {
-      putchar (c);
-      if (c == '\n')
-        counter++;
-      if (counter == numLines)
+      printf ("%s", buf);
+      counter++;
+      if ((counter == numLines) || (feof (stdin)))
         break;
     }
   return EXIT_SUCCESS;

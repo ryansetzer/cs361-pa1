@@ -1,0 +1,18 @@
+--- outputs/C_binaries_bad.txt	2022-10-05 17:52:06.814181122 -0400
++++ expected/C_binaries_bad-2.txt	2022-10-05 17:39:25.715166805 -0400
+@@ -2,15 +2,3 @@
+ $ ./bin/head -c 5 Makefile
+ $ quit
+ 
+-$ ./bin/ls -l
+-$ ./bin/head -c 5 Makefile
+-$ quit
+-
+-$ ./bin/ls -l
+-$ ./bin/head -c 5 Makefile
+-$ quit
+-
+-$ ./bin/ls -l
+-$ ./bin/head -c 5 Makefile
+-$ quit
+-

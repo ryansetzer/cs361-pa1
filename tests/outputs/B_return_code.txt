@@ -1,5 +1,27 @@
-pwd.txt
-empty.txt
+$ ./bin/ls data
+$ echo $?
+0
+$ ./bin/ls asldfkjasldfkj
+$ echo $?
+1
+$ quit
+
+$ ./bin/ls data
+$ echo $?
+0
+$ ./bin/ls asldfkjasldfkj
+$ echo $?
+1
+$ quit
+
+$ ./bin/ls data
+$ echo $?
+0
+$ ./bin/ls asldfkjasldfkj
+$ echo $?
+1
+$ quit
+
 $ ./bin/ls data
 $ echo $?
 0

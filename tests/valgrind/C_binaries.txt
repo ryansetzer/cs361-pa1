@@ -1,31 +1,81 @@
-==1820873== Memcheck, a memory error detector
-==1820873== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1820873== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==1820873== Command: ../dukesh -b scripts/bins.txt
-==1820873== 
-pwd.txt
-empty.txt
-#
-# Simple Test Makefile
-# Mike Lam, James Madison University, August 2016
-#
-# This version of the Makefile includes support for building a test suite. The
+==1934746== Memcheck, a memory error detector
+==1934746== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1934746== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1934746== Command: ../dukesh -b scripts/bins.txt
+==1934746== 
 $ ./bin/ls data
 $ ./bin/head Makefile
 $ quit
 
-==1820873== 
-==1820873== HEAP SUMMARY:
-==1820873==     in use at exit: 472 bytes in 1 blocks
-==1820873==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
-==1820873== 
-==1820873== LEAK SUMMARY:
-==1820873==    definitely lost: 0 bytes in 0 blocks
-==1820873==    indirectly lost: 0 bytes in 0 blocks
-==1820873==      possibly lost: 0 bytes in 0 blocks
-==1820873==    still reachable: 472 bytes in 1 blocks
-==1820873==         suppressed: 0 bytes in 0 blocks
-==1820873== Rerun with --leak-check=full to see details of leaked memory
-==1820873== 
-==1820873== For lists of detected and suppressed errors, rerun with: -s
-==1820873== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==1934808== 
+==1934808== HEAP SUMMARY:
+==1934808==     in use at exit: 472 bytes in 1 blocks
+==1934808==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934808== 
+==1934808== LEAK SUMMARY:
+==1934808==    definitely lost: 0 bytes in 0 blocks
+==1934808==    indirectly lost: 0 bytes in 0 blocks
+==1934808==      possibly lost: 0 bytes in 0 blocks
+==1934808==    still reachable: 472 bytes in 1 blocks
+==1934808==         suppressed: 0 bytes in 0 blocks
+==1934808== Rerun with --leak-check=full to see details of leaked memory
+==1934808== 
+==1934808== For lists of detected and suppressed errors, rerun with: -s
+==1934808== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls data
+$ ./bin/head Makefile
+$ quit
+
+==1934807== 
+==1934807== HEAP SUMMARY:
+==1934807==     in use at exit: 472 bytes in 1 blocks
+==1934807==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934807== 
+==1934807== LEAK SUMMARY:
+==1934807==    definitely lost: 0 bytes in 0 blocks
+==1934807==    indirectly lost: 0 bytes in 0 blocks
+==1934807==      possibly lost: 0 bytes in 0 blocks
+==1934807==    still reachable: 472 bytes in 1 blocks
+==1934807==         suppressed: 0 bytes in 0 blocks
+==1934807== Rerun with --leak-check=full to see details of leaked memory
+==1934807== 
+==1934807== For lists of detected and suppressed errors, rerun with: -s
+==1934807== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls data
+$ ./bin/head Makefile
+$ quit
+
+==1934809== 
+==1934809== HEAP SUMMARY:
+==1934809==     in use at exit: 472 bytes in 1 blocks
+==1934809==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934809== 
+==1934809== LEAK SUMMARY:
+==1934809==    definitely lost: 0 bytes in 0 blocks
+==1934809==    indirectly lost: 0 bytes in 0 blocks
+==1934809==      possibly lost: 0 bytes in 0 blocks
+==1934809==    still reachable: 472 bytes in 1 blocks
+==1934809==         suppressed: 0 bytes in 0 blocks
+==1934809== Rerun with --leak-check=full to see details of leaked memory
+==1934809== 
+==1934809== For lists of detected and suppressed errors, rerun with: -s
+==1934809== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ ./bin/ls data
+$ ./bin/head Makefile
+$ quit
+
+==1934746== 
+==1934746== HEAP SUMMARY:
+==1934746==     in use at exit: 472 bytes in 1 blocks
+==1934746==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1934746== 
+==1934746== LEAK SUMMARY:
+==1934746==    definitely lost: 0 bytes in 0 blocks
+==1934746==    indirectly lost: 0 bytes in 0 blocks
+==1934746==      possibly lost: 0 bytes in 0 blocks
+==1934746==    still reachable: 472 bytes in 1 blocks
+==1934746==         suppressed: 0 bytes in 0 blocks
+==1934746== Rerun with --leak-check=full to see details of leaked memory
+==1934746== 
+==1934746== For lists of detected and suppressed errors, rerun with: -s
+==1934746== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

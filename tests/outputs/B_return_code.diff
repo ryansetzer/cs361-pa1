@@ -1,10 +1,32 @@
---- outputs/B_return_code.txt	2022-10-05 17:25:40.103556042 -0400
-+++ expected/B_return_code-4.txt	2022-10-03 17:17:58.509303691 -0400
-@@ -1,10 +1,10 @@
- pwd.txt
- empty.txt
-+0
-+1
+--- outputs/B_return_code.txt	2022-10-05 17:52:08.526196905 -0400
++++ expected/B_return_code-4.txt	2022-10-05 17:39:25.587165626 -0400
+@@ -1,32 +1,10 @@
+-$ ./bin/ls data
+-$ echo $?
+-0
+-$ ./bin/ls asldfkjasldfkj
+-$ echo $?
+-1
+-$ quit
+-
+-$ ./bin/ls data
+-$ echo $?
+-0
+-$ ./bin/ls asldfkjasldfkj
+-$ echo $?
+-1
+-$ quit
+-
+-$ ./bin/ls data
+-$ echo $?
++pwd.txt
++empty.txt
+ 0
+-$ ./bin/ls asldfkjasldfkj
+-$ echo $?
+ 1
+-$ quit
+-
  $ ./bin/ls data
  $ echo $?
 -0
