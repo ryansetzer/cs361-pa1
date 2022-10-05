@@ -41,30 +41,31 @@ isExecutable (char *command)
 
 int runCmd (char *command)
 {
-  // printf("ORIG%s\n", command);
-
+  // Creating Pipe
   int fd[2];
   pipe (fd);
-
+  // Parsing Arguments
   char *cmd1 = strtok (command, "|");
   char *cmd2 = strtok (NULL, "\n");
-
+  // Creating Possible Runnable Commands
   char *firstCmd = strtok (cmd1, " ");
   char *firstArgs = strtok (NULL, "\n");
-
   char *secondCmd = strtok (cmd2, " ");
   char *secondArgs = strtok (NULL, "\n");
-  if (cmd2 == NULL && firstArgs == NULL)
+  
+  if (cmd2 == NULL && firstArgs == NULL) // No Pipe Found (Single Command)
     firstCmd [strlen (firstCmd) - 1] = '\0';
-  // printf("first-%s\nargs1-%s\nsecond-%s\nargs2-%s\n", firstCmd, firstArgs, secondCmd, secondArgs);
+  //printf("first-%s\nargs1-%s\nsecond-%s\nargs2-%s\n", firstCmd, firstArgs, secondCmd, secondArgs);
 
-  // printf ("CMD=%s ARGS=%s\n", cmd, args);
+  // Forking
   pid_t child_pid = fork();
-  if (child_pid < 0)
+
+  if (child_pid < 0) // Bad Child
     return EXIT_FAILURE;
+  // Child
   if (child_pid == 0)
   {
-      if (cmd2 != NULL)
+      if (cmd2 != NULL) // 
       {
         close (fd[0]);
         dup2 (fd[1], STDOUT_FILENO);

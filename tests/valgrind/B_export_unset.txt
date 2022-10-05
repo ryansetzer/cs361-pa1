@@ -1,8 +1,8 @@
-==1838087== Memcheck, a memory error detector
-==1838087== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1838087== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==1838087== Command: ../dukesh -b scripts/export.txt
-==1838087== 
+==2199604== Memcheck, a memory error detector
+==2199604== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2199604== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==2199604== Command: ../dukesh -b scripts/export.txt
+==2199604== 
 $ which export
 export: dukesh built-in command
 $ echo N=${NUM}
@@ -12,18 +12,18 @@ $ echo N=${NUM}
 N=5
 $ quit
 
-==1838087== 
-==1838087== HEAP SUMMARY:
-==1838087==     in use at exit: 472 bytes in 1 blocks
-==1838087==   total heap usage: 8 allocs, 7 frees, 19,266 bytes allocated
-==1838087== 
-==1838087== LEAK SUMMARY:
-==1838087==    definitely lost: 0 bytes in 0 blocks
-==1838087==    indirectly lost: 0 bytes in 0 blocks
-==1838087==      possibly lost: 0 bytes in 0 blocks
-==1838087==    still reachable: 472 bytes in 1 blocks
-==1838087==         suppressed: 0 bytes in 0 blocks
-==1838087== Rerun with --leak-check=full to see details of leaked memory
-==1838087== 
-==1838087== For lists of detected and suppressed errors, rerun with: -s
-==1838087== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==2199604== 
+==2199604== HEAP SUMMARY:
+==2199604==     in use at exit: 472 bytes in 1 blocks
+==2199604==   total heap usage: 8 allocs, 7 frees, 19,266 bytes allocated
+==2199604== 
+==2199604== LEAK SUMMARY:
+==2199604==    definitely lost: 0 bytes in 0 blocks
+==2199604==    indirectly lost: 0 bytes in 0 blocks
+==2199604==      possibly lost: 0 bytes in 0 blocks
+==2199604==    still reachable: 472 bytes in 1 blocks
+==2199604==         suppressed: 0 bytes in 0 blocks
+==2199604== Rerun with --leak-check=full to see details of leaked memory
+==2199604== 
+==2199604== For lists of detected and suppressed errors, rerun with: -s
+==2199604== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

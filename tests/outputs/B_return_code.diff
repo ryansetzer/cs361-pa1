@@ -1,5 +1,5 @@
---- outputs/B_return_code.txt	2022-10-04 22:08:43.854526662 -0400
-+++ expected/B_return_code-4.txt	2022-10-03 22:02:05.304900298 -0400
+--- outputs/B_return_code.txt	2022-10-05 02:19:23.863954284 -0400
++++ expected/B_return_code-4.txt	2022-10-03 17:17:58.509303691 -0400
 @@ -1,10 +1,10 @@
  pwd.txt
  empty.txt
