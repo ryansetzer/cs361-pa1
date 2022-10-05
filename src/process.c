@@ -53,63 +53,124 @@ int runCmd (char *command)
   char *secondCmd = strtok (cmd2, " ");
   char *secondArgs = strtok (NULL, "\n");
   
-  if (cmd2 == NULL && firstArgs == NULL) // No Pipe Found (Single Command)
+  if (cmd2 == NULL && firstArgs == NULL)
     firstCmd [strlen (firstCmd) - 1] = '\0';
   //printf("first-%s\nargs1-%s\nsecond-%s\nargs2-%s\n", firstCmd, firstArgs, secondCmd, secondArgs);
 
-  // Forking
-  pid_t child_pid = fork();
-
-  if (child_pid < 0) // Bad Child
-    return EXIT_FAILURE;
-  // Child
-  if (child_pid == 0)
-  {
-      if (cmd2 != NULL) // 
-      {
-        close (fd[0]);
-        dup2 (fd[1], STDOUT_FILENO);
-      }
-      char *token1 = strtok (firstArgs, " ");
-      char *token2 = strtok (NULL, " ");
-      char *token3 = strtok (NULL, "\\n");
-      // printf ("T1=%s  T2=%s  T3=%s\n", token1, token2, token3);
-      if (firstArgs == NULL)
-      {
-        execlp (firstCmd, firstCmd, NULL);
-      }
-      else if (token1 != NULL && token2 == NULL && token3 == NULL)
-        execlp (firstCmd, firstCmd, token1, NULL);
-      else if (token1 != NULL && token2 != NULL && token3 != NULL)
-        execlp (firstCmd, firstCmd, token1, token2, token3, NULL);
-      else
-        execlp (firstCmd, firstCmd, token1, token2, NULL);
-  }
-  wait (NULL);
-
-  if (cmd2 != NULL)
-  {
-      int new_pid = fork();
-      if (new_pid == 0) {
-        dup2 (fd[0], STDIN_FILENO);
-        char *token1 = strtok (secondArgs, " ");
-        char *token2 = strtok (NULL, " ");
-        char *token3 = strtok (NULL, "\\n");
-        // printf ("T1=%s  T2=%s  T3=%s\n", token1, token2, token3);
-        if (secondArgs == NULL)
+  if (cmd2 == NULL) // No Pipe Found (Single Command)
+    {
+      pid_t child_pid = fork();
+      if (child_pid < 0) // Bad Fork
+        return EXIT_FAILURE;
+      // CHILD
+      if (child_pid == 0)
         {
-          execlp (secondCmd, secondCmd, NULL);
+          close (fd[0]); // closing read end of pipe
+          dup2 (fd[1], STDOUT_FILENO); // redirecting stdout to write end of pipe
+          char *arg1= strtok (firstArgs, " ");
+          char *arg2 = strtok (NULL, " ");
+          char *arg3 = strtok (NULL, "\\n");
+          if (firstArgs == NULL)
+          {
+            execlp (firstCmd, firstCmd, NULL);
+          }
+          else if (arg1 != NULL && arg2 == NULL && arg3 == NULL)
+            execlp (firstCmd, firstCmd, arg1, NULL);
+          else if (arg1 != NULL && arg2 != NULL && arg3 != NULL)
+            execlp (firstCmd, firstCmd, arg1, arg2, arg3, NULL);
+          else
+            execlp (firstCmd, firstCmd, arg1, arg2, NULL);
         }
-        else if (token1 != NULL && token2 == NULL && token3 == NULL)
-          execlp (secondCmd, secondCmd, token1, NULL);
-        else if (token1 != NULL && token2 != NULL && token3 != NULL)
-          execlp (secondCmd, secondCmd, token1, token2, token3, NULL);
-        else
-          execlp (secondCmd, secondCmd, token1, token2, NULL);
-      }
-      wait (NULL);
-  }
-  return EXIT_SUCCESS;
+      // PARENT
+      else
+        {
+          close (fd[1]); // close write end of pipe
+          char buffer[1000];
+          for (int i = 0; i < sizeof (buffer); i++)
+            buffer[i] = '\0';
+          read (fd[0], buffer, sizeof (buffer));
+          if (buffer[0] != ' ')
+            printf ("%s", buffer);
+        }
+        return EXIT_SUCCESS;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // // Forking
+  // pid_t child_pid = fork();
+
+  // if (child_pid < 0) // Bad Child
+  //   return EXIT_FAILURE;
+  // // Child
+  // if (child_pid == 0)
+  // {
+  //     if (cmd2 != NULL) // 
+  //     {
+  //       close (fd[0]);
+  //       dup2 (fd[1], STDOUT_FILENO);
+  //     }
+  //     char *token1 = strtok (firstArgs, " ");
+  //     char *token2 = strtok (NULL, " ");
+  //     char *token3 = strtok (NULL, "\\n");
+  //     // printf ("T1=%s  T2=%s  T3=%s\n", token1, token2, token3);
+  //     if (firstArgs == NULL)
+  //     {
+  //       execlp (firstCmd, firstCmd, NULL);
+  //     }
+  //     else if (token1 != NULL && token2 == NULL && token3 == NULL)
+  //       execlp (firstCmd, firstCmd, token1, NULL);
+  //     else if (token1 != NULL && token2 != NULL && token3 != NULL)
+  //       execlp (firstCmd, firstCmd, token1, token2, token3, NULL);
+  //     else
+  //       execlp (firstCmd, firstCmd, token1, token2, NULL);
+  // }
+  // wait (NULL);
+
+  // if (cmd2 != NULL)
+  // {
+  //     int new_pid = fork();
+  //     if (new_pid == 0) {
+  //       dup2 (fd[0], STDIN_FILENO);
+  //       char *token1 = strtok (secondArgs, " ");
+  //       char *token2 = strtok (NULL, " ");
+  //       char *token3 = strtok (NULL, "\\n");
+  //       // printf ("T1=%s  T2=%s  T3=%s\n", token1, token2, token3);
+  //       if (secondArgs == NULL)
+  //       {
+  //         execlp (secondCmd, secondCmd, NULL);
+  //       }
+  //       else if (token1 != NULL && token2 == NULL && token3 == NULL)
+  //         execlp (secondCmd, secondCmd, token1, NULL);
+  //       else if (token1 != NULL && token2 != NULL && token3 != NULL)
+  //         execlp (secondCmd, secondCmd, token1, token2, token3, NULL);
+  //       else
+  //         execlp (secondCmd, secondCmd, token1, token2, NULL);
+  //     }
+  //     wait (NULL);
+  // }
+  // return EXIT_SUCCESS;
 }
 
 

@@ -1,0 +1,79 @@
+--- ../src/shell.c	2022-10-04 23:35:41.095352687 -0400
++++ ckstyle/shell.c.gnu	2022-10-05 02:54:17.463334798 -0400
+@@ -34,7 +34,8 @@
+       // if (argumentTwo != NULL)
+       //   {
+       //     // argumentTwo [strlen (argumentTwo) - 1] = '\0';
+-      //     //printf ("FROM SHELL : command one: [%s], command two: [%s]\n", argumentOne, argumentTwo);
++      //     //printf ("FROM SHELL : command one: [%s], command two: [%s]\n",
++      //     argumentOne, argumentTwo);
+       //     // runExec (argumentOne, &argumentTwo[1]);
+       //   }
+       // else
+@@ -47,39 +48,39 @@
+         pwd ();
+       else if (strncmp (buffer, "which", 5) == 0)
+         which (&buffer[6]);
+-          // if (strncmp (buffer, "./bin/ls", 8) == 0)
+-          //   {
+-          //     // int fd[2];
+-          //     // pipe (fd);
+-          //     char *arguments = &buffer[8];
+-          //     runCmd ("./bin/ls", arguments);
+-          //     // char tempBuf[1000];
+-          //     // for (int i = 0; i < sizeof (tempBuf); i++)
+-          //     //   tempBuf[i] = '\0';
+-          //     // read (fd[0], tempBuf, sizeof (tempBuf));
+-          //     // if (tempBuf[0] != ' ')
+-          //     //   printf ("%s", tempBuf);
+-          //   }
+-          // if (strncmp (buffer, "./bin/head", 10) == 0)
+-          //   {
+-          //     int fd[2];
+-          //     pipe (fd);
+-          //     char *arguments = &buffer[10];
+-          //     runCmd ("./bin/head", arguments);
+-          //     char tempBuf[1000];
+-          //     for (int i = 0; i < sizeof (tempBuf); i++)
+-          //       tempBuf[i] = '\0';
+-          //     read (fd[0], tempBuf, sizeof (tempBuf));
+-          //     if (tempBuf[0] != ' ')
+-          //       printf ("%s", tempBuf);
+-          //   }
++      // if (strncmp (buffer, "./bin/ls", 8) == 0)
++      //   {
++      //     // int fd[2];
++      //     // pipe (fd);
++      //     char *arguments = &buffer[8];
++      //     runCmd ("./bin/ls", arguments);
++      //     // char tempBuf[1000];
++      //     // for (int i = 0; i < sizeof (tempBuf); i++)
++      //     //   tempBuf[i] = '\0';
++      //     // read (fd[0], tempBuf, sizeof (tempBuf));
++      //     // if (tempBuf[0] != ' ')
++      //     //   printf ("%s", tempBuf);
++      //   }
++      // if (strncmp (buffer, "./bin/head", 10) == 0)
++      //   {
++      //     int fd[2];
++      //     pipe (fd);
++      //     char *arguments = &buffer[10];
++      //     runCmd ("./bin/head", arguments);
++      //     char tempBuf[1000];
++      //     for (int i = 0; i < sizeof (tempBuf); i++)
++      //       tempBuf[i] = '\0';
++      //     read (fd[0], tempBuf, sizeof (tempBuf));
++      //     if (tempBuf[0] != ' ')
++      //       printf ("%s", tempBuf);
++      //   }
+       else if (strncmp (buffer, "./bin/", 6) == 0)
+         runCmd (buffer);
+       else if (strncmp (buffer, "export", 6) == 0)
+         export(&buffer[7]);
+       else if (strncmp (buffer, "quit", 4) == 0)
+         break;
+-        // }
++      // }
+     }
+   printf ("\n");
+   hash_destroy ();

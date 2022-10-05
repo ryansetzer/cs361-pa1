@@ -1,0 +1,10 @@
+builtins.c                     pass
+builtins.h                     pass
+hash.h                         pass
+main.c                         pass
+process.c                      FAIL (see ckstyle/process.c.diff for details)
+process.h                      pass
+shell.c                        FAIL (see ckstyle/shell.c.diff for details)
+shell.h                        pass
+Code that does not adhere to GNU standards will not be accepted.
+You must fix these files before submission.
