@@ -31,14 +31,14 @@ shell (FILE *input)
       memcpy (bufferTwin, buffer, MAXLENGTH);
       char *argumentOne = strtok (bufferTwin, "|");
       char *argumentTwo = strtok (NULL, "|");
-      if (argumentTwo != NULL)
-        {
-          argumentTwo [strlen (argumentTwo) - 1] = '\0';
-          //printf ("FROM SHELL : command one: [%s], command two: [%s]\n", argumentOne, argumentTwo);
-          runExec (argumentOne, &argumentTwo[1]);
-        }
-      else
-        {
+      // if (argumentTwo != NULL)
+      //   {
+      //     // argumentTwo [strlen (argumentTwo) - 1] = '\0';
+      //     //printf ("FROM SHELL : command one: [%s], command two: [%s]\n", argumentOne, argumentTwo);
+      //     // runExec (argumentOne, &argumentTwo[1]);
+      //   }
+      // else
+      //   {
           if (strncmp (buffer, "echo", 4) == 0)
             echo (&buffer[5]);
           if (strncmp (buffer, "cd", 2) == 0)
@@ -47,37 +47,39 @@ shell (FILE *input)
             pwd ();
           if (strncmp (buffer, "which", 5) == 0)
             which (&buffer[6]);
-          if (strncmp (buffer, "./bin/ls", 8) == 0)
-            {
-              int fd[2];
-              pipe (fd);
-              char *arguments = &buffer[8];
-              runCmd ("./bin/ls", arguments, fd);
-              char tempBuf[1000];
-              for (int i = 0; i < sizeof (tempBuf); i++)
-                tempBuf[i] = '\0';
-              read (fd[0], tempBuf, sizeof (tempBuf));
-              if (tempBuf[0] != ' ')
-                printf ("%s", tempBuf);
-            }
-          if (strncmp (buffer, "./bin/head", 10) == 0)
-            {
-              int fd[2];
-              pipe (fd);
-              char *arguments = &buffer[10];
-              runCmd ("./bin/head", arguments, fd);
-              char tempBuf[1000];
-              for (int i = 0; i < sizeof (tempBuf); i++)
-                tempBuf[i] = '\0';
-              read (fd[0], tempBuf, sizeof (tempBuf));
-              if (tempBuf[0] != ' ')
-                printf ("%s", tempBuf);
-            }
+          // if (strncmp (buffer, "./bin/ls", 8) == 0)
+          //   {
+          //     // int fd[2];
+          //     // pipe (fd);
+          //     char *arguments = &buffer[8];
+          //     runCmd ("./bin/ls", arguments);
+          //     // char tempBuf[1000];
+          //     // for (int i = 0; i < sizeof (tempBuf); i++)
+          //     //   tempBuf[i] = '\0';
+          //     // read (fd[0], tempBuf, sizeof (tempBuf));
+          //     // if (tempBuf[0] != ' ')
+          //     //   printf ("%s", tempBuf);
+          //   }
+          // if (strncmp (buffer, "./bin/head", 10) == 0)
+          //   {
+          //     int fd[2];
+          //     pipe (fd);
+          //     char *arguments = &buffer[10];
+          //     runCmd ("./bin/head", arguments);
+          //     char tempBuf[1000];
+          //     for (int i = 0; i < sizeof (tempBuf); i++)
+          //       tempBuf[i] = '\0';
+          //     read (fd[0], tempBuf, sizeof (tempBuf));
+          //     if (tempBuf[0] != ' ')
+          //       printf ("%s", tempBuf);
+          //   }
+          if (strncmp (buffer, "./bin/", 6) == 0)
+            runCmd (buffer);
           if (strncmp (buffer, "export", 6) == 0)
             export(&buffer[7]);
           if (strncmp (buffer, "quit", 4) == 0)
             break;
-        }
+        // }
     }
   printf ("\n");
   hash_destroy ();

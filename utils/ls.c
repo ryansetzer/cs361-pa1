@@ -28,7 +28,7 @@ main (int argc, char *argv[])
       usage ();
     }
     else
-      printf (" ");
+      printf ("");
     return EXIT_FAILURE;
   }
   if (dir == NULL)
@@ -40,7 +40,7 @@ main (int argc, char *argv[])
     d = opendir (dir); // uses given directory
   if (d == NULL)
     {
-      printf (" ");
+      printf ("");
       return EXIT_FAILURE;
     }
   entry = readdir (d);

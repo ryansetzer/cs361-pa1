@@ -4,14 +4,5 @@ C_binaries                     pass
 C_binaries_flags               pass
 C_binaries_bad                 pass
 C_which                        pass
-B_return_code                  pass
+B_return_code                  FAIL (see outputs/B_return_code.diff for details)
 B_export_unset                 pass
-B_env                          FAIL (see outputs/B_env.diff for details)
-A_binaries                     pass
-A_binaries_flags               pass
-A_pipe                         FAIL (see outputs/A_pipe.diff for details)
-A_which                        pass
-Memory leak(s) found. See files listed below for details.
-  - valgrind/A_pipe.txt
-  - valgrind/A_pipe.txt
-  - valgrind/A_pipe.txt

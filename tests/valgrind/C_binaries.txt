@@ -1,31 +1,31 @@
-==1043074== Memcheck, a memory error detector
-==1043074== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1043074== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==1043074== Command: ../dukesh -b scripts/bins.txt
-==1043074== 
-$ ./bin/ls data
+==1541807== Memcheck, a memory error detector
+==1541807== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1541807== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1541807== Command: ../dukesh -b scripts/bins.txt
+==1541807== 
 pwd.txt
 empty.txt
-$ ./bin/head Makefile
 #
 # Simple Test Makefile
 # Mike Lam, James Madison University, August 2016
 #
 # This version of the Makefile includes support for building a test suite. The
+$ ./bin/ls data
+$ ./bin/head Makefile
 $ quit
 
-==1043074== 
-==1043074== HEAP SUMMARY:
-==1043074==     in use at exit: 472 bytes in 1 blocks
-==1043074==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
-==1043074== 
-==1043074== LEAK SUMMARY:
-==1043074==    definitely lost: 0 bytes in 0 blocks
-==1043074==    indirectly lost: 0 bytes in 0 blocks
-==1043074==      possibly lost: 0 bytes in 0 blocks
-==1043074==    still reachable: 472 bytes in 1 blocks
-==1043074==         suppressed: 0 bytes in 0 blocks
-==1043074== Rerun with --leak-check=full to see details of leaked memory
-==1043074== 
-==1043074== For lists of detected and suppressed errors, rerun with: -s
-==1043074== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==1541807== 
+==1541807== HEAP SUMMARY:
+==1541807==     in use at exit: 472 bytes in 1 blocks
+==1541807==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1541807== 
+==1541807== LEAK SUMMARY:
+==1541807==    definitely lost: 0 bytes in 0 blocks
+==1541807==    indirectly lost: 0 bytes in 0 blocks
+==1541807==      possibly lost: 0 bytes in 0 blocks
+==1541807==    still reachable: 472 bytes in 1 blocks
+==1541807==         suppressed: 0 bytes in 0 blocks
+==1541807== Rerun with --leak-check=full to see details of leaked memory
+==1541807== 
+==1541807== For lists of detected and suppressed errors, rerun with: -s
+==1541807== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

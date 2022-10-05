@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <assert.h>
@@ -19,6 +20,9 @@ main (int argc, char *argv[])
   int numLines = 5;
   size_t lineSize = LINELEN;
   char *buffer;
+  char *buf2;
+
+
   if (!(get_args (argc, argv, &script, &numLines, &badFlag)))
   {
     if (!badFlag)
@@ -26,13 +30,13 @@ main (int argc, char *argv[])
       usage ();
     }
     else
-      printf (" ");
+      printf ("");
     return EXIT_FAILURE;
   }
   if (script == NULL)
   {
-    int i = 0;
     char buf[100];
+    int i = 0;
     while (i < numLines)
     {
       fscanf (stdin, "%s", buf);
@@ -41,14 +45,25 @@ main (int argc, char *argv[])
     }
     return EXIT_SUCCESS;
   } 
+  
   int i = numLines;
-  while (i > 0)
+  char c;
+  // getline (&buffer, &lineSize, script);
+
+  while (i > 0 /*&& c != EOF*/)
   {
-    int eof = getline (&buffer, &lineSize, script);
-    if (eof == -1)
-      break;
+    // char *test = strdup (buffer);
+    getline (&buffer, &lineSize, script);
+    // if (strncmp (test, buffer, strlen (buffer)) == 0)
+    //   break;
     printf ("%s", buffer);
     i--;
+    // c = getc (script);
+    // if (c == EOF)
+    //   break;
+    // printf ("%c", c);
+    // if (c == 10)
+    //   i--;
   }
   return EXIT_SUCCESS;
 }
