@@ -1,6 +1,6 @@
 pwd.txt
 empty.txt
-$ ./bin/ls data
+ $ ./bin/ls data
 $ echo $?
 0
 $ ./bin/ls asldfkjasldfkj

@@ -6,6 +6,7 @@ static void usage (void);
 int
 main (int argc, char *argv[])
 {
+  usage ();
   return EXIT_SUCCESS;
 }
 

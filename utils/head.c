@@ -20,8 +20,6 @@ main (int argc, char *argv[])
   int numLines = 5;
   size_t lineSize = LINELEN;
   char *buffer;
-  char *buf2;
-
 
   if (!(get_args (argc, argv, &script, &numLines, &badFlag)))
   {
@@ -30,41 +28,66 @@ main (int argc, char *argv[])
       usage ();
     }
     else
-      printf ("");
+      printf (" ");
     return EXIT_FAILURE;
   }
   if (script == NULL)
   {
     char buf[100];
-    int i = 0;
-    while (i < numLines)
+    int i = numLines;
+    char c;
+    int counter = 0;
+    while ((c = getc (stdin)) != EOF)
     {
-      fscanf (stdin, "%s", buf);
-      printf ("%s\n", buf);
-      i++;
-    }
-    return EXIT_SUCCESS;
-  } 
-  
-  int i = numLines;
-  char c;
-  // getline (&buffer, &lineSize, script);
+      putchar (c);
+      if (c == '\n')
+      {
+        counter++;
 
-  while (i > 0 /*&& c != EOF*/)
-  {
-    // char *test = strdup (buffer);
-    getline (&buffer, &lineSize, script);
-    // if (strncmp (test, buffer, strlen (buffer)) == 0)
-    //   break;
-    printf ("%s", buffer);
-    i--;
-    // c = getc (script);
-    // if (c == EOF)
-    //   break;
-    // printf ("%c", c);
-    // if (c == 10)
-    //   i--;
+      }
+      if (counter == numLines)
+        break;
+      // printf ("%s", c);
+    }
+    // int counter = 0;
+    // while (fgets (buf, lineSize, stdin) != NULL)
+    // {
+    //   printf ("%s", buf);
+    //   counter++;
+    //   if (counter == numLines)
+    //     break;
+    // }
+    return EXIT_SUCCESS;
   }
+    char c; 
+    int counter = 0;
+    while ((c = getc (script)) != -1)
+    {
+      putchar (c);
+      if (c == '\n')
+        counter++;
+      if (counter == numLines)
+        break;
+      // printf ("%s", c);
+    }
+  
+  // while (i > 0)
+  // {
+  //   int check = getline (&buffer, &lineSize, script);
+  //   if (check == -1)
+  //     break;
+  //   printf ("%s", buffer);
+  //   i--;
+  // }
+  // int counter = 0;
+  // while (getline (&buffer, &lineSize, script) != -1)
+  // {
+  //   // counter++;
+  //   printf ("%s", buffer);
+  //   i--;
+  //   if (i == 0)
+  //     break;
+  // }
   return EXIT_SUCCESS;
 }
 

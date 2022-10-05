@@ -6,6 +6,14 @@ static void usage (void);
 int
 main (int argc, char *argv[], char *envp[])
 {
+  if (argc == 0)
+    usage();
+  if (argc == 1)
+  {
+    for (int i = 0; i < sizeof (&envp); i++)
+      printf ("%s\n", envp [i]);
+    return EXIT_SUCCESS;
+  }
   return EXIT_SUCCESS;
 }
 

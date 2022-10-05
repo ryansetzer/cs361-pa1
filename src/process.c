@@ -88,8 +88,8 @@ int runCmd (char *command)
 
   if (cmd2 != NULL)
   {
-      child_pid = fork();
-      if (child_pid == 0) {
+      int new_pid = fork();
+      if (new_pid == 0) {
         dup2 (fd[0], STDIN_FILENO);
         char *token1 = strtok (secondArgs, " ");
         char *token2 = strtok (NULL, " ");

@@ -27,10 +27,10 @@ shell (FILE *input)
         }
       if (input != stdin)
         printf ("%s", buffer);
-      char bufferTwin[MAXLENGTH];
-      memcpy (bufferTwin, buffer, MAXLENGTH);
-      char *argumentOne = strtok (bufferTwin, "|");
-      char *argumentTwo = strtok (NULL, "|");
+      // char bufferTwin[MAXLENGTH];
+      // memcpy (bufferTwin, buffer, MAXLENGTH);
+      // char *argumentOne = strtok (bufferTwin, "|");
+      // char *argumentTwo = strtok (NULL, "|");
       // if (argumentTwo != NULL)
       //   {
       //     // argumentTwo [strlen (argumentTwo) - 1] = '\0';
@@ -39,14 +39,14 @@ shell (FILE *input)
       //   }
       // else
       //   {
-          if (strncmp (buffer, "echo", 4) == 0)
-            echo (&buffer[5]);
-          if (strncmp (buffer, "cd", 2) == 0)
-            cd (&buffer[3]);
-          if (strncmp (buffer, "pwd", 3) == 0)
-            pwd ();
-          if (strncmp (buffer, "which", 5) == 0)
-            which (&buffer[6]);
+      if (strncmp (buffer, "echo", 4) == 0)
+        echo (&buffer[5]);
+      else if (strncmp (buffer, "cd", 2) == 0)
+        cd (&buffer[3]);
+      else if (strncmp (buffer, "pwd", 3) == 0)
+        pwd ();
+      else if (strncmp (buffer, "which", 5) == 0)
+        which (&buffer[6]);
           // if (strncmp (buffer, "./bin/ls", 8) == 0)
           //   {
           //     // int fd[2];
@@ -73,12 +73,12 @@ shell (FILE *input)
           //     if (tempBuf[0] != ' ')
           //       printf ("%s", tempBuf);
           //   }
-          if (strncmp (buffer, "./bin/", 6) == 0)
-            runCmd (buffer);
-          if (strncmp (buffer, "export", 6) == 0)
-            export(&buffer[7]);
-          if (strncmp (buffer, "quit", 4) == 0)
-            break;
+      else if (strncmp (buffer, "./bin/", 6) == 0)
+        runCmd (buffer);
+      else if (strncmp (buffer, "export", 6) == 0)
+        export(&buffer[7]);
+      else if (strncmp (buffer, "quit", 4) == 0)
+        break;
         // }
     }
   printf ("\n");

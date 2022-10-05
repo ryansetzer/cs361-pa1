@@ -6,7 +6,7 @@
 void hash_dump (void); // for debugging if needed
 
 void hash_destroy (void);
-void hash_init (size_t);
+void hash_init (int);
 char *hash_find (char *);
 bool hash_insert (char *, char *);
 char **hash_keys (void);
