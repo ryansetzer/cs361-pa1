@@ -57,6 +57,9 @@ int runCmd (char *command)
     firstCmd [strlen (firstCmd) - 1] = '\0';
   //printf("first-%s\nargs1-%s\nsecond-%s\nargs2-%s\n", firstCmd, firstArgs, secondCmd, secondArgs);
 
+  // ┌────────────────┐
+  // | SINGLE COMMAND |
+  // └────────────────┘
   if (cmd2 == NULL) // No Pipe Found (Single Command)
     {
       pid_t child_pid = fork();
@@ -94,151 +97,78 @@ int runCmd (char *command)
         }
         return EXIT_SUCCESS;
     }
+  // ┌──────────────┐
+  // | TWO COMMANDS |
+  // └──────────────┘
+    else
+      {
+        int fd2[2];
+        pipe (fd2);
+        pid_t child_pid = fork();
+        if (child_pid < 0) // Bad Fork
+          return EXIT_FAILURE;
+        // CHILD
+        if (child_pid == 0)
+          {
+            pid_t child2_pid = fork();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // // Forking
-  // pid_t child_pid = fork();
-
-  // if (child_pid < 0) // Bad Child
-  //   return EXIT_FAILURE;
-  // // Child
-  // if (child_pid == 0)
-  // {
-  //     if (cmd2 != NULL) // 
-  //     {
-  //       close (fd[0]);
-  //       dup2 (fd[1], STDOUT_FILENO);
-  //     }
-  //     char *token1 = strtok (firstArgs, " ");
-  //     char *token2 = strtok (NULL, " ");
-  //     char *token3 = strtok (NULL, "\\n");
-  //     // printf ("T1=%s  T2=%s  T3=%s\n", token1, token2, token3);
-  //     if (firstArgs == NULL)
-  //     {
-  //       execlp (firstCmd, firstCmd, NULL);
-  //     }
-  //     else if (token1 != NULL && token2 == NULL && token3 == NULL)
-  //       execlp (firstCmd, firstCmd, token1, NULL);
-  //     else if (token1 != NULL && token2 != NULL && token3 != NULL)
-  //       execlp (firstCmd, firstCmd, token1, token2, token3, NULL);
-  //     else
-  //       execlp (firstCmd, firstCmd, token1, token2, NULL);
-  // }
-  // wait (NULL);
-
-  // if (cmd2 != NULL)
-  // {
-  //     int new_pid = fork();
-  //     if (new_pid == 0) {
-  //       dup2 (fd[0], STDIN_FILENO);
-  //       char *token1 = strtok (secondArgs, " ");
-  //       char *token2 = strtok (NULL, " ");
-  //       char *token3 = strtok (NULL, "\\n");
-  //       // printf ("T1=%s  T2=%s  T3=%s\n", token1, token2, token3);
-  //       if (secondArgs == NULL)
-  //       {
-  //         execlp (secondCmd, secondCmd, NULL);
-  //       }
-  //       else if (token1 != NULL && token2 == NULL && token3 == NULL)
-  //         execlp (secondCmd, secondCmd, token1, NULL);
-  //       else if (token1 != NULL && token2 != NULL && token3 != NULL)
-  //         execlp (secondCmd, secondCmd, token1, token2, token3, NULL);
-  //       else
-  //         execlp (secondCmd, secondCmd, token1, token2, NULL);
-  //     }
-  //     wait (NULL);
-  // }
-  // return EXIT_SUCCESS;
+            if (child2_pid == 0)
+              {
+                // Running Second Command First
+                close (fd[1]);
+                close (fd2[0]);
+                dup2 (fd[0], STDIN_FILENO); // redirecting stdin to read end of pipe (first command)
+                dup2 (fd2[1], STDOUT_FILENO); // redirecting stdout to write end of pipe
+                char *arg1= strtok (secondArgs, " ");
+                char *arg2 = strtok (NULL, " ");
+                char *arg3 = strtok (NULL, "\\n");
+                if (secondArgs == NULL)
+                {
+                  execlp (secondCmd, secondCmd, NULL);
+                }
+                else if (arg1 != NULL && arg2 == NULL && arg3 == NULL)
+                  execlp (secondCmd, secondCmd, arg1, NULL);
+                else if (arg1 != NULL && arg2 != NULL && arg3 != NULL)
+                  execlp (secondCmd, secondCmd, arg1, arg2, arg3, NULL);
+                else
+                  execlp (secondCmd, secondCmd, arg1, arg2, NULL);
+              }
+            // PARENT
+            else
+              {
+                // Running First Command Second
+                close (fd2[0]);
+                close (fd2[1]);
+                close (fd[0]); // close read end of pipe
+                dup2 (fd[1], STDOUT_FILENO); // redirecting stdout to write end of pipe
+                printf ("HELLO\n");
+                char *arg1= strtok (secondArgs, " ");
+                char *arg2 = strtok (NULL, " ");
+                char *arg3 = strtok (NULL, "\\n");
+                if (secondArgs == NULL)
+                {
+                  execlp (secondCmd, secondCmd, NULL);
+                }
+                else if (arg1 != NULL && arg2 == NULL && arg3 == NULL)
+                  execlp (secondCmd, secondCmd, arg1, NULL);
+                else if (arg1 != NULL && arg2 != NULL && arg3 != NULL)
+                  execlp (secondCmd, secondCmd, arg1, arg2, arg3, NULL);
+                else
+                  execlp (secondCmd, secondCmd, arg1, arg2, NULL);
+              }
+          }      // PARENT
+      else
+        {
+          close (fd[0]);
+          close (fd[1]);
+          close (fd2[1]); // close write end of pipe
+          char buffer[1000];
+          for (int i = 0; i < sizeof (buffer); i++)
+            buffer[i] = '\0';
+          read (fd2[0], buffer, sizeof (buffer));
+          if (buffer[0] != ' ')
+            printf ("%s", buffer);
+        }
+        return EXIT_SUCCESS;
+      }
 }
-
-
-// void
-// runCmd (char *command, char *arguments, int fd[2])
-// {
-//   pid_t child_pid = fork();
-
-//   if (child_pid < 0)
-//     return;
-
-//   if (child_pid == 0)
-//     {
-//       char *writeableArgument = strdup (&arguments[1]);
-//       writeableArgument[strlen (writeableArgument) - 1] = '\0';
-//       char *token1 = strtok (writeableArgument, " ");
-//       char *token2 = strtok (NULL, " ");
-//       char *token3 = strtok (NULL, "\\n");
-//       //printf ("token1=[%s] token2=[%s] token3=[%s] command: [%s]\n", token1, token2, token3, command);
-//       close (fd[0]); // close read end of pipe
-//       dup2 (fd[1], STDOUT_FILENO);
-//       if (strlen (writeableArgument) == 0)
-//         execlp (command, command, NULL);
-//       else if (token2 == NULL || token1 == NULL)
-//         execlp (command, command, writeableArgument, NULL);
-//       else if (token1 != NULL && token2 != NULL && token3 != NULL)
-//         execlp (command, command, token1, token2, token3, NULL);
-//       else
-//         execlp (command, command, token1, token2, NULL);
-//     }
-// }
-
-// void
-// runExec (char *commandOne, char *commandTwo)
-// {
-//   int fd[2];
-//   pipe (fd);
-
-//   pid_t child = fork ();
-//   if (child < 0)
-//     return;
-
-//   if (child == 0)
-//     {
-//       // SECOND COMMAND
-//       dup2 (fd[0], STDIN_FILENO);
-//       char *arguments = strdup (commandTwo); 
-//       char *token = strtok (commandTwo, " ");
-//       arguments = &arguments[strlen (token) + 1];
-//       printf ("command2: [%s], arguments: [%s]\n", token, arguments);
-//       runCmd(token, arguments, fd);
-//       // FIRST COMMAND
-//       arguments = strdup (commandOne); 
-//       token = strtok (commandOne, " ");
-//       arguments = &arguments[strlen (token)];
-//       printf ("command: [%s], arguments: [%s]\n", token, arguments);
-//       runCmd (token, arguments, fd);
-//       char buffyTheVampSlayer[1000];
-//       for (int i = 0; i < sizeof (buffyTheVampSlayer); i++)
-//         buffyTheVampSlayer[i] = '\0';
-//       printf ("waiting to read\n");
-//       read (fd[0], buffyTheVampSlayer, sizeof (buffyTheVampSlayer));
-//       printf ("read\n");
-//       printf ("%s", buffyTheVampSlayer);
-//     }
-//   else
-//     {
-//       close (fd[0]);
-//       close (fd[1]);
-//     }
-// }
