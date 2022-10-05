@@ -1,0 +1,26 @@
+==1597814== Memcheck, a memory error detector
+==1597814== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1597814== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1597814== Command: ../dukesh -b scripts/env.txt
+==1597814== 
+A=5
+$ ./bin/env A=5 ./bin/env
+$ ./bin/env A=5 B=6 C=7 ./bin/env
+$ ./bin/env A=5 B=6 C=7 ./bin/env | head -n 1
+$ quit
+
+==1597814== 
+==1597814== HEAP SUMMARY:
+==1597814==     in use at exit: 472 bytes in 1 blocks
+==1597814==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1597814== 
+==1597814== LEAK SUMMARY:
+==1597814==    definitely lost: 0 bytes in 0 blocks
+==1597814==    indirectly lost: 0 bytes in 0 blocks
+==1597814==      possibly lost: 0 bytes in 0 blocks
+==1597814==    still reachable: 472 bytes in 1 blocks
+==1597814==         suppressed: 0 bytes in 0 blocks
+==1597814== Rerun with --leak-check=full to see details of leaked memory
+==1597814== 
+==1597814== For lists of detected and suppressed errors, rerun with: -s
+==1597814== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

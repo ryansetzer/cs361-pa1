@@ -1,0 +1,31 @@
+==1821293== Memcheck, a memory error detector
+==1821293== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1821293== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1821293== Command: ../dukesh -b scripts/bins.txt
+==1821293== 
+pwd.txt
+empty.txt
+#
+# Simple Test Makefile
+# Mike Lam, James Madison University, August 2016
+#
+# This version of the Makefile includes support for building a test suite. The
+$ ./bin/ls data
+$ ./bin/head Makefile
+$ quit
+
+==1821293== 
+==1821293== HEAP SUMMARY:
+==1821293==     in use at exit: 472 bytes in 1 blocks
+==1821293==   total heap usage: 6 allocs, 5 frees, 19,260 bytes allocated
+==1821293== 
+==1821293== LEAK SUMMARY:
+==1821293==    definitely lost: 0 bytes in 0 blocks
+==1821293==    indirectly lost: 0 bytes in 0 blocks
+==1821293==      possibly lost: 0 bytes in 0 blocks
+==1821293==    still reachable: 472 bytes in 1 blocks
+==1821293==         suppressed: 0 bytes in 0 blocks
+==1821293== Rerun with --leak-check=full to see details of leaked memory
+==1821293== 
+==1821293== For lists of detected and suppressed errors, rerun with: -s
+==1821293== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

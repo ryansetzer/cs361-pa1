@@ -1,0 +1,11 @@
+--- outputs/B_env.txt	2022-10-05 17:25:41.319567257 -0400
++++ expected/B_env-2.txt	2022-10-03 17:17:58.501303613 -0400
+@@ -1,4 +1,8 @@
+ A=5
++A=5
++B=6
++C=7
++A=5
+ $ ./bin/env A=5 ./bin/env
+ $ ./bin/env A=5 B=6 C=7 ./bin/env
+ $ ./bin/env A=5 B=6 C=7 ./bin/env | head -n 1

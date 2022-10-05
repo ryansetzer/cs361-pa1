@@ -28,7 +28,6 @@ main (int argc, char *argv[])
       usage ();
     }
     else
-      printf (" ");
     return EXIT_FAILURE;
   }
   if (dir == NULL)
@@ -38,9 +37,7 @@ main (int argc, char *argv[])
     }
   else
     d = opendir (dir); // uses given directory
-  if (d == NULL)
     {
-      printf (" ");
       return EXIT_FAILURE;
     }
   entry = readdir (d);
@@ -49,7 +46,7 @@ main (int argc, char *argv[])
     {
       char buffer[1000];
       for (int i = 0; i < sizeof (buffer); i++)
-        buffer [i] = ' ';
+        buffer [i] = '\0';
       char *filename = entry -> d_name;
       getcwd (buffer, sizeof (buffer));
       char *fullDir = strcat (buffer, "/");

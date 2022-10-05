@@ -1,0 +1,26 @@
+--- outputs/A_binaries_flags.txt	2022-10-05 17:25:42.699579985 -0400
++++ expected/A_binaries_flags-2.txt	2022-10-03 17:17:58.497303575 -0400
+@@ -1,19 +1,19 @@
++$ ./bin/ls -a data
+ .
+ ..
+ pwd.txt
+ .hidden.txt
+ empty.txt
++$ ./bin/ls -s data
+ 9 pwd.txt
+ 0 empty.txt
++$ ./bin/ls -sa data
+ 4096 .
+ 4096 ..
+ 9 pwd.txt
+ 5 .hidden.txt
+ 0 empty.txt
+-#
+-$ ./bin/ls -a data
+-$ ./bin/ls -s data
+-$ ./bin/ls -sa data
+ $ ./bin/head -n 1 Makefile
++#
+ $ quit
+ 

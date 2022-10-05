@@ -28,7 +28,7 @@ main (int argc, char *argv[])
       usage ();
     }
     else
-      printf (" ");
+      printf ('\0');
     return EXIT_FAILURE;
   }
   if (script == NULL)
@@ -37,26 +37,13 @@ main (int argc, char *argv[])
     int i = numLines;
     char c;
     int counter = 0;
-    while ((c = getc (stdin)) != EOF)
+    while (fgets (buf, lineSize, stdin) != NULL)
     {
-      putchar (c);
-      if (c == '\n')
-      {
-        counter++;
-
-      }
-      if (counter == numLines)
+      printf ("%s", buf);
+      counter++;
+      if ((counter == numLines) || (feof (stdin)))
         break;
-      // printf ("%s", c);
     }
-    // int counter = 0;
-    // while (fgets (buf, lineSize, stdin) != NULL)
-    // {
-    //   printf ("%s", buf);
-    //   counter++;
-    //   if (counter == numLines)
-    //     break;
-    // }
     return EXIT_SUCCESS;
   }
     char c; 
@@ -68,26 +55,7 @@ main (int argc, char *argv[])
         counter++;
       if (counter == numLines)
         break;
-      // printf ("%s", c);
     }
-  
-  // while (i > 0)
-  // {
-  //   int check = getline (&buffer, &lineSize, script);
-  //   if (check == -1)
-  //     break;
-  //   printf ("%s", buffer);
-  //   i--;
-  // }
-  // int counter = 0;
-  // while (getline (&buffer, &lineSize, script) != -1)
-  // {
-  //   // counter++;
-  //   printf ("%s", buffer);
-  //   i--;
-  //   if (i == 0)
-  //     break;
-  // }
   return EXIT_SUCCESS;
 }
 

@@ -1,0 +1,16 @@
+--- outputs/A_binaries.txt	2022-10-05 17:25:41.943573012 -0400
++++ expected/A_binaries-2.txt	2022-10-03 17:17:58.493303536 -0400
+@@ -1,11 +1,11 @@
++$ ./bin/ls data
+ pwd.txt
+ empty.txt
++$ ./bin/head Makefile
+ #
+ # Simple Test Makefile
+ # Mike Lam, James Madison University, August 2016
+ #
+ # This version of the Makefile includes support for building a test suite. The
+-$ ./bin/ls data
+-$ ./bin/head Makefile
+ $ quit
+ 
