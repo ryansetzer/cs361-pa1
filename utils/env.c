@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-#include "/cs/home/stu/setzerrj/cs361-pa1/src/hash.h"
+// #include "/cs/home/stu/setzerrj/cs361-pa1/src/hash.h"
 
 static void usage (void);
 

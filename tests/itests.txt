@@ -1,8 +1,0 @@
-C_cd_pwd                       pass
-C_echo                         pass
-C_binaries                     pass
-C_binaries_flags               pass
-C_binaries_bad                 pass
-C_which                        pass
-B_return_code                  pass
-B_export_unset                 pass
